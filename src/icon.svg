@@ -1,0 +1,26 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 41.88 111.78">
+  <!-- <defs>
+    <style>
+      .cls-1 {
+        stroke: #030303;
+        stroke-miterlimit: 10;
+        stroke-width: 0.25px;
+        fill: url(#linear-gradient);
+      }
+
+      .cls-2 {
+        font-size: 9px;
+        fill: #010101;
+        font-family: Helvetica-Bold, Helvetica;
+        font-weight: 700;
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="0.15" y1="55.88" x2="32.01" y2="55.88" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#11b6c3"/>
+      <stop offset="1" stop-color="#16959e"/>
+    </linearGradient>
+  </defs> -->
+
+  <polygon class="cls-1" points="29.35 108.97 29.35 111.63 22.72 111.63 20.06 95.7 18.73 86.41 16.08 86.41 16.08 95.7 17.41 110.3 10.77 111.63 10.77 110.3 14.75 108.97 13.42 95.7 12.1 86.41 0.15 86.41 6.79 50.56 0.15 42.6 1.48 33.31 9.44 16.05 9.44 12.07 6.79 4.11 8.12 0.13 13.42 0.13 14.75 4.11 14.75 10.74 13.42 13.4 21.39 18.71 26.7 42.6 24.04 49.24 32.01 83.75 22.72 85.08 24.04 95.7 24.04 107.64 29.35 108.97"/>
+  <text class="cls-2" transform="translate(34.14 25.12) rotate(90)">admin</text>
+</svg>
