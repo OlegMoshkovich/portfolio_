@@ -103,9 +103,6 @@ export const Icon = () => {
             <Text2 transform="matrix(1 0 0 1 40 180)"><tspan x="0" y="0" class="st0 st3 st4">single page </tspan><tspan x="0" y="16.8" class="st0 st3 st4">trial</tspan><tspan x="0" y="33.6" class="st0 st3 st4">application</tspan></Text2>
             <Text2 transform="matrix(1 0 0 1 227 180)"><tspan x="0" y="0" class="st0 st3 st4">admin </tspan><tspan x="0" y="16.8" class="st0 st3 st4">portal</tspan></Text2>
             <Text2 transform="matrix(1 0 0 1 395 180)"><tspan x="0" y="0" class="st0 st3 st4">site </tspan><tspan x="0" y="16.8" class="st0 st3 st4">portal</tspan></Text2>
-
-
         </svg>
-
     )
 }

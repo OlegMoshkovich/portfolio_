@@ -1,19 +1,14 @@
 import React from 'react';
-
+import styled from 'styled-components'
+import { Section } from './components/setup'
 import './App.css';
-import { Icon } from './icon'
-import { Rects } from './rects'
 
 
 function App() {
   return (
     <div >
-      <div className='sign'>
-        <div className='rect' >
-          <Icon />
-
-        </div>
-      </div>
+      <Section color={'black'} />
+      <Section color={'blue'} />
     </div>
   );
 }
