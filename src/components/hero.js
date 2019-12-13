@@ -41,19 +41,11 @@ max-height:100%;
 // border: 1px solid yellow; 
 `
 
-export const Section = (props) => {
+export const Hero = (props) => {
     return (
         <PageContainer color={props.color} >
             <ContentContainer>
-                <CenterContainer color={'white'} >
-                    <Image src={gs1} />
-                </CenterContainer >
-                <CenterContainer color={'white'} >
-                    <Image src={gs2} />
-                </CenterContainer >
-                <CenterContainer color={'white'} >
-                    <Image src={gs3} />
-                </CenterContainer >
+                <Image src={gs1} />
             </ContentContainer>
         </PageContainer >
     )
