@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components'
-import { Section } from './components/section'
-import { Hero } from './components/hero'
+import { Section } from './components/section/section'
+import { Hero } from './components/hero/hero'
 import './App.css';
 import gs1 from './img/gs/gs1.png'
 import gs2 from './img/gs/gs2.png'
@@ -18,9 +18,10 @@ function App() {
 
   return (
     <div >
-      <Hero color={'white'} img={hcs_hero} />
+      <Hero color={'white'} title={'Girls Scouts / React Native Development'} img={gs5} />
+      <Hero color={'white'} title={'HCS / ReactJS and Unity development'} img={hcs_hero} />
       <Section color={'white'} images={[hcs1, hcs2, hcs3]} />
-      {/* <Section color={'white'} images={[gs1, gs2, gs3]} /> */}
+
     </div>
   );
 }
