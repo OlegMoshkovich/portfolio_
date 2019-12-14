@@ -11,29 +11,21 @@ const PageContainer = styled.div`
 display:flex
 height:100vh;
 width:100vw;
-flex-direction:row;
+flex-direction:column;
 justify-content:space-around;
 align-items:center;
 background:${(props) => props.color};
 `
-const ContentContainer = styled.div`
+const CenterContainer = styled.div`
 display:flex
 flex-direction:row;
 justify-content:space-around;
 align-items:center;
 height:100%;
-width:80%;
+width:70%;
 // background:yellow;
-border: 1px solid yellow;
-`
-const CenterContainer = styled.div`
-display:flex;
-flex-direction:row;
-justify-content:space-around;
-align-items:center;
-width:40%;
-height:40%;
-background:${(props) => props.color};
+// border: 1px solid yellow;
+
 `
 const Image = styled.img`
 max-width:100%;
@@ -44,9 +36,9 @@ max-height:100%;
 export const Hero = (props) => {
     return (
         <PageContainer color={props.color} >
-            <ContentContainer>
-                <Image src={gs1} />
-            </ContentContainer>
+            <CenterContainer>
+                <Image src={props.img} />
+            </CenterContainer>
         </PageContainer >
     )
 }
