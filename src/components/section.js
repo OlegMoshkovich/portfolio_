@@ -13,10 +13,11 @@ background:${(props) => props.color};
 // text-align:center;
 `
 const TitleContainer = styled.div`
-width:20vw;
+width:auto;
 align-self:start;
 margin-top: -100px;
 margin-left: 50px;
+
 `
 const TitleCell = styled.div`
 display:flex
@@ -25,6 +26,10 @@ justify-content:flex-start;
 align-items:left;
 background:${(props) => props.color};
 color:white;
+font-family: 'Roboto', sans-serif;
+font-weight: bold;
+font-size: 20px;
+padding:2px 10px 2px 10px;
 `
 const FlexContainer = styled.div`
 display:flex
@@ -67,7 +72,7 @@ export const Section = (props) => {
     return (
         <PageContainer color={props.color} >
             <TitleContainer color={'white'} >
-                <TitleCell color={'blue'}>HCS</TitleCell>
+                <TitleCell color={'blue'}>HCS / ReactJS and Unity development</TitleCell>
             </TitleContainer >
             <FlexContainer color={props.color} >
                 <CenterContainer>
