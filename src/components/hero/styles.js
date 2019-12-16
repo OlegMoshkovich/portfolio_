@@ -23,8 +23,8 @@ margin-top:20px;
 // border: 1px solid red;
 `
 export const Image = styled.img`
-max-width:${(props) => props.proportions};
-max-height:${(props) => props.proportions};
+max-width:${(props) => props.proportions || '80%'};
+max-height:${(props) => props.proportions || '80%'};
 // border: 1px solid blue; 
 `
 export const TitleContainer = styled.div`
@@ -43,6 +43,6 @@ background:${(props) => props.color};
 color:white;
 font-family: 'Roboto', sans-serif;
 font-weight: bold;
-font-size: 20px;
+font-size: 24px;
 padding:2px 10px 2px 10px;
 `
