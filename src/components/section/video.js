@@ -20,7 +20,7 @@ export const Video = (props) => {
             </TitleContainer >
             <FlexContainer color={props.color} >
                 <CenterContainer>
-                    <video style={{ width: props.proportions, height: props.proportions }} mute loop autoPlay>
+                    <video style={{ width: props.proportions, height: props.proportions }} loop autoPlay>
                         <source src={props.src} type="video/mp4" />
                         Your browser does not support the video tag.
                       </video>

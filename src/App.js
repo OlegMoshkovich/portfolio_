@@ -2,10 +2,9 @@ import React from 'react';
 import { Section } from './components/section/section'
 import { Video } from './components/section/video'
 import { Hero } from './components/hero/hero'
+import { Nav } from './components/nav/globalNav'
+import { PageNav } from './components/nav/pageNav'
 import './App.css';
-import gs1 from './img/gs/gs1.png'
-import gs2 from './img/gs/gs2.png'
-import gs3 from './img/gs/gs3.png'
 import gs5_hero from './img/gs/gs2.png'
 import map from './img/gs/map.png'
 import ava from './img/gs/image_gif.gif'
@@ -37,6 +36,8 @@ function App() {
 
   return (
     <div >
+      <Nav />
+      <PageNav />
 
       <Hero color={'blue'} fontColor={'white'} header={true} title={'Oleg Moshkovich / Engineer'} img={title} proportions={'93%'} />
       {/* -----------------gs */}
