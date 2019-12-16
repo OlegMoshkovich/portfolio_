@@ -16,7 +16,7 @@ width:auto;
 align-self:start;
 margin-top: -50px;
 margin-left: 50px;
-margin-right: 170px;
+margin-right: 200px;
 // border: 1px solid red;
 `
 export const TitleCell = styled.div`
