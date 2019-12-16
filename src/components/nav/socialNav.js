@@ -1,5 +1,8 @@
 import React from 'react';
-import styled from 'styled-components'
+import styled from 'styled-components';
+import linkedIn from '../../img/in.png';
+import git from '../../img/git.png';
+import gitLab from '../../img/gitlab.png';
 
 const Circle = styled.div`
 width:18px;
@@ -28,12 +31,19 @@ bottom:20px;
 left:30px;
 `
 
+export const Image = styled.img`
+width:8px;
+height:8px;
+`
+
 export const SocialNav = () => {
     return (
         <NavContainer>
-            {
-                [...Array(3)].map((el, i) => <Circle>{i + 1}</Circle>)
-            }
+
+            <Circle><Image src={gitLab} /></Circle>
+            <Circle><Image src={linkedIn} /></Circle>
+            <Circle><Image src={git} /></Circle>
+
         </NavContainer>
     )
 
