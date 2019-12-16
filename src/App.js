@@ -11,6 +11,9 @@ import gs5_hero from './img/gs/gs2.png'
 import hcs1 from './img/hcs/image1.png'
 import hcs2 from './img/hcs/image2.png'
 import hcs3 from './img/hcs/image3.png'
+import emilie1 from './img/emilie/emilie1.png'
+import emilie2 from './img/emilie/emilie2.png'
+import emilie3 from './img/emilie/emilie3.png'
 import ribbon1 from './img/ribbon1.png'
 import ribbon2 from './img/ribbon2.png'
 import ribbon3 from './img/ribbon3.png'
@@ -20,13 +23,14 @@ import emilie_hero from './img/emilie-01.png'
 
 
 
+
 function App() {
 
   return (
     <div >
       <Hero color={'white'} title={'Girls Scouts / React Native Development'} img={gs5_hero} />
       <Section color={'white'} images={[gs1, gs2, gs3]}
-        description1={'In 2015 I joined an exciting startup with the mission to increase daily safety on industrial worksites through application of data'}
+        description1={'In 2017 I joined omission.studio, то develop a fully functioning prototype of the Girls Scouts mobile application designed for 1.2 million users. The prototype was build using React Native Framework and EXPO toolchain.'}
         description2={' In the course of two years working for Human Condition Safety. I developed JS(React) analytical dashboards to visualize data obtained during product pilots and a simmulation engine created using Unity3D.'} />
 
       <Hero color={'white'} title={'HCS / ReactJS and Unity development'} img={hcs_hero} />
@@ -36,11 +40,12 @@ function App() {
 
       <Hero color={'white'} title={'10 Design / CATIA Computational design'} img={ribbon_hero} />
       <Section color={'white'} images={[ribbon1, ribbon2, ribbon3]}
-        description1={'In 2015 I joined an exciting startup with the mission to increase daily safety on industrial worksites through application of data'}
+        description1={'In 2012 I participated in designing a cultural portion of chinese city - Zhuhai. I was asked to move to Hong Kong for 6 month and consult 10 Design during design development phase of the project.'}
         description2={' In the course of two years working for Human Condition Safety. I developed JS(React) analytical dashboards to visualize data obtained during product pilots and a simmulation engine created using Unity3D.'} />
+
       <Hero color={'white'} title={'BCG.DV / ReactJs Redux Material'} img={emilie_hero} proportion={'50%'} />
-      <Section color={'white'} images={[ribbon1, ribbon2, ribbon3]}
-        description1={'In 2015 I joined an exciting startup with the mission to increase daily safety on industrial worksites through application of data'}
+      <Section color={'white'} images={[emilie1, emilie2, emilie3]}
+        description1={'In 2019 I joined Boston Consultant Group to work on Emilie Scientific Start up. '}
         description2={' In the course of two years working for Human Condition Safety. I developed JS(React) analytical dashboards to visualize data obtained during product pilots and a simmulation engine created using Unity3D.'} />
 
 

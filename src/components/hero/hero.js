@@ -13,7 +13,6 @@ export const Hero = (props) => {
     console.log(props)
     return (
         <PageContainer color={props.color} >
-
             <TitleContainer color={'white'} >
                 <TitleCell color={'blue'}>{props.title}</TitleCell>
             </TitleContainer >
