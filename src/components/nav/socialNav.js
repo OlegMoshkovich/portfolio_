@@ -32,17 +32,17 @@ left:30px;
 `
 
 export const Image = styled.img`
-width:8px;
-height:8px;
+width:${(props) => props.proportions};
+height:${(props) => props.proportions};
 `
 
 export const SocialNav = () => {
     return (
         <NavContainer>
 
-            <Circle><Image src={gitLab} /></Circle>
-            <Circle><Image src={linkedIn} /></Circle>
-            <Circle><Image src={git} /></Circle>
+            <Circle><Image src={gitLab} proportions={'10px'} /></Circle>
+            <Circle><Image src={linkedIn} proportions={'8px'} /></Circle>
+            <Circle><Image src={git} proportions={'8px'} /></Circle>
 
         </NavContainer>
     )
