@@ -15,15 +15,15 @@ display:flex
 flex-direction:row;
 justify-content:space-around;
 align-items:center;
-height:100%;
 width:100%;
+height:100%;
 // background:yellow;
-// border: 1px solid yellow;
+// border: 1px solid red;
 `
 export const Image = styled.img`
-max-width:100%;
-max-height:100%;
-// border: 1px solid yellow; 
+max-width:80%;
+max-height:80%;
+// border: 1px solid blue; 
 `
 export const TitleContainer = styled.div`
 width:auto;

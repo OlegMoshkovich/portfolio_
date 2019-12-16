@@ -18,8 +18,7 @@ export const Section = (props) => {
     return (
         <PageContainer color={props.color} >
             <TitleContainer color={''} >
-                <TitleCell color={'transparent'} textColor={'blue'}>In 2015 I joined an exciting startup with the mission to increase daily safety
-                on industrial worksites through application of data</TitleCell>
+                <TitleCell color={'transparent'} textColor={'blue'}>{props.description1}</TitleCell>
             </TitleContainer >
             <FlexContainer color={props.color} >
                 <CenterContainer>
@@ -36,10 +35,7 @@ export const Section = (props) => {
 
             </FlexContainer>
             <TextContainer color={'white'} >
-                <TextCell color={'transparent'}>
-                    In the course of two years working for Human Condition Safety.
-    I developed JS(React) analytical dashboards to visualize data obtained during product pilots and a simmulation engine created using Unity3D.
-                </TextCell>
+                <TextCell color={'transparent'}>{props.description2}</TextCell>
             </TextContainer >
         </PageContainer >
     )
