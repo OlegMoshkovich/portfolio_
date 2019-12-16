@@ -10,22 +10,18 @@ import {
 
 
 export const Hero = (props) => {
-    console.log(props)
     return (
-        <PageContainer color={props.color} >
+        <PageContainer  >
             <TitleContainer color={'white'} >
                 {props.header ?
-                    <TitleCell color={'blue'}>{props.title}</TitleCell> :
+                    <TitleCell fontColor={props.fontColor} color={props.color}>{props.title}</TitleCell> :
                     ''
                 }
-
             </TitleContainer >
             <CenterContainer>
                 <Image src={props.img} proportions={props.proportions} />
             </CenterContainer>
-            <TitleContainer color={'white'} >
-                <TitleCell color={'transparent'}>{props.title}</TitleCell>
-            </TitleContainer >
+
 
         </PageContainer >
     )

@@ -5,15 +5,14 @@ import {
     TitleCell,
     FlexContainer,
     CenterContainer,
-    ContentContainer,
-    Image,
+
     TextContainer,
     TextCell
 } from './styles'
+import video from '../../img/HCS.mp4'
 
 
-export const Section = (props) => {
-    const { images } = props
+export const Video = (props) => {
     return (
         <PageContainer color={props.color} >
             <TitleContainer color={''} >
@@ -21,21 +20,17 @@ export const Section = (props) => {
             </TitleContainer >
             <FlexContainer color={props.color} >
                 <CenterContainer>
-                    {
-                        images.map((image, index) => {
-                            return (
-                                <ContentContainer key={index} color={'white'}  >
-                                    <Image src={image} border={props.border} />
-                                </ContentContainer >
-                            )
-                        })
-                    }
+                    <video style={{ width: props.proportions, height: props.proportions }} mute loop autoPlay>
+                        <source src={props.src} type="video/mp4" />
+                        Your browser does not support the video tag.
+                      </video>
                 </CenterContainer>
-
             </FlexContainer>
             <TextContainer color={'white'} >
                 <TextCell color={'transparent'}>{props.description2}</TextCell>
             </TextContainer >
+
         </PageContainer >
     )
 }
+

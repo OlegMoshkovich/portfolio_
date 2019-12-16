@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components'
 
 export const PageContainer = styled.div`
@@ -32,17 +31,17 @@ width:auto;
 align-self:start;
 margin-top: 50px;
 margin-left: 50px;
-
 `
+
 export const TitleCell = styled.div`
 display:flex
 flex-direction:row;
 justify-content:flex-start;
 align-items:left;
 background:${(props) => props.color};
-color:white;
+color:${(props) => props.fontColor || 'white'};
 font-family: 'Roboto', sans-serif;
-font-weight: bold;
+font-weight: ${(props) => props.weight || 'white'};
 font-size: 24px;
 padding:2px 10px 2px 10px;
 `
