@@ -14,7 +14,11 @@ export const Hero = (props) => {
     return (
         <PageContainer color={props.color} >
             <TitleContainer color={'white'} >
-                <TitleCell color={'blue'}>{props.title}</TitleCell>
+                {props.header ?
+                    <TitleCell color={'blue'}>{props.title}</TitleCell> :
+                    ''
+                }
+
             </TitleContainer >
             <CenterContainer>
                 <Image src={props.img} proportions={props.proportions} />

@@ -25,8 +25,8 @@ export const Section = (props) => {
                     {
                         images.map(image => {
                             return (
-                                <ContentContainer color={'white'} >
-                                    <Image src={image} />
+                                <ContentContainer color={'white'}  >
+                                    <Image src={image} border={props.border} />
                                 </ContentContainer >
                             )
                         })

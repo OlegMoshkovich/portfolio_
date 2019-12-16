@@ -9,7 +9,7 @@ align-items:center;
 height:100vh;
 width:100vw;
 background:${(props) => props.color};
-// border:10px solid yellow;
+// border:2px solid yellow;
 // text-align:center;
 `
 export const TitleContainer = styled.div`
@@ -83,5 +83,5 @@ background:${(props) => props.color};
 export const Image = styled.img`
 max-width:70%;
 max-height:70%;
-border:1px solid blue;
+border:1px solid ${(props) => props.border || 'blue'};
 `

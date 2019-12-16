@@ -9,6 +9,7 @@ flex-direction:column;
 justify-content:space-around;
 align-items:center;
 background:${(props) => props.color};
+//  border:2px solid yellow;
 `
 export const CenterContainer = styled.div`
 display:flex
@@ -17,12 +18,13 @@ justify-content:space-around;
 align-items:center;
 width:100%;
 height:100%;
+margin-top:20px;
 // background:yellow;
 // border: 1px solid red;
 `
 export const Image = styled.img`
-max-width:80%;
-max-height:80%;
+max-width:${(props) => props.proportions};
+max-height:${(props) => props.proportions};
 // border: 1px solid blue; 
 `
 export const TitleContainer = styled.div`
