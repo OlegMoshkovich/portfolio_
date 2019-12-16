@@ -8,12 +8,19 @@ margin: 0px 3px 0px 3px;
 background-color:blue;
 border-radius:50%;
 `
+const AnchorCircle = styled.div`
+width:18px;
+height:18px;
+margin: 0px 3px 0px 3px;
+background-color:blue;
+border-radius:50%;
+`
 const NavContainer = styled.div`
 width:auto;
 height:auto;
 display:flex;
 flex-direction:row;
-justify-content:center;
+justify-content:flex-end;
 position: fixed;
 top:55px;
 right:55px;

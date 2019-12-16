@@ -4,6 +4,7 @@ import { Video } from './components/section/video'
 import { Hero } from './components/hero/hero'
 import { Nav } from './components/nav/globalNav'
 import { PageNav } from './components/nav/pageNav'
+import { SocialNav } from './components/nav/socialNav'
 import './App.css';
 import gs5_hero from './img/gs/gs2.png'
 import map from './img/gs/map.png'
@@ -38,6 +39,7 @@ function App() {
     <div >
       <Nav />
       <PageNav />
+      <SocialNav />
 
       <Hero color={'blue'} fontColor={'white'} header={true} title={'Oleg Moshkovich / Engineer'} img={title} proportions={'93%'} />
       {/* -----------------gs */}
@@ -46,7 +48,7 @@ function App() {
       <Video src={gs_video} proportions={'110%'}
         description1={'In 2017 I joined omission.studio, то develop a fully functioning prototype of the Girls Scouts mobile application designed for 1.2 million users. The prototype was built using React Native Library and EXPO toolchain.'}
       />
-      <Hero color={'white'} fontColor={'blue'} weight={'light'} header={true} title={'Product Map'} img={map} proportions={'93%'} />
+      <Hero color={'white'} fontColor={'blue'} weight={'light'} header={true} title={'Product Map'} img={map} proportions={'80%'} />
       {/* -----------------gs */}
 
       <Section color={'white'} border={'transparent'} images={[world, ava]}
@@ -69,7 +71,7 @@ function App() {
         description1={'During my time in HCS I developed JS(React) analytical dashboards to visualize data obtained during product pilots and worked on a simmulation engine created using Unity3D.'}
       />
       {/* -----------------ribbon */}
-      <Hero color={'blue'} fontColor={'white'} header={true} title={'10 Design / CATIA Computational design'} img={ribbon_hero} proportions={'140%'} />
+      <Hero color={'blue'} fontColor={'white'} header={true} title={'10 Design / CATIA Computational design'} img={ribbon_hero} proportions={'120%'} />
       <Section color={'white'} images={[ribbon1, ribbon2, ribbon3]}
         description1={'In 2012 I participated in designing a cultural portion of chinese city - Zhuhai. I was asked to move to Hong Kong for 6 month and consult 10 Design during design development phase of the project.'}
         description2={' As a computational designer I created parametric models contolled by a comprehensive set of data points. The objective was to find the optimal form for the bespoke geometrical object on the scale of architecture.'} />
