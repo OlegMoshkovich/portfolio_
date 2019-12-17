@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components'
+import { Link } from 'react-scroll'
 
 const Circle = styled.div`
 width:14px;
@@ -14,6 +15,7 @@ display:flex;
 justify-content:center;
 border:1px solid white;
 align-items:center;
+cursor:pointer;
 &:hover {
     border:1px solid blue;
   }
@@ -35,7 +37,7 @@ export const PageNav = () => {
     return (
         <NavContainer>
             {
-                [...Array(10)].map((el, i) => <Circle>{i + 1}</Circle>)
+                [...Array(10)].map((el, i) => <Link to={i + 1} duration={0} offset={0} ><Circle>{i + 1}</Circle></Link>)
             }
         </NavContainer>
     )

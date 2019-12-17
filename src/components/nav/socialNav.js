@@ -17,6 +17,7 @@ border:1px solid white;
 align-items:center;
 border-radius:50%;
 margin: 3px 0px 3px 0px;
+cursor:pointer;
 &:hover {
     background-color :yellow;
   }

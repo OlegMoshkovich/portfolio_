@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components'
+import { Link } from 'react-scroll'
 
 const Circle = styled.div`
 width:${(props) => props.proportions};
@@ -12,6 +13,7 @@ font-weight: bold;
 justify-content:center;
 align-items: center;
 color:white;
+cursor:pointer;
 &:hover {
     background-color:${(props) => props.hover};;
   }
@@ -40,10 +42,19 @@ right:45px;
 export const Nav = () => {
     return (
         <NavContainer>
-            <Circle onClick={() => console.log('first circle is clicked')} proportions={'18px'} />
-            <Circle proportions={'18px'} hover={'yellow'} />
-            <Circle proportions={'18px'} hover={'yellow'} />
-            <Circle proportions={'18px'} hover={'yellow'} />
+            <Link to="gs" duration={0} >
+                <Circle onClick={() => console.log('hello ')} proportions={'18px'} hover={'yellow'} />
+            </Link>
+            <Link to="emilie" duration={0} >
+                <Circle proportions={'18px'} hover={'yellow'} />
+            </Link>
+            <Link to="hcs" duration={0} >
+                <Circle proportions={'18px'} hover={'yellow'} />
+            </Link>
+            <Link to="10" duration={0} >
+                <Circle proportions={'18px'} hover={'yellow'} />
+            </Link>
+
             {/* <Circle proportions={'18px'} hover={'yellow'} /> */}
             <div style={{ margin: '0px 0px 0px 10px' }}>
                 <Circle proportions={'40px'} hover={'blue'}>
@@ -51,10 +62,6 @@ export const Nav = () => {
                         <div
                             style={{
                                 margin: '0px 3px 7px 0px',
-                                // transition: "opacity 1s ease- out",
-                                // opacity: '0',
-                                // height: '0',
-                                // overflow: "hidden"
                             }}>_</div>
                         <div>></div>
                     </div>
