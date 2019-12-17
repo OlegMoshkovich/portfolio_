@@ -29,7 +29,7 @@ display:flex;
 flex-direction:column;
 justify-content:center;
 position: fixed;
-top:30%;
+top:25%;
 right:55px;
 `
 

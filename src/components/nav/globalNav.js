@@ -7,6 +7,7 @@ width:${(props) => props.proportions};
 height:${(props) => props.proportions};
 margin: 0px 3px 0px 3px;
 background-color:blue;
+border: 1px solid white;
 border-radius:50%;
 display:flex;
 font-weight: bold;
@@ -43,19 +44,19 @@ export const Nav = () => {
     return (
         <NavContainer>
             <Link to="gs" duration={0} >
-                <Circle onClick={() => console.log('hello ')} proportions={'18px'} hover={'yellow'} />
+                <Circle onClick={() => console.log('hello ')} proportions={'18px'} hover={'white'} />
             </Link>
             <Link to="emilie" duration={0} >
-                <Circle proportions={'18px'} hover={'yellow'} />
+                <Circle proportions={'18px'} hover={'white'} />
             </Link>
             <Link to="hcs" duration={0} >
-                <Circle proportions={'18px'} hover={'yellow'} />
+                <Circle proportions={'18px'} hover={'white'} />
             </Link>
             <Link to="10design" duration={0} >
-                <Circle proportions={'18px'} hover={'yellow'} />
+                <Circle proportions={'18px'} hover={'white'} />
             </Link>
 
-            {/* <Circle proportions={'18px'} hover={'yellow'} /> */}
+            {/* <Circle proportions={'18px'} hover={'white'} /> */}
             <div style={{ margin: '0px 0px 0px 10px' }}>
                 <Circle proportions={'40px'} hover={'blue'}>
                     <div style={{ display: 'flex' }}>

@@ -1,36 +1,44 @@
 import React, { Component } from 'react';
-import styled from 'styled-components'
-import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
+import { Element } from 'react-scroll'
 
-import { Section } from './components/section/section'
-import { Video } from './components/section/video'
-import { Hero } from './components/hero/hero'
-import { Nav } from './components/nav/globalNav'
-import { PageNav } from './components/nav/pageNav'
-import { SocialNav } from './components/nav/socialNav'
-import './App.css';
-import gs5_hero from './img/gs/gs2.png'
-import map from './img/gs/map.png'
-import ava from './img/gs/image_gif.gif'
-import world from './img/gs/WORLD.png'
-import hcs1 from './img/hcs/image1.png'
-import hcs2 from './img/hcs/image2.png'
-import hcs3 from './img/hcs/image3.png'
-import emilie1 from './img/emilie/emilie1.png'
-import emilie2 from './img/emilie/emilie2.png'
-import emilie3 from './img/emilie/emilie3.png'
-import ribbon1 from './img/ribbon1.png'
-import ribbon2 from './img/ribbon2.png'
-import ribbon3 from './img/ribbon3.png'
-import hcs_hero from './img/hcs_dashboard_1.png'
-import ribbon_hero from './img/ribbon_dwg.png'
-import ribbon_realized from './img/ribbon_realized.png'
-import emilie_hero from './img/emilie-01.png'
-import title from './img/title.png'
-import prototype1 from './img/gs/prototype1.png'
-import prototype2 from './img/gs/prototype2.png'
-import gs_video from './img/gs_short_demo.mp4'
-import hcs_video from './img/HCS.mp4'
+import { Section } from '../components/section/section'
+import { Video } from '../components/section/video'
+import { Hero } from '../components/hero/hero'
+import { Nav } from '../components/nav/globalNav'
+import { PageNav } from '../components/nav/pageNav'
+import { SocialNav } from '../components/nav/socialNav'
+
+import title from '../img/title.png'
+
+import gs5_hero from '../img/gs/gs2.png'
+import map from '../img/gs/map.png'
+import ava from '../img/gs/image_gif.gif'
+import world from '../img/gs/WORLD.png'
+import prototype1 from '../img/gs/prototype1.png'
+import prototype2 from '../img/gs/prototype2.png'
+import gs_video from '../img/gs_short_demo.mp4'
+
+import hcs_hero from '../img/hcs_dashboard_1.png'
+import hcs1 from '../img/hcs/image1.png'
+import hcs2 from '../img/hcs/image2.png'
+import hcs3 from '../img/hcs/image3.png'
+import hcs_video from '../img/HCS.mp4'
+
+import emilie_hero from '../img/emilie-01.png'
+import emilie1 from '../img/emilie/emilie1.png'
+import emilie2 from '../img/emilie/emilie2.png'
+import emilie3 from '../img/emilie/emilie3.png'
+
+import ribbon_hero from '../img/ribbon_dwg.png'
+import ribbon1 from '../img/ribbon1.png'
+import ribbon2 from '../img/ribbon2.png'
+import ribbon3 from '../img/ribbon3.png'
+import ribbon_realized from '../img/ribbon_realized.png'
+
+
+
+
+
 
 
 class App extends Component {
@@ -41,6 +49,7 @@ class App extends Component {
         <Nav />
         <PageNav />
         <SocialNav />
+        <a href='/map' style={{ position: 'fixed', bottom: '30px', right: '45px', color: 'blue' }}>map</a>
 
         <Hero color={'blue'} fontColor={'white'} header={true} title={'Oleg Moshkovich / Engineer'} img={title} proportions={'93%'} />
         {/* -----------------gs */}
@@ -56,11 +65,11 @@ class App extends Component {
         <Hero color={'white'} fontColor={'blue'} weight={'light'} header={true} title={'Product Map'} img={map} proportions={'80%'} />
         <Element name="4" />
         <Section color={'white'} border={'transparent'} images={[world, ava]}
-          description1={'In 2017 I joined omission.studio, то develop a fully functioning prototype of the Girls Scouts mobile application designed for 1.2 million users. The prototype was build using React Native Framework and EXPO toolchain.'}
+          description1={'In 2017 I joined omission.studio, то design and develop a fully functioning prototype of the Girls Scouts mobile application with the reach of 1.2 million users. The prototype was build using React Native Framework and EXPO toolchain.'}
         />
         <Element name="5" />
         <Section color={'white'} border={'transparent'} images={[prototype1, prototype2]}
-          description1={' Extensive user research and testing took place in New York and Washington DC, gathered feedback resulted in the definition of the first release feature set.The production team was engaged in September of 2018. The first version of the application is on schedule to be released in March of 2019.'} />
+          description1={' Extensive user research and testing took place in New York and Washington DC, gathered feedback resulted in the definition of the first release feature set.The production team was engaged in September of 2018.'} />
 
         {/* -----------------emilie */}
 
@@ -69,7 +78,7 @@ class App extends Component {
         <Hero color={'blue'} fontColor={'white'} header={true} title={'BCG.DV / ReactJs + Redux + Material'} img={emilie_hero} proportion={'50%'} proportions={'85%'} />
         <Element name="7" />
         <Section color={'white'} images={[emilie1, emilie2, emilie3]}
-          description1={'In 2019 I joined Boston Consultant Group to work on Emilie Scientific platform as a front end engineer. The platform included user facing assesment survey, and 2 adminn portals used for management of varies aspects of the application.'} />
+          description1={'In 2019 I joined Boston Consultant Group to work on Emilie Scientific content and user management platform as a front end engineer. The platform included user facing assesment survey, and 2 admin portals used for managing varies aspects of the application.'} />
         {/* -----------------hcs */}
 
         <Element name="hcs" />
@@ -77,7 +86,7 @@ class App extends Component {
         <Hero color={'blue'} fontColor={'white'} header={true} title={'HCS / ReactJS and Unity development'} img={hcs_hero} proportions={'100%'} />
         <Element name="9" />
         <Section color={'white'} images={[hcs1, hcs2, hcs3]}
-          description1={'In 2015 I joined mission driven start up to work on products designed to increase safety in the industrial space.'}
+          description1={'In 2015 I joined mission driven start up Human Condition Safety to work on products designed to increase safety on construction sites, through the application of IoT and simmulation technology.'}
         />
         <Element name="10" />
         <Video src={hcs_video} proportions={'60%'}
@@ -93,7 +102,6 @@ class App extends Component {
         <Element name="12" />
         <Section color={'white'} images={[ribbon_realized]} border={'transparent'}
           description1={' The objective was to find the optimal form for the bespoke geometrical object on the scale of architecture. The workflow involved using object oriented programing to construct the geometrical system to produced the final form of the structure. The designed object was realized in 2017.'} />
-
 
       </div >
     );

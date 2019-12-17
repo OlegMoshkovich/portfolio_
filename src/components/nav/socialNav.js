@@ -4,7 +4,7 @@ import linkedIn from '../../img/in.png';
 import git from '../../img/git.png';
 import gitLab from '../../img/gitlab.png';
 
-const Circle = styled.div`
+const Circle = styled.a`
 width:18px;
 height:18px;
 background-color:blue;
@@ -19,7 +19,7 @@ border-radius:50%;
 margin: 3px 0px 3px 0px;
 cursor:pointer;
 &:hover {
-    background-color :yellow;
+    background-color :blue;
   }
 `
 
@@ -37,15 +37,16 @@ left:30px;
 export const Image = styled.img`
 width:${(props) => props.proportions};
 height:${(props) => props.proportions};
+
 `
 
 export const SocialNav = () => {
     return (
         <NavContainer>
 
-            <Circle><Image src={gitLab} proportions={'10px'} /></Circle>
-            <Circle onClick={() => console.log('linked in is clicked')}><Image src={linkedIn} proportions={'8px'} /></Circle>
-            <Circle><Image src={git} proportions={'8px'} /></Circle>
+            <Circle href='https://www.gitlab.com/oleg.moshkovich'><Image src={gitLab} proportions={'10px'} /></Circle>
+            <Circle href='https://www.linkedin.com/in/olegmoshkovich/' onClick={() => console.log('linked in is clicked')}><Image src={linkedIn} proportions={'8px'} /></Circle>
+            <Circle href='https://github.com/OlegMoshkovich'><Image src={git} proportions={'8px'} /></Circle>
 
         </NavContainer>
     )
