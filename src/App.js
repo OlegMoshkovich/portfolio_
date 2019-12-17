@@ -47,8 +47,9 @@ class App extends Component {
         <Element name="gs" />
         <Element name="1" />
         <Hero className='violet' color={'blue'} ref={(section) => { this.Violet = section; }} fontColor={'white'} header={true} title={'Girls Scouts / React Native Development'} img={gs5_hero} proportions={'100%'} />
+
         <Element name="2" />
-        <Video src={gs_video} proportions={'110%'}
+        <Video src={gs_video} proportions={'80%'}
           description1={'In 2017 I joined omission.studio, то develop a fully functioning prototype of the Girls Scouts mobile application designed for 1.2 million users. The prototype was built using React Native Library and EXPO toolchain.'}
         />
         <Element name="3" />
@@ -70,6 +71,7 @@ class App extends Component {
         <Section color={'white'} images={[emilie1, emilie2, emilie3]}
           description1={'In 2019 I joined Boston Consultant Group to work on Emilie Scientific platform as a front end engineer. The platform included user facing assesment survey, and 2 adminn portals used for management of varies aspects of the application.'} />
         {/* -----------------hcs */}
+
         <Element name="hcs" />
         <Element name="8" />
         <Hero color={'blue'} fontColor={'white'} header={true} title={'HCS / ReactJS and Unity development'} img={hcs_hero} proportions={'100%'} />
@@ -78,18 +80,19 @@ class App extends Component {
           description1={'In 2015 I joined mission driven start up to work on products designed to increase safety in the industrial space.'}
         />
         <Element name="10" />
-        <Video src={hcs_video} proportions={'90%'}
+        <Video src={hcs_video} proportions={'60%'}
           description1={'During my time in HCS I developed JS(React) analytical dashboards to visualize data obtained during product pilots and worked on a simmulation engine created using Unity3D.'}
         />
         {/* -----------------ribbon */}
-        <Element name="10" />
+        <Element name="10design" />
         <Element name="11" />
         <Hero color={'blue'} fontColor={'white'} header={true} title={'10 Design / CATIA Computational design'} img={ribbon_hero} proportions={'120%'} />
+        <Element name="11" />
         <Section color={'white'} images={[ribbon1, ribbon2, ribbon3]}
-          description1={'In 2012 I participated in designing a cultural portion of chinese city - Zhuhai. I was asked to move to Hong Kong for 6 month and consult 10 Design during design development phase of the project.'}
-          description2={' As a computational designer I created parametric models contolled by a comprehensive set of data points. The objective was to find the optimal form for the bespoke geometrical object on the scale of architecture.'} />
+          description1={'In 2012 I participated in designing a cultural portion of chinese city - Zhuhai. I was asked to move to Hong Kong for 6 month and consult 10 Design during design development phase of the project.As a computational designer I created parametric models contolled by a comprehensive set of data points. '} />
+        <Element name="12" />
         <Section color={'white'} images={[ribbon_realized]} border={'transparent'}
-          description2={' The workflow involved using object oriented programing to construct the geometrical system to produced the final form of the structure. The designed object was realized in 2017.'} />
+          description1={' The objective was to find the optimal form for the bespoke geometrical object on the scale of architecture. The workflow involved using object oriented programing to construct the geometrical system to produced the final form of the structure. The designed object was realized in 2017.'} />
 
 
       </div >

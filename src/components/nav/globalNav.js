@@ -51,7 +51,7 @@ export const Nav = () => {
             <Link to="hcs" duration={0} >
                 <Circle proportions={'18px'} hover={'yellow'} />
             </Link>
-            <Link to="10" duration={0} >
+            <Link to="10design" duration={0} >
                 <Circle proportions={'18px'} hover={'yellow'} />
             </Link>
 

@@ -44,7 +44,7 @@ export const SocialNav = () => {
         <NavContainer>
 
             <Circle><Image src={gitLab} proportions={'10px'} /></Circle>
-            <Circle onClick={() => console.log('linked in is clicked')}><Image src={linkedIn} proportions={'7px'} /></Circle>
+            <Circle onClick={() => console.log('linked in is clicked')}><Image src={linkedIn} proportions={'8px'} /></Circle>
             <Circle><Image src={git} proportions={'8px'} /></Circle>
 
         </NavContainer>

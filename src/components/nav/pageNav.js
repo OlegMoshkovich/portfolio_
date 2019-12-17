@@ -37,7 +37,7 @@ export const PageNav = () => {
     return (
         <NavContainer>
             {
-                [...Array(10)].map((el, i) => <Link to={i + 1} duration={0} offset={0} ><Circle>{i + 1}</Circle></Link>)
+                [...Array(12)].map((el, i) => <Link to={i + 1} duration={0} offset={0} ><Circle>{i + 1}</Circle></Link>)
             }
         </NavContainer>
     )

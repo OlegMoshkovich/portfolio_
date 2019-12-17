@@ -14,7 +14,7 @@ background:${(props) => props.color};
 export const TitleContainer = styled.div`
 width:auto;
 align-self:start;
-margin-top: -50px;
+margin-top: 45px;
 margin-left: 50px;
 margin-right: 200px;
 // border: 1px solid red;
