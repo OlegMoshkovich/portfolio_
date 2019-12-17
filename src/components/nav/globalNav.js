@@ -17,6 +17,7 @@ color:white;
 cursor:pointer;
 &:hover {
     background-color:${(props) => props.hover};;
+    border:1px solid blue
   }
 
 `

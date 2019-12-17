@@ -78,7 +78,17 @@ class Map extends Component {
                         <div>map goes here</div>
                     </CenterContainer> */}
 
-                    <div style={{ color: 'white' }}>map goes here</div>
+                    <div style={{
+                        width: '60%',
+                        height: '60%',
+                        color: 'blue',
+                        backgroundColor: 'white',
+                        border: '1px solid white',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        justifyContent: 'center',
+                        alignItems: 'center'
+                    }}>map goes here</div>
 
 
                 </PageContainer >
