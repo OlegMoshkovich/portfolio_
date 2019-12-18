@@ -3,12 +3,9 @@ import {
     PageContainer,
     TitleContainer,
     TitleCell,
-    FlexContainer,
     CenterContainer,
     ContentContainer,
     Image,
-    TextContainer,
-    TextCell
 } from './styles'
 
 

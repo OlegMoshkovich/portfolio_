@@ -21,23 +21,18 @@ cursor:pointer;
   }
 
 `
-const AnchorCircle = styled.div`
-width:18px;
-height:18px;
-margin: 0px 3px 0px 3px;
-background-color:blue;
-border-radius:50%;
-`
+
+
 const NavContainer = styled.div`
-width:auto;
-height:auto;
-display:flex;
-flex-direction:row;
-justify-content:flex-end;
-align-items: center;
+width: auto;
+height: auto;
+display: flex;
+flex - direction: row;
+justify - content: flex - end;
+align - items: center;
 position: fixed;
-top:40px;
-right:45px;
+top: 40px;
+right: 45px;
 // border:1px solid blue;
 `
 
@@ -56,8 +51,6 @@ export const Nav = () => {
             <Link to="10design" duration={0} >
                 <Circle proportions={'18px'} hover={'white'} />
             </Link>
-
-            {/* <Circle proportions={'18px'} hover={'white'} /> */}
             <div style={{ margin: '0px 0px 0px 10px' }}>
                 <Circle proportions={'40px'} hover={'blue'} hoverBorder={'white'}>
                     <div style={{ display: 'flex' }}>

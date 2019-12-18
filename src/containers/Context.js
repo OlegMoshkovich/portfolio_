@@ -1,16 +1,8 @@
 
-import React, { Component, useState, useEffect } from 'react';
-
-import { Section } from '../components/section/section'
-import { Video } from '../components/section/video'
-import { Hero } from '../components/hero/hero'
+import React, { useState } from 'react';
 import { NavContext } from '../components/nav/NavContext'
-import { PageNav } from '../components/nav/pageNav'
 import { SocialNav } from '../components/nav/socialNav'
-import title from '../img/title.png'
 import styled from 'styled-components'
-
-
 
 export const PageContainer = styled.div`
     display:flex
@@ -59,62 +51,61 @@ export const TitleCell = styled.div`
     padding:2px 10px 2px 10px;
     `
 
+export const ContentContainer = styled.div`
+    width: 60%;
+    height: 50%;
+    color: blue;
+    background-color: white;
+    border: 1px solid white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    font-weight: light;
+    `
+const ExtraLink = styled.a`
+    position: fixed; 
+    bottom: 30px; 
+    right: 45px;
+    color: white;
+    `
+
 
 const Context = () => {
     const key = 'mnnfCWd6y4tQ4IipGbUkIZXICpFqbHH1'
-    const [state, setState] = useState('hello')
-    const [articles, setArticles] = useState([])
+    const [article, setArticle] = useState('empty')
+    console.log(article)
+    // useEffect(() => {
+    //     fetch(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=trump&api-key=${key}`)
+    //         .then(resp => resp.json())
+    //         .then(data => data.response)
+    //         .then(data => data.docs)
+    //         .then(docs => setArticles(docs))
+    // }, [])
 
-    useEffect(() => {
-        fetch(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=trump&api-key=${key}`)
+    const fetchArticles = (searchTerm) => {
+        console.log('in the fetch')
+        const random = Math.floor(Math.random() * 10)
+        console.log('random', random)
+        console.log('search term', searchTerm)
+        fetch(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${searchTerm}&api-key=${key}`)
             .then(resp => resp.json())
             .then(data => data.response)
             .then(data => data.docs)
-            .then(docs => setArticles(docs))
-    }, [])
-    if (articles.length !== 0) {
-        console.log('articles are received', articles[5].snippet)
-        return (
-            <div>
-                <NavContext />
-                <SocialNav />
-                <a href='/' style={{ position: 'fixed', bottom: '30px', right: '45px', color: 'white' }}>portfolio</a>
-                <PageContainer  >
-                    <div style={{
-                        width: '60%',
-                        height: '50%',
-                        color: 'blue',
-                        backgroundColor: 'white',
-                        border: '1px solid white',
-                        display: 'flex',
-                        flexDirection: 'column',
-                        justifyContent: 'center',
-                        textAlign: 'center',
-                        alignItems: 'center',
-                        fontWeight: 'bold'
-                    }}>{articles[5].snippet}</div>
-                </PageContainer >
-                <div></div>
-            </div >
-        )
+            .then(docs => setArticle(docs[random].snippet))
     }
+    console.log(article)
+
     return (
-        <div>
-            <NavContext />
+
+
+        < div >
+            <NavContext fetchArticles={fetchArticles} />
             <SocialNav />
-            <a href='/' style={{ position: 'fixed', bottom: '30px', right: '45px', color: 'white' }}>portfolio</a>
-            <PageContainer  >
-                <div style={{
-                    width: '60%',
-                    height: '60%',
-                    color: 'blue',
-                    backgroundColor: 'white',
-                    border: '1px solid white',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'center',
-                    alignItems: 'center'
-                }}>articles go here</div>
+            <ExtraLink href='/' >portfolio</ExtraLink>
+            <PageContainer>
+                {article === 'empty' ? <ContentContainer>waiting</ContentContainer> : <ContentContainer>{article}</ContentContainer>}
             </PageContainer >
             <div></div>
         </div >

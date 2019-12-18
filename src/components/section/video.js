@@ -3,10 +3,7 @@ import {
     PageContainer,
     TitleContainer,
     TitleCell,
-    FlexContainer,
     CenterContainer,
-    TextContainer,
-    TextCell
 } from './styles'
 
 

@@ -5,7 +5,7 @@ import App from './containers/App';
 import Map from './containers/Map'
 import Context from './containers/Context'
 import * as serviceWorker from './serviceWorker';
-import { Router, Link } from "@reach/router"
+import { Router } from "@reach/router"
 
 
 
