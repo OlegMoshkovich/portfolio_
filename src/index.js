@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './containers/App';
 import Map from './containers/Map'
+import Context from './containers/Context'
 import * as serviceWorker from './serviceWorker';
 import { Router, Link } from "@reach/router"
 
@@ -13,6 +14,7 @@ const Application = () => {
         <Router>
             <App path="/" />
             <Map path="map" />
+            <Context path="context" />
         </Router>
     )
 }

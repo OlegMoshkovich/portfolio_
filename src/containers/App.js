@@ -4,7 +4,7 @@ import { Element } from 'react-scroll'
 import { Section } from '../components/section/section'
 import { Video } from '../components/section/video'
 import { Hero } from '../components/hero/hero'
-import { Nav } from '../components/nav/globalNav'
+import { Nav } from '../components/nav/Nav'
 import { PageNav } from '../components/nav/pageNav'
 import { SocialNav } from '../components/nav/socialNav'
 
@@ -49,7 +49,7 @@ class App extends Component {
         <Nav />
         <PageNav />
         <SocialNav />
-        <a href='/map' style={{ position: 'fixed', bottom: '30px', right: '45px', color: 'blue' }}>map</a>
+        <a href='/context' style={{ position: 'fixed', bottom: '30px', right: '45px', color: 'blue' }}>context</a>
 
         <Hero color={'blue'} fontColor={'white'} header={true} title={'Oleg Moshkovich / Engineer'} img={title} proportions={'93%'} />
         {/* -----------------gs */}
@@ -65,7 +65,7 @@ class App extends Component {
         <Hero color={'white'} fontColor={'blue'} weight={'light'} header={true} title={'Product Map'} img={map} proportions={'80%'} />
         <Element name="4" />
         <Section color={'white'} border={'transparent'} images={[world, ava]}
-          description1={'In 2017 I joined omission.studio, то design and develop a fully functioning prototype of the Girls Scouts mobile application with the reach of 1.2 million users. The prototype was build using React Native Framework and EXPO toolchain.'}
+          description1={'The designed and prototyped system contained developed concept character, created using Maya and a digital outdoor/world create using Unity. Both concepts were integrated into React Native application in the form of custom media components.  '}
         />
         <Element name="5" />
         <Section color={'white'} border={'transparent'} images={[prototype1, prototype2]}
@@ -78,7 +78,7 @@ class App extends Component {
         <Hero color={'blue'} fontColor={'white'} header={true} title={'BCG.DV / ReactJs + Redux + Material'} img={emilie_hero} proportion={'50%'} proportions={'85%'} />
         <Element name="7" />
         <Section color={'white'} images={[emilie1, emilie2, emilie3]}
-          description1={'In 2019 I joined Boston Consultant Group to work on Emilie Scientific content and user management platform as a front end engineer. The platform included user facing assesment survey, and 2 admin portals used for managing varies aspects of the application.'} />
+          description1={'In 2019 I joined Boston Consultant Group to work on Emilie Scientific platform as a front end engineer. The content and user management platform included user assesment single page application, and 2 admin portals used for content and user management.'} />
         {/* -----------------hcs */}
 
         <Element name="hcs" />
@@ -86,7 +86,7 @@ class App extends Component {
         <Hero color={'blue'} fontColor={'white'} header={true} title={'HCS / ReactJS and Unity development'} img={hcs_hero} proportions={'100%'} />
         <Element name="9" />
         <Section color={'white'} images={[hcs1, hcs2, hcs3]}
-          description1={'In 2015 I joined mission driven start up Human Condition Safety to work on products designed to increase safety on construction sites, through the application of IoT and simmulation technology.'}
+          description1={'In 2015 I joined mission driven start up Human Condition Safety to work on products designed to increase safety on construction sites through the application of IoT systems and simmulation technology.'}
         />
         <Element name="10" />
         <Video src={hcs_video} proportions={'60%'}
@@ -98,7 +98,7 @@ class App extends Component {
         <Hero color={'blue'} fontColor={'white'} header={true} title={'10 Design / CATIA Computational design'} img={ribbon_hero} proportions={'120%'} />
         <Element name="11" />
         <Section color={'white'} images={[ribbon1, ribbon2, ribbon3]}
-          description1={'In 2012 I participated in designing a cultural portion of chinese city - Zhuhai. I was asked to move to Hong Kong for 6 month and consult 10 Design during design development phase of the project.As a computational designer I created parametric models contolled by a comprehensive set of data points. '} />
+          description1={'In 2012 I participated in designing a cultural portion of chinese city - Zhuhai. I was asked to move to Hong Kong for 6 month and consult the design team during development phase of the project. As a computational designer I created parametric models contolled by a comprehensive set of data points. '} />
         <Element name="12" />
         <Section color={'white'} images={[ribbon_realized]} border={'transparent'}
           description1={' The objective was to find the optimal form for the bespoke geometrical object on the scale of architecture. The workflow involved using object oriented programing to construct the geometrical system to produced the final form of the structure. The designed object was realized in 2017.'} />

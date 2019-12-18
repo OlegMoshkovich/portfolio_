@@ -16,8 +16,8 @@ align-items: center;
 color:white;
 cursor:pointer;
 &:hover {
-    background-color:${(props) => props.hover};;
-    border:1px solid blue
+    background-color:${(props) => props.hover};
+    border:1px solid ${(props) => props.hoverBorder || 'blue'};
   }
 
 `
@@ -59,7 +59,7 @@ export const Nav = () => {
 
             {/* <Circle proportions={'18px'} hover={'white'} /> */}
             <div style={{ margin: '0px 0px 0px 10px' }}>
-                <Circle proportions={'40px'} hover={'blue'}>
+                <Circle proportions={'40px'} hover={'blue'} hoverBorder={'white'}>
                     <div style={{ display: 'flex' }}>
                         <div
                             style={{

@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { Section } from '../components/section/section'
 import { Video } from '../components/section/video'
 import { Hero } from '../components/hero/hero'
-import { Nav } from '../components/nav/globalNav'
+import { Nav } from '../components/nav/Nav'
 import { PageNav } from '../components/nav/pageNav'
 import { SocialNav } from '../components/nav/socialNav'
 import title from '../img/title.png'
