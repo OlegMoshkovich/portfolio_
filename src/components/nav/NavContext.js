@@ -57,7 +57,7 @@ top:80px;
 export const NavContext = () => {
     return (
         <div >
-            <NavContainer>
+            {/* <NavContainer>
                 <div style={{ margin: '0px 0px 0px 10px' }}>
                     <Circle proportions={'40px'} hover={'blue'}>
                         <div style={{ display: 'flex' }}>
@@ -69,7 +69,7 @@ export const NavContext = () => {
                         </div>
                     </Circle>
                 </div>
-            </NavContainer >
+            </NavContainer > */}
 
             <ButtonContainer>
                 <Link to="gs" duration={0} >

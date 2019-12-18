@@ -62,7 +62,7 @@ export const TitleCell = styled.div`
 
 const Context = () => {
     const key = 'mnnfCWd6y4tQ4IipGbUkIZXICpFqbHH1'
-    const [state, setState] = useState(('hello'))
+    const [state, setState] = useState('hello')
     const [articles, setArticles] = useState([])
 
     useEffect(() => {
@@ -73,8 +73,30 @@ const Context = () => {
             .then(docs => setArticles(docs))
     }, [])
     if (articles.length !== 0) {
-        console.log('articles are received', articles)
-
+        console.log('articles are received', articles[5].snippet)
+        return (
+            <div>
+                <NavContext />
+                <SocialNav />
+                <a href='/' style={{ position: 'fixed', bottom: '30px', right: '45px', color: 'white' }}>portfolio</a>
+                <PageContainer  >
+                    <div style={{
+                        width: '60%',
+                        height: '50%',
+                        color: 'blue',
+                        backgroundColor: 'white',
+                        border: '1px solid white',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        justifyContent: 'center',
+                        textAlign: 'center',
+                        alignItems: 'center',
+                        fontWeight: 'bold'
+                    }}>{articles[5].snippet}</div>
+                </PageContainer >
+                <div></div>
+            </div >
+        )
     }
     return (
         <div>
@@ -92,21 +114,12 @@ const Context = () => {
                     flexDirection: 'column',
                     justifyContent: 'center',
                     alignItems: 'center'
-                }}>map goes here</div>
+                }}>articles go here</div>
             </PageContainer >
             <div></div>
         </div >
     )
 }
 
+
 export default Context;
-
-
-
-// useEffect(() => {
-//     fetch(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=trump&api-key=${key}`)
-//         .then(resp => resp.json())
-//         .then(data => data.response)
-//         .then(data => data.docs)
-//         .then(docs => setArticles(docs))
-// }, [])
