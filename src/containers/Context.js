@@ -54,7 +54,6 @@ export const TitleCell = styled.div`
 export const ContentContainer = styled.div`
     width: 60%;
     height: 50%;
-    color: blue;
     background-color: white;
     border: 1px solid white;
     display: flex;
@@ -62,7 +61,12 @@ export const ContentContainer = styled.div`
     justify-content: center;
     text-align: center;
     align-items: center;
+    `
+
+const Content = styled.div`
     font-weight: light;
+    color: blue;
+    margin:20px;
     `
 const ExtraLink = styled.a`
     position: fixed; 
@@ -75,6 +79,7 @@ const ExtraLink = styled.a`
 const Context = () => {
     const key = 'mnnfCWd6y4tQ4IipGbUkIZXICpFqbHH1'
     const [article, setArticle] = useState('empty')
+    const [random, setRandom] = useState(1)
     console.log(article)
     // useEffect(() => {
     //     fetch(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=trump&api-key=${key}`)
@@ -85,8 +90,11 @@ const Context = () => {
     // }, [])
 
     const fetchArticles = (searchTerm) => {
+
         console.log('in the fetch')
-        const random = Math.floor(Math.random() * 10)
+        let genRandom = Math.floor(Math.random() * 10)
+        genRandom !== random ? setRandom(genRandom) : setRandom(genRandom + 1)
+
         console.log('random', random)
         console.log('search term', searchTerm)
         fetch(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${searchTerm}&api-key=${key}`)
@@ -105,7 +113,9 @@ const Context = () => {
             <SocialNav />
             <ExtraLink href='/' >portfolio</ExtraLink>
             <PageContainer>
-                {article === 'empty' ? <ContentContainer>waiting</ContentContainer> : <ContentContainer>{article}</ContentContainer>}
+                <ContentContainer>
+                    {article === 'empty' ? <Content>waiting</Content> : <Content>{article}</Content>}
+                </ContentContainer>
             </PageContainer >
             <div></div>
         </div >
