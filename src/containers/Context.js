@@ -11,7 +11,7 @@ export const PageContainer = styled.div`
     flex-direction:column;
     justify-content:space-around;
     align-items:center;
-    background:${(props) => props.color || 'blue'};
+    background:${(props) => props.color};
     //  border:2px solid yellow;
     `
 export const CenterContainer = styled.div`
@@ -54,19 +54,22 @@ export const TitleCell = styled.div`
 export const ContentContainer = styled.div`
     width: 60%;
     height: 50%;
-    background-color: white;
+    background-color:${(props) => props.background}  ;
     border: 1px solid white;
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
     align-items: center;
+    border-radius:0px;
+    font-family: ${(props) => props.font};
     `
 
 const Content = styled.div`
     font-weight: light;
-    color: blue;
-    margin:20px;
+    color: black;
+    font-size: 24px;
+    margin:40px;
     `
 const ExtraLink = styled.a`
     position: fixed; 
@@ -80,40 +83,49 @@ const Context = () => {
     const key = 'mnnfCWd6y4tQ4IipGbUkIZXICpFqbHH1'
     const [article, setArticle] = useState('empty')
     const [random, setRandom] = useState(1)
-    console.log(article)
-    // useEffect(() => {
-    //     fetch(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=trump&api-key=${key}`)
-    //         .then(resp => resp.json())
-    //         .then(data => data.response)
-    //         .then(data => data.docs)
-    //         .then(docs => setArticles(docs))
-    // }, [])
+    const [background, setBackground] = useState('blue')
+    const [compColor, setCompColor] = useState('blue')
+    const [font, setFont] = useState('roboto')
+    const [weight, setWeight] = useState('light')
+
+
 
     const fetchArticles = (searchTerm) => {
 
-        console.log('in the fetch')
+        if (searchTerm === 'politics') {
+            setBackground('black')
+            setFont('Times New Roman')
+            setCompColor('white')
+
+        } else if (searchTerm === 'art') {
+            setBackground('#BACFC9')
+            setFont('Open+Sans')
+            setCompColor('#FFC696 ')
+
+        } else if (searchTerm === 'technology') {
+            setBackground('#00ff00')
+            setFont('Inconsolata')
+            setCompColor('transparent')
+        }
+
         let genRandom = Math.floor(Math.random() * 10)
         genRandom !== random ? setRandom(genRandom) : setRandom(genRandom + 1)
-
-        console.log('random', random)
-        console.log('search term', searchTerm)
         fetch(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${searchTerm}&api-key=${key}`)
             .then(resp => resp.json())
             .then(data => data.response)
             .then(data => data.docs)
             .then(docs => setArticle(docs[random].snippet))
+            .catch((function (reason) {
+                console.log(reason)
+            }))
     }
-    console.log(article)
-
     return (
-
-
         < div >
-            <NavContext fetchArticles={fetchArticles} />
+            <NavContext fetchArticles={fetchArticles} color={background} />
             <SocialNav />
             <ExtraLink href='/' >portfolio</ExtraLink>
-            <PageContainer>
-                <ContentContainer>
+            <PageContainer color={background} >
+                <ContentContainer font={font} background={compColor}>
                     {article === 'empty' ? <Content>waiting</Content> : <Content>{article}</Content>}
                 </ContentContainer>
             </PageContainer >
