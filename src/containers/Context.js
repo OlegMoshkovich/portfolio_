@@ -22,7 +22,6 @@ export const CenterContainer = styled.div`
     width:100%;
     height:100%;
     margin-top:20px;
-    
     background:blue;
     // border: 1px solid red;
     `
@@ -53,9 +52,9 @@ export const TitleCell = styled.div`
 
 export const ContentContainer = styled.div`
     width: 60%;
-    height: 50%;
+    height: auto;
     background-color:${(props) => props.background}  ;
-    border: 1px solid white;
+    border: .5px solid white;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -67,9 +66,9 @@ export const ContentContainer = styled.div`
 
 const Content = styled.div`
     font-weight: light;
-    color: black;
+    color: white;
     font-size: 24px;
-    margin:40px;
+    margin:60px 40px 60px 40px;
     `
 const ExtraLink = styled.a`
     position: fixed; 
@@ -95,7 +94,7 @@ const Context = () => {
         if (searchTerm === 'politics') {
             setBackground('black')
             setFont('Times New Roman')
-            setCompColor('white')
+            setCompColor('black')
 
         } else if (searchTerm === 'art') {
             setBackground('#BACFC9')
@@ -103,9 +102,9 @@ const Context = () => {
             setCompColor('#FFC696 ')
 
         } else if (searchTerm === 'technology') {
-            setBackground('#00ff00')
+            setBackground('lightgrey')
             setFont('Inconsolata')
-            setCompColor('transparent')
+            setCompColor('#00ff00')
         }
 
         let genRandom = Math.floor(Math.random() * 10)
@@ -115,18 +114,18 @@ const Context = () => {
             .then(data => data.response)
             .then(data => data.docs)
             .then(docs => setArticle(docs[random].snippet))
-            .catch((function (reason) {
-                console.log(reason)
+            .catch((function (error) {
+                setArticle('please wait a bit...')
             }))
     }
     return (
         < div >
             <NavContext fetchArticles={fetchArticles} color={background} />
-            <SocialNav />
+            <SocialNav color={background} />
             <ExtraLink href='/' >portfolio</ExtraLink>
             <PageContainer color={background} >
                 <ContentContainer font={font} background={compColor}>
-                    {article === 'empty' ? <Content>waiting</Content> : <Content>{article}</Content>}
+                    {article === 'empty' ? <Content>please select a number</Content> : <Content>{article}</Content>}
                 </ContentContainer>
             </PageContainer >
             <div></div>

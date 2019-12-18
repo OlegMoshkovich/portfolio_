@@ -7,7 +7,7 @@ import gitLab from '../../img/gitlab.png';
 const Circle = styled.a`
 width:18px;
 height:18px;
-background-color:blue;
+background-color:${(props) => props.background || 'blue'};
 color:blue;
 font-family: 'Roboto', sans-serif;
 font-size:10px;
@@ -40,13 +40,14 @@ height:${(props) => props.proportions};
 
 `
 
-export const SocialNav = () => {
+export const SocialNav = (props) => {
+    console.log('props from social', props)
     return (
         <NavContainer>
 
-            <Circle href='https://www.gitlab.com/oleg.moshkovich'><Image src={gitLab} proportions={'10px'} /></Circle>
-            <Circle href='https://www.linkedin.com/in/olegmoshkovich/' onClick={() => console.log('linked in is clicked')}><Image src={linkedIn} proportions={'8px'} /></Circle>
-            <Circle href='https://github.com/OlegMoshkovich'><Image src={git} proportions={'8px'} /></Circle>
+            <Circle href='https://www.gitlab.com/oleg.moshkovich' background={props.color}><Image src={gitLab} proportions={'10px'} /></Circle>
+            <Circle href='https://www.linkedin.com/in/olegmoshkovich/' background={props.color}><Image src={linkedIn} proportions={'8px'} /></Circle>
+            <Circle href='https://github.com/OlegMoshkovich' background={props.color}><Image src={git} proportions={'8px'} /></Circle>
 
         </NavContainer>
     )
