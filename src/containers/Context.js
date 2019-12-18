@@ -22,6 +22,7 @@ export const CenterContainer = styled.div`
     width:100%;
     height:100%;
     margin-top:20px;
+
     background:blue;
     // border: 1px solid red;
     `
