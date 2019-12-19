@@ -3,7 +3,9 @@ import React, { useState } from 'react';
 import { NavContext } from '../components/nav/NavContext'
 import { SocialNav } from '../components/nav/socialNav'
 import styled from 'styled-components'
+import PulseLoader from 'react-spinners/PulseLoader'
 const ThemeContext = React.createContext('light');
+
 
 export const PageContainer = styled.div`
     display:flex
@@ -22,8 +24,7 @@ export const CenterContainer = styled.div`
     align-items:center;
     width:100%;
     height:100%;
-    margin-top:20px;
-
+    margin-top:40px;
     background:blue;
     // border: 1px solid red;
     `
@@ -74,7 +75,7 @@ const Content = styled.div`
     font-weight: light;
     color: white;
     font-size: 24px;
-    margin:60px 40px 60px 40px;
+    margin:70px 40px 60px 40px;
     `
 const ExtraLink = styled.a`
     position: fixed; 
@@ -138,10 +139,19 @@ const Context = () => {
             <SocialNav color={background} />
             <ExtraLink href='/' >portfolio</ExtraLink>
             <PageContainer color={background} >
-                {loading ? <div style={{ color: 'white' }}>loading</div> : <ContentContainer font={font} background={compColor}>
-                    {article === 'empty' ? <Content>please select a number</Content> : <Content>{article}</Content>}
-                    <div style={{ alignSelf: 'flex-end', marginBottom: '10px', marginRight: '10px', color: 'white' }}>{subject}</div>
-                </ContentContainer>}
+                {loading ?
+                    <PulseLoader
+                        // css={override}
+                        sizeUnit={"px"}
+                        size={10}
+                        color={'white'}
+                        loading={loading}
+                    />
+                    // <div style={{ color: 'white' }}>loading</div> 
+                    : <ContentContainer font={font} background={compColor}>
+                        {article === 'empty' ? <Content>please select a number</Content> : <Content>{article}</Content>}
+                        <div style={{ alignSelf: 'flex-end', marginBottom: '10px', marginRight: '10px', color: 'white' }}>{subject}</div>
+                    </ContentContainer>}
 
 
             </PageContainer >
