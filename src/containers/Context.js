@@ -37,14 +37,9 @@ const Context = () => {
     const key = 'mnnfCWd6y4tQ4IipGbUkIZXICpFqbHH1'
     const [article, setArticle] = useState('empty')
     const [random, setRandom] = useState(1)
-
     const [subject, setSubject] = useState('')
     const [loading, setLoading] = useState(false)
-    const [border, setBorder] = useState('white')
     const [localTheme, setLocalTheme] = useState(defaultTheme)
-
-
-
 
 
     const fetchArticles = (searchTerm) => {
@@ -79,8 +74,8 @@ const Context = () => {
         <div>
             {/* Theme Context -- every component inside of the ThemeContext has access to the themeHook  */}
             <ThemeContext.Provider value={themeHook} >
-                <NavContext fetchArticles={fetchArticles} color={localTheme.background} />
-                <SocialNav color={localTheme.background} />
+                <NavContext fetchArticles={fetchArticles} color={localTheme.pageBackground} />
+                <SocialNav color={localTheme.pageBackground} />
                 <ExtraLink href='/' >portfolio</ExtraLink>
                 <PageContainer color={localTheme.pageBackground} >
                     {loading ?
