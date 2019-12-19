@@ -21,5 +21,11 @@ export const ThemeTechnology = {
     contentBackground: '#00ff00',
     border: 'yellow'
 }
+export const ThemeDefault = {
+    pageBackground: 'blue',
+    font: 'Roboto',
+    contentBackground: 'blue',
+    border: 'white'
+};
 
 export default ThemeContext;

@@ -1,18 +1,22 @@
-import React, { useContext } from 'react'
-import Styled from 'styled-components'
+import React, { useContext, useEffect } from 'react'
+import styled from 'styled-components'
 import PulseLoader from 'react-spinners/PulseLoader'
-import ThemeContext from '../../utils/ThemeContext';
+import ThemeContext, { ThemeDefault } from '../../utils/ThemeContext';
 
 
 export const News = (props) => {
-    const [theme] = useContex(ThemeContext)
+    const [theme, setTheme] = useContext(ThemeContext)
+    useEffect(
+        () => setTheme(ThemeDefault), []
+    )
+
     return (
         < PageContainer color={theme.pageBackground} >
             {
                 props.loading ?
                     <PulseLoader sizeUnit={"px"} size={10} color={'white'} loading={props.loading} />
                     : <ContentContainer font={theme.font} background={theme.contentBackground} border={theme.border} >
-                        {article === 'empty' ? <Content>please select a topic</Content> : <Content>{article}</Content>}
+                        {props.article === 'empty' ? <Content>please select a topic</Content> : <Content>{props.article}</Content>}
                         <div style={{ marginBottom: '20px', marginRight: '10px', color: 'white', fontSize: '12px' }}>{props.subject}</div>
                     </ContentContainer>
             }
