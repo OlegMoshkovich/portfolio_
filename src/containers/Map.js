@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Nav } from '../components/nav/Nav'
-import { SocialNav } from '../components/nav/socialNav'
+import { SocialNav } from '../components/nav/SocialNav'
 import styled from 'styled-components'
 
 
