@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { NavContext } from '../components/nav/NavContext'
 import { SocialNav } from '../components/nav/socialNav'
 import styled from 'styled-components'
@@ -8,7 +8,9 @@ import ThemeContext from '../utils/ThemeContext';
 
 
 const Context = () => {
-    const themeHook = useState('pink')
+    const themeHook = useState({})
+    const [theme] = useContext(ThemeContext)
+
     const defaultTheme = {
         pageBackground: 'blue',
         font: 'Roboto',
@@ -74,13 +76,13 @@ const Context = () => {
         <div>
             {/* Theme Context -- every component inside of the ThemeContext has access to the themeHook  */}
             <ThemeContext.Provider value={themeHook} >
-                <NavContext fetchArticles={fetchArticles} color={localTheme.pageBackground} />
-                <SocialNav color={localTheme.pageBackground} />
+                <NavContext fetchArticles={fetchArticles} />
+                <SocialNav />
                 <ExtraLink href='/' >portfolio</ExtraLink>
                 <PageContainer color={localTheme.pageBackground} >
                     {loading ?
                         <PulseLoader sizeUnit={"px"} size={10} color={'white'} loading={loading} />
-                        : <ContentContainer font={localTheme.font} background={localTheme.contentBackground} border={localTheme.border} >
+                        : <ContentContainer font={theme.font} background={localTheme.contentBackground} border={localTheme.border} >
                             {article === 'empty' ? <Content>please select a topic</Content> : <Content>{article}</Content>}
                             <div style={{ marginBottom: '20px', marginRight: '10px', color: 'white', fontSize: '12px' }}>{subject}</div>
                         </ContentContainer>}
