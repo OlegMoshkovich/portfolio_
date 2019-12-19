@@ -40,7 +40,7 @@ export const Nav = () => {
     return (
         <NavContainer>
             <Link to="gs" duration={0} >
-                <Circle onClick={() => console.log('hello ')} proportions={'18px'} hover={'white'} />
+                <Circle proportions={'18px'} hover={'white'} />
             </Link>
             <Link to="emilie" duration={0} >
                 <Circle proportions={'18px'} hover={'white'} />

@@ -41,14 +41,11 @@ height:${(props) => props.proportions};
 `
 
 export const SocialNav = (props) => {
-    console.log('props from social', props)
     return (
         <NavContainer>
-
             <Circle href='https://www.gitlab.com/oleg.moshkovich' background={props.color}><Image src={gitLab} proportions={'10px'} /></Circle>
             <Circle href='https://www.linkedin.com/in/olegmoshkovich/' background={props.color}><Image src={linkedIn} proportions={'8px'} /></Circle>
             <Circle href='https://github.com/OlegMoshkovich' background={props.color}><Image src={git} proportions={'8px'} /></Circle>
-
         </NavContainer>
     )
 
