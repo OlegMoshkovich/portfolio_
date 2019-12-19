@@ -3,7 +3,6 @@ import React, { useContext } from 'react';
 import styled from 'styled-components'
 import ThemeContext from '../../utils/ThemeContext';
 
-
 const Circle = styled.div`
 width:${(props) => props.proportions};
 height:${(props) => props.proportions};
@@ -24,7 +23,6 @@ cursor:pointer;
     border:1px solid white
     box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1);
   }
-
 `
 
 const ButtonContainer = styled.div`
@@ -41,9 +39,7 @@ top:80px;
 `
 
 export const NavContext = (props) => {
-
     const [theme, setTheme] = useContext(ThemeContext)
-
     return (
         <div >
             <ButtonContainer>
@@ -56,8 +52,6 @@ export const NavContext = (props) => {
                 }} background={theme} proportions={'40px'} hover={'black'} margin={'6px'}>politics</Circle>
                 <Circle onClick={() => props.fetchArticles('technology')} background={props.color} proportions={'40px'} hover={'#00ff00'} margin={'6px'}>tech</Circle>
             </ButtonContainer>
-
         </div >
     )
-
 }

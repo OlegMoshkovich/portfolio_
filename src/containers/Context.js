@@ -9,18 +9,43 @@ import ThemeContext from '../utils/ThemeContext';
 
 const Context = () => {
     const themeHook = useState('pink')
-    console.log('themeHook', themeHook)
+    const defaultTheme = {
+        pageBackground: 'blue',
+        font: 'Roboto',
+        contentBackground: 'blue',
+        border: 'white'
+    };
+    const themePolitics = {
+        pageBackground: 'black',
+        font: 'Times New Roman',
+        contentBackground: 'black',
+        border: 'black'
+    }
+    const themeArt = {
+        pageBackground: '#BACFC9',
+        font: 'Open+Sans',
+        contentBackground: '#FFC696',
+        border: 'white'
+    }
+    const themeTechnology = {
+        pageBackground: 'lightgrey',
+        font: 'Inconsolata',
+        contentBackground: '#00ff00',
+        border: 'yellow'
+    }
 
     const key = 'mnnfCWd6y4tQ4IipGbUkIZXICpFqbHH1'
     const [article, setArticle] = useState('empty')
     const [random, setRandom] = useState(1)
-    const [background, setBackground] = useState('blue')
-    const [compColor, setCompColor] = useState('blue')
-    const [font, setFont] = useState('roboto')
-    const [weight, setWeight] = useState('light')
+
     const [subject, setSubject] = useState('')
     const [loading, setLoading] = useState(false)
     const [border, setBorder] = useState('white')
+    const [localTheme, setLocalTheme] = useState(defaultTheme)
+
+
+
+
 
     const fetchArticles = (searchTerm) => {
         let topic = 'New York Times ' + searchTerm.toUpperCase() + ' snippet'
@@ -28,22 +53,11 @@ const Context = () => {
         setSubject(topic)
 
         if (searchTerm === 'politics') {
-            setBackground('black')
-            setFont('Times New Roman')
-            setCompColor('black')
-            setBorder('black')
-
+            setLocalTheme(themePolitics)
         } else if (searchTerm === 'art') {
-            setBackground('#BACFC9')
-            setFont('Open+Sans')
-            setCompColor('#FFC696 ')
-            setBorder('white')
-
+            setLocalTheme(themeArt)
         } else if (searchTerm === 'technology') {
-            setBackground('lightgrey')
-            setFont('Inconsolata')
-            setCompColor('#00ff00')
-            setBorder('yellow')
+            setLocalTheme(themeTechnology)
         }
 
         let genRandom = Math.floor(Math.random() * 10)
@@ -54,7 +68,6 @@ const Context = () => {
             .then(data => data.docs)
             .then(docs => {
                 return (
-                    console.log(docs[random]),
                     setLoading(false),
                     setArticle(docs[random].snippet))
             })
@@ -66,20 +79,13 @@ const Context = () => {
         <div>
             {/* Theme Context -- every component inside of the ThemeContext has access to the themeHook  */}
             <ThemeContext.Provider value={themeHook} >
-                <NavContext fetchArticles={fetchArticles} color={background} />
-                <SocialNav color={background} />
+                <NavContext fetchArticles={fetchArticles} color={localTheme.background} />
+                <SocialNav color={localTheme.background} />
                 <ExtraLink href='/' >portfolio</ExtraLink>
-                <PageContainer color={background} >
+                <PageContainer color={localTheme.pageBackground} >
                     {loading ?
-                        <PulseLoader
-                            // css={override}
-                            sizeUnit={"px"}
-                            size={10}
-                            color={'white'}
-                            loading={loading}
-                        />
-                        // <div style={{ color: 'white' }}>loading</div> 
-                        : <ContentContainer font={font} background={compColor} border={border} >
+                        <PulseLoader sizeUnit={"px"} size={10} color={'white'} loading={loading} />
+                        : <ContentContainer font={localTheme.font} background={localTheme.contentBackground} border={localTheme.border} >
                             {article === 'empty' ? <Content>please select a topic</Content> : <Content>{article}</Content>}
                             <div style={{ marginBottom: '20px', marginRight: '10px', color: 'white', fontSize: '12px' }}>{subject}</div>
                         </ContentContainer>}
