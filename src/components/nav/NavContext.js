@@ -46,6 +46,7 @@ export const NavContext = (props) => {
                 <Circle onClick={() => props.fetchArticles('art')} background={props.color} proportions={'40px'} hover={'#FFC696'} margin={'6px'}>2</Circle>
                 <Circle onClick={() => props.fetchArticles('technology')} background={props.color} proportions={'40px'} hover={'#00ff00'} margin={'6px'}>3</Circle>
             </ButtonContainer>
+
         </div >
     )
 

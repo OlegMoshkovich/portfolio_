@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { NavContext } from '../components/nav/NavContext'
 import { SocialNav } from '../components/nav/socialNav'
 import styled from 'styled-components'
+const ThemeContext = React.createContext('light');
 
 export const PageContainer = styled.div`
     display:flex
@@ -52,7 +53,7 @@ export const TitleCell = styled.div`
     `
 
 export const ContentContainer = styled.div`
-    width: 60%;
+    width: 400px;
     height: auto;
     background-color:${(props) => props.background}  ;
     border: .5px solid white;
@@ -63,6 +64,10 @@ export const ContentContainer = styled.div`
     align-items: center;
     border-radius:0px;
     font-family: ${(props) => props.font};
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+    @media (max-width: 768px) {
+        width: 80%;
+      }
     `
 
 const Content = styled.div`
@@ -87,10 +92,14 @@ const Context = () => {
     const [compColor, setCompColor] = useState('blue')
     const [font, setFont] = useState('roboto')
     const [weight, setWeight] = useState('light')
+    const [subject, setSubject] = useState('')
+    const [loading, setLoading] = useState(false)
 
 
 
     const fetchArticles = (searchTerm) => {
+        setLoading(true)
+        setSubject(searchTerm)
 
         if (searchTerm === 'politics') {
             setBackground('black')
@@ -114,7 +123,11 @@ const Context = () => {
             .then(resp => resp.json())
             .then(data => data.response)
             .then(data => data.docs)
-            .then(docs => setArticle(docs[random].snippet))
+            .then(docs => {
+                return (
+                    setLoading(false),
+                    setArticle(docs[random].snippet))
+            })
             .catch((function (error) {
                 setArticle('please wait a bit...')
             }))
@@ -125,9 +138,12 @@ const Context = () => {
             <SocialNav color={background} />
             <ExtraLink href='/' >portfolio</ExtraLink>
             <PageContainer color={background} >
-                <ContentContainer font={font} background={compColor}>
+                {loading ? <div style={{ color: 'white' }}>loading</div> : <ContentContainer font={font} background={compColor}>
                     {article === 'empty' ? <Content>please select a number</Content> : <Content>{article}</Content>}
-                </ContentContainer>
+                    <div style={{ alignSelf: 'flex-end', marginBottom: '10px', marginRight: '10px', color: 'white' }}>{subject}</div>
+                </ContentContainer>}
+
+
             </PageContainer >
             <div></div>
         </div >
