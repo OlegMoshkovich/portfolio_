@@ -33,7 +33,7 @@ const Context = () => {
         contentBackground: '#00ff00',
         border: 'yellow'
     }
-
+    console.log('current theme', themeHook)
     const key = 'mnnfCWd6y4tQ4IipGbUkIZXICpFqbHH1'
     const [article, setArticle] = useState('empty')
     const [random, setRandom] = useState(1)

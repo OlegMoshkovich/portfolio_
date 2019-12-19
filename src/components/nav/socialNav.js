@@ -1,15 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import linkedIn from '../../img/in.png';
 import git from '../../img/git.png';
 import gitLab from '../../img/gitlab.png';
+import ThemeContext from '../../utils/ThemeContext';
+
+
 
 export const SocialNav = (props) => {
+    const [theme] = useContext(ThemeContext)
     return (
         <NavContainer>
-            <Circle href='https://www.gitlab.com/oleg.moshkovich' background={props.color}><Image src={gitLab} proportions={'10px'} /></Circle>
-            <Circle href='https://www.linkedin.com/in/olegmoshkovich/' background={props.color}><Image src={linkedIn} proportions={'8px'} /></Circle>
-            <Circle href='https://github.com/OlegMoshkovich' background={props.color}><Image src={git} proportions={'8px'} /></Circle>
+            <Circle href='https://www.gitlab.com/oleg.moshkovich' background={theme.pageBackground}><Image src={gitLab} proportions={'10px'} /></Circle>
+            <Circle href='https://www.linkedin.com/in/olegmoshkovich/' background={theme.pageBackground}><Image src={linkedIn} proportions={'8px'} /></Circle>
+            <Circle href='https://github.com/OlegMoshkovich' background={theme.pageBackground}><Image src={git} proportions={'8px'} /></Circle>
         </NavContainer>
     )
 }
