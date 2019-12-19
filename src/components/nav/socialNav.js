@@ -11,9 +11,9 @@ export const SocialNav = (props) => {
     const [theme] = useContext(ThemeContext)
     return (
         <NavContainer>
-            <Circle href='https://www.gitlab.com/oleg.moshkovich' background={theme.pageBackground}><Image src={gitLab} proportions={'10px'} /></Circle>
-            <Circle href='https://www.linkedin.com/in/olegmoshkovich/' background={theme.pageBackground}><Image src={linkedIn} proportions={'8px'} /></Circle>
-            <Circle href='https://github.com/OlegMoshkovich' background={theme.pageBackground}><Image src={git} proportions={'8px'} /></Circle>
+            <Circle href='https://www.gitlab.com/oleg.moshkovich' background={theme.pageBackground} hover={theme.contentBackground}><Image src={gitLab} proportions={'10px'} /></Circle>
+            <Circle href='https://www.linkedin.com/in/olegmoshkovich/' background={theme.pageBackground} hover={theme.contentBackground}><Image src={linkedIn} proportions={'8px'} /></Circle>
+            <Circle href='https://github.com/OlegMoshkovich' background={theme.pageBackground} hover={theme.contentBackground}><Image src={git} proportions={'8px'} /></Circle>
         </NavContainer>
     )
 }
@@ -33,7 +33,7 @@ border-radius:50%;
 margin: 3px 0px 3px 0px;
 cursor:pointer;
 &:hover {
-    background-color :blue;
+    background-color:${(props) => props.hover};
   }
 `
 
