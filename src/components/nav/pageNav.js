@@ -31,6 +31,9 @@ justify-content:center;
 position: fixed;
 top:25%;
 right:55px;
+@media (max-width: 768px) {
+    display:none;
+    }
 `
 
 export const PageNav = () => {

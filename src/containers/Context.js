@@ -6,7 +6,7 @@ import styled from 'styled-components'
 import ThemeContext from '../utils/ThemeContext';
 import { ContentCard } from '../components/section/contentCard'
 import { connect } from 'react-redux'
-import { getArticles } from '../actions/getArticles'
+import { ExtraLink } from './styles'
 
 
 const Context = (props) => {
@@ -22,7 +22,6 @@ const Context = (props) => {
         let topic = 'New York Times ' + searchTerm.toUpperCase() + ' snippet'
         setLoading(true)
         setSubject(topic)
-        props.getArticles(searchTerm)
 
         let genRandom = Math.floor(Math.random() * 10)
         genRandom !== random ? setRandom(genRandom) : setRandom(genRandom + 1)
@@ -57,17 +56,6 @@ const Context = (props) => {
         </div>
     )
 }
-const mapStateToProps = ({ articles }) => ({ articles })
 
-const mapDispatchToProps = dispatch => ({
-    getArticles: topic => dispatch(getArticles(topic))
-})
+export default Context;
 
-export default connect(mapStateToProps, mapDispatchToProps)(Context);
-
-const ExtraLink = styled.a`
-            position: fixed; 
-            bottom: 30px; 
-            right: 45px;
-            color: white;
-            `

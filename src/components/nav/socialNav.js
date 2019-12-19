@@ -46,6 +46,9 @@ justify-content:center;
 position: fixed;
 bottom:20px;
 left:30px;
+@media (max-width: 768px) {
+    display:none;
+    }
 `
 
 export const Image = styled.img`

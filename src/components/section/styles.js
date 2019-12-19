@@ -10,6 +10,9 @@ width:100vw;
 background:${(props) => props.color};
 // border:2px solid yellow;
 // text-align:center;
+@media (max-width: 768px) {
+    display:none;
+    }
 `
 export const TitleContainer = styled.div`
 width:auto;

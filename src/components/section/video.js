@@ -17,14 +17,9 @@ export const Video = (props) => {
             <CenterContainer>
                 <video style={{ width: props.proportions, height: props.proportions }} loop autoPlay>
                     <source src={props.src} type="video/mp4" />
-                    Your browser does not support the video tag.
+                    video is not supported by the browser
                       </video>
-            </CenterContainer>
-            {/* </FlexContainer> */}
-            {/* <TextContainer color={'white'} >
-                <TextCell color={'transparent'}>{props.description2}</TextCell>
-            </TextContainer > */}
-
+            </CenterContainer>=
         </PageContainer >
     )
 }

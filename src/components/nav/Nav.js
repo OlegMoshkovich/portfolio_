@@ -61,4 +61,7 @@ position: fixed;
 top: 40px;
 right: 45px;
 // border:1px solid blue;
+@media (max-width: 768px) {
+    display:none;
+    }
 `
