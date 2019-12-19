@@ -21,9 +21,10 @@ export const ThemeTechnology = {
     pageBackground: 'lightgrey',
     font: 'Inconsolata',
     color: 'blue',
-    contentBackground: '#00ff00',
+    fontWeight: 'bold',
+    contentBackground: 'yellow',
+    radius: '15px',
     border: 'yellow'
-
 }
 export const ThemeDefault = {
     pageBackground: 'blue',

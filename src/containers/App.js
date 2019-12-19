@@ -5,8 +5,8 @@ import { Section } from '../components/section/section'
 import { Video } from '../components/section/video'
 import { Hero } from '../components/hero/hero'
 import { Nav } from '../components/nav/Nav'
-import { PageNav } from '../components/nav/pageNav'
-import { SocialNav } from '../components/nav/socialNav'
+import { PageNav } from '../components/nav/PageNav'
+import { SocialNav } from '../components/nav/SocialNav'
 
 import title from '../img/title.png'
 
@@ -49,7 +49,7 @@ class App extends Component {
         <Nav />
         <PageNav />
         <SocialNav />
-        <a href='/context' style={{ position: 'fixed', bottom: '30px', right: '45px', color: 'blue' }}>context</a>
+        <a href='/context' style={{ position: 'fixed', bottom: '30px', right: '45px', color: 'blue' }}>news</a>
 
         <Hero color={'blue'} fontColor={'white'} header={true} title={'Oleg Moshkovich / Engineer'} img={title} proportions={'93%'} />
         {/* -----------------gs */}

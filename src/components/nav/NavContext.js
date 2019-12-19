@@ -27,7 +27,7 @@ export const NavContext = (props) => {
                         setTheme(ThemeTechnology),
                         props.fetchArticles('technology')
                     )
-                }} background={theme.pageBackground} proportions={'40px'} hover={'#00ff00'} margin={'6px'}>tech</Circle>
+                }} background={theme.pageBackground} proportions={'40px'} hover={'yellow'} margin={'6px'}>tech</Circle>
             </ButtonContainer>
         </div >
     )
