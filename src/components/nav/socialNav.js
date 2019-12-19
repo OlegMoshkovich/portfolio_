@@ -11,7 +11,7 @@ export const SocialNav = (props) => {
     const [theme] = useContext(ThemeContext)
     return (
         <NavContainer>
-            <Circle href='https://www.gitlab.com/oleg.moshkovich' background={theme.pageBackground} hover={theme.contentBackground}><Image src={gitLab} proportions={'10px'} /></Circle>
+            <Circle href='https://www.gitlab.com/oleg.moshkovich' git background={theme.pageBackground} hover={theme.contentBackground}><Image src={gitLab} proportions={'10px'} /></Circle>
             <Circle href='https://www.linkedin.com/in/olegmoshkovich/' background={theme.pageBackground} hover={theme.contentBackground}><Image src={linkedIn} proportions={'8px'} /></Circle>
             <Circle href='https://github.com/OlegMoshkovich' background={theme.pageBackground} hover={theme.contentBackground}><Image src={git} proportions={'8px'} /></Circle>
         </NavContainer>

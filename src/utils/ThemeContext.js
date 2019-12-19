@@ -6,24 +6,29 @@ const ThemeContext = createContext([{}, () => { }])
 export const ThemePolitics = {
     pageBackground: 'black',
     font: 'Times New Roman',
+    color: 'white',
     contentBackground: 'black',
-    border: 'black'
+    border: 'black',
 }
 export const ThemeArt = {
     pageBackground: '#BACFC9',
     font: 'Open+Sans',
+    color: 'white',
     contentBackground: '#FFC696',
     border: 'white'
 }
 export const ThemeTechnology = {
     pageBackground: 'lightgrey',
     font: 'Inconsolata',
+    color: 'blue',
     contentBackground: '#00ff00',
     border: 'yellow'
+
 }
 export const ThemeDefault = {
     pageBackground: 'blue',
     font: 'Roboto',
+    color: 'white',
     contentBackground: 'blue',
     border: 'white'
 };
