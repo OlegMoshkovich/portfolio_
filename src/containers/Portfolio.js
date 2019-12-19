@@ -42,7 +42,7 @@ import ribbon_realized from '../img/ribbon_realized.png'
 
 
 class Portfolio extends Component {
-  myRef = React.createRef();
+  // myRef = React.createRef();
   render() {
     return (
       <div >
@@ -55,7 +55,7 @@ class Portfolio extends Component {
         {/* -----------------gs */}
         <Element name="gs" />
         <Element name="1" />
-        <Hero className='violet' color={'blue'} ref={(section) => { this.Violet = section; }} fontColor={'white'} header={true} title={'Girls Scouts / React Native Development'} img={gs5_hero} proportions={'100%'} />
+        <Hero className='violet' color={'blue'} fontColor={'white'} header={true} title={'Girls Scouts / React Native Development'} img={gs5_hero} proportions={'100%'} />
 
         <Element name="2" />
         <Video src={gs_video} proportions={'80%'}

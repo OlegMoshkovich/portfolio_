@@ -2,10 +2,8 @@
 import React, { useState } from 'react';
 import { NavContext } from '../components/nav/NavContext'
 import { SocialNav } from '../components/nav/SocialNav'
-import styled from 'styled-components'
 import ThemeContext from '../utils/ThemeContext';
 import { ContentCard } from '../components/section/contentCard'
-import { connect } from 'react-redux'
 import { ExtraLink } from './styles'
 
 

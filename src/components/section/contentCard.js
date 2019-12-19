@@ -101,9 +101,3 @@ const Subject = styled.div`
         color: ${(props) => props.color};
         font-size: 12px;
             `
-const ExtraLink = styled.a`
-        position: fixed; 
-        bottom: 30px; 
-        right: 45px;
-        color: white;
-        `
