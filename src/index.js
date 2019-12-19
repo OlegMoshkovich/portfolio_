@@ -13,7 +13,7 @@ const Application = () => {
     return (
         <Router>
             <Portfolio path="/" />
-            <Map path="map" />
+            {/* <Map path="map" /> */}
             <Context path="context" />
         </Router>
     )
