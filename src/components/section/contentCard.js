@@ -4,28 +4,28 @@ import PulseLoader from 'react-spinners/PulseLoader'
 import ThemeContext, { ThemeDefault } from '../../utils/ThemeContext';
 
 
-export const News = (props) => {
-    const [theme, setTheme] = useContext(ThemeContext)
-    useEffect(
-        () => setTheme(ThemeDefault), []
-    )
+export const ContentCard = (props) => {
+        const [theme, setTheme] = useContext(ThemeContext)
+        useEffect(
+                () => setTheme(ThemeDefault), []
+        )
 
-    return (
-        < PageContainer color={theme.pageBackground} >
-            {
-                props.loading ?
-                    <PulseLoader sizeUnit={"px"} size={10} color={'white'} loading={props.loading} />
-                    : <ContentContainer font={theme.font} background={theme.contentBackground} border={theme.border} radius={theme.radius}>
+        return (
+                < PageContainer color={theme.pageBackground} >
                         {
-                            props.article === 'empty' ?
-                                <Content color={theme.color}>please select a topic</Content> :
-                                <Content color={theme.color} weight={theme.fontWeight} > {props.article}</Content>
+                                props.loading ?
+                                        <PulseLoader sizeUnit={"px"} size={10} color={'white'} loading={props.loading} />
+                                        : <ContentContainer font={theme.font} background={theme.contentBackground} border={theme.border} radius={theme.radius}>
+                                                {
+                                                        props.article === 'empty' ?
+                                                                <Content color={theme.color}>please select a topic</Content> :
+                                                                <Content color={theme.color} weight={theme.fontWeight} > {props.article}</Content>
+                                                }
+                                                <Subject color={theme.color}>{props.subject}</Subject>
+                                        </ContentContainer>
                         }
-                        <Subject color={theme.color}>{props.subject}</Subject>
-                    </ContentContainer>
-            }
-        </PageContainer >
-    )
+                </PageContainer >
+        )
 }
 
 export const PageContainer = styled.div`

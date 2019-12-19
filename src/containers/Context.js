@@ -5,7 +5,7 @@ import { SocialNav } from '../components/nav/SocialNav'
 import styled from 'styled-components'
 import PulseLoader from 'react-spinners/PulseLoader'
 import ThemeContext, { ThemeDefault } from '../utils/ThemeContext';
-import { News } from '../components/section/news'
+import { ContentCard } from '../components/section/contentCard'
 
 
 
@@ -48,7 +48,7 @@ const Context = () => {
                 <NavContext fetchArticles={fetchArticles} />
                 <SocialNav />
                 <ExtraLink href='/' >portfolio</ExtraLink>
-                <News article={article} subject={subject} loading={loading} />
+                <ContentCard article={article} subject={subject} loading={loading} />
             </ThemeContext.Provider>
         </div>
     )

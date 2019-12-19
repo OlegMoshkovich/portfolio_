@@ -41,7 +41,7 @@ import ribbon_realized from '../img/ribbon_realized.png'
 
 
 
-class App extends Component {
+class Portfolio extends Component {
   myRef = React.createRef();
   render() {
     return (
@@ -49,7 +49,7 @@ class App extends Component {
         <Nav />
         <PageNav />
         <SocialNav />
-        <a href='/context' style={{ position: 'fixed', bottom: '30px', right: '45px', color: 'blue' }}>news</a>
+        <a href='/context' style={{ position: 'fixed', bottom: '30px', right: '45px', color: 'blue' }}>context</a>
 
         <Hero color={'blue'} fontColor={'white'} header={true} title={'Oleg Moshkovich / Engineer'} img={title} proportions={'93%'} />
         {/* -----------------gs */}
@@ -109,4 +109,4 @@ class App extends Component {
 }
 
 
-export default App;
+export default Portfolio;
