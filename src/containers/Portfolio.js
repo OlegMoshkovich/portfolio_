@@ -41,7 +41,7 @@ import ribbon_realized from '../img/ribbon_realized.png'
 
 
 
-class Portfolio extends Component {
+export class Portfolio extends Component {
   // myRef = React.createRef();
   render() {
     return (
@@ -110,4 +110,4 @@ class Portfolio extends Component {
 }
 
 
-export default Portfolio;
+

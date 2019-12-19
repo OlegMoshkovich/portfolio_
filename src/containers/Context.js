@@ -7,7 +7,7 @@ import { ExtraLink } from './styles'
 import { SocialNav } from '../components/nav/socialnav'
 
 
-const Context = (props) => {
+export const Context = (props) => {
     const themeHook = useState({})
     const key = 'mnnfCWd6y4tQ4IipGbUkIZXICpFqbHH1'
     const [article, setArticle] = useState('empty')
@@ -55,5 +55,4 @@ const Context = (props) => {
     )
 }
 
-export default Context;
 
