@@ -1,9 +1,10 @@
 
 import React, { useState } from 'react';
-import { NavContext } from '../components/nav/NavContext'
+import { NavContext } from '../components/nav/navcontext'
 import ThemeContext from '../utils/ThemeContext';
-import { ContentCard } from '../components/section/contentCard'
+import { ContentCard } from '../components/section/contentcard'
 import { ExtraLink } from './styles'
+import { SocialNav } from '../components/nav/socialnav'
 
 
 const Context = (props) => {
@@ -44,7 +45,7 @@ const Context = (props) => {
             {/* Theme Context -- every component inside of the ThemeContext has access to the themeHook  */}
             <ThemeContext.Provider value={themeHook} >
                 <NavContext fetchArticles={fetchArticles} />
-
+                <SocialNav />
                 <div>{props.articles}</div>
                 <ExtraLink href='/' >portfolio</ExtraLink>
                 <ContentCard article={article} subject={subject} loading={loading} />
