@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
-import { Portfolio } from './containers/portfolio'
+import { Portfolio } from './portfolio'
 import { Router } from '@reach/router'
 
 
