@@ -6,7 +6,6 @@ import { Video } from '../components/section/video'
 import { Hero } from '../components/hero/hero'
 import { Nav } from '../components/nav/Nav'
 import { PageNav } from '../components/nav/PageNav'
-import { SocialNav } from '../components/nav/SocialNav'
 
 import title from '../img/title.png'
 
@@ -48,7 +47,7 @@ class Portfolio extends Component {
       <div >
         <Nav />
         <PageNav />
-        <SocialNav />
+
         <a href='/context' style={{ position: 'fixed', bottom: '30px', right: '45px', color: 'blue' }}>context</a>
 
         <Hero color={'blue'} display={'none'} fontColor={'white'} header={true} title={'Oleg Moshkovich / Engineer'} img={title} proportions={'93%'} />
