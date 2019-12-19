@@ -57,7 +57,7 @@ export const ContentContainer = styled.div`
     width: 400px;
     height: auto;
     background-color:${(props) => props.background}  ;
-    border: .5px solid white;
+    border: .5px solid ${(props) => props.border || 'white'};
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -95,27 +95,32 @@ const Context = () => {
     const [weight, setWeight] = useState('light')
     const [subject, setSubject] = useState('')
     const [loading, setLoading] = useState(false)
+    const [border, setBorder] = useState('white')
 
 
 
     const fetchArticles = (searchTerm) => {
+        let topic = 'New York Times ' + searchTerm.toUpperCase() + ' snippet'
         setLoading(true)
-        setSubject(searchTerm)
+        setSubject(topic)
 
         if (searchTerm === 'politics') {
             setBackground('black')
             setFont('Times New Roman')
             setCompColor('black')
+            setBorder('black')
 
         } else if (searchTerm === 'art') {
             setBackground('#BACFC9')
             setFont('Open+Sans')
             setCompColor('#FFC696 ')
+            setBorder('white')
 
         } else if (searchTerm === 'technology') {
             setBackground('lightgrey')
             setFont('Inconsolata')
             setCompColor('#00ff00')
+            setBorder('yellow')
         }
 
         let genRandom = Math.floor(Math.random() * 10)
@@ -126,6 +131,7 @@ const Context = () => {
             .then(data => data.docs)
             .then(docs => {
                 return (
+                    console.log(docs[random]),
                     setLoading(false),
                     setArticle(docs[random].snippet))
             })
@@ -148,9 +154,9 @@ const Context = () => {
                         loading={loading}
                     />
                     // <div style={{ color: 'white' }}>loading</div> 
-                    : <ContentContainer font={font} background={compColor}>
+                    : <ContentContainer font={font} background={compColor} border={border} >
                         {article === 'empty' ? <Content>please select a number</Content> : <Content>{article}</Content>}
-                        <div style={{ alignSelf: 'flex-end', marginBottom: '10px', marginRight: '10px', color: 'white' }}>{subject}</div>
+                        <div style={{ marginBottom: '30px', marginRight: '10px', color: 'white', fontSize: '12px' }}>{subject}</div>
                     </ContentContainer>}
 
 

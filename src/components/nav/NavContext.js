@@ -15,6 +15,7 @@ display:flex;
 font-weight: bold;
 justify-content:center;
 align-items: center;
+font-size:12px;
 color:white;
 cursor:pointer;
 &:hover {
@@ -39,10 +40,18 @@ top:80px;
 
 export const NavContext = (props) => {
     console.log('props', props)
+    const updater = (e) => {
+        console.log('event', e.target)
+    }
     return (
         <div >
             <ButtonContainer>
-                <Circle onClick={() => props.fetchArticles('politics')} background={props.color} proportions={'40px'} hover={'black'} margin={'6px'}>1</Circle>
+                <Circle onClick={(e) => {
+                    return (
+                        props.fetchArticles('politics')
+                        // updater(e)
+                    )
+                }} background={props.color} proportions={'40px'} hover={'black'} margin={'6px'}>1</Circle>
                 <Circle onClick={() => props.fetchArticles('art')} background={props.color} proportions={'40px'} hover={'#FFC696'} margin={'6px'}>2</Circle>
                 <Circle onClick={() => props.fetchArticles('technology')} background={props.color} proportions={'40px'} hover={'#00ff00'} margin={'6px'}>3</Circle>
             </ButtonContainer>
