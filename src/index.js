@@ -2,17 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
+import { Portfolio } from './containers/portfolio'
+import { Router } from '@reach/router'
 
 
 
 
 const Application = () => {
     return (
-        <div>hello</div>
-        // <Router>
-        //     <Portfolio path="/" />
-        //     <Context path="context" />
-        // </Router>
+        <Router>
+            <Portfolio path="/" />
+        </Router>
     )
 }
 
