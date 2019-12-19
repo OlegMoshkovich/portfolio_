@@ -11,8 +11,9 @@ background:${(props) => props.color};
 //  border:2px solid yellow;
 @media (max-width: 768px) {
     // margin:0px;
-    height:50vh;
-    border: 1px solid red;
+    height:24vh;
+    // border: 1px solid red;
+    display:${(props) => props.display}
     }
 `
 export const CenterContainer = styled.div`
@@ -47,6 +48,8 @@ margin-left: 50px;
     // display:none;
     margin-left: 0px;
     margin-top: 0px;
+    align-self:center;
+    // border:1px solid red;
     }
 `
 
@@ -63,8 +66,12 @@ font-size: 24px;
 padding:2px 10px 2px 10px;
 @media (max-width: 768px) {
     // background:transparent;
-    // color:blue;
+    color:white;
+    // border-bottom: 1px solid
+    width:100%;
+    font-size: 18px;
     margin-left: 0px;
-    margin-top: 0px;
+    margin-top: 20px;
+    padding:2px 0px 2px 0px;
     }
 `

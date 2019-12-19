@@ -11,9 +11,9 @@ export const SocialNav = (props) => {
     const [theme] = useContext(ThemeContext)
     return (
         <NavContainer>
-            <Circle href='https://www.gitlab.com/oleg.moshkovich' git background={theme.pageBackground} hover={theme.contentBackground}><Image src={gitLab} proportions={'10px'} /></Circle>
+            <Circle href='https://www.gitlab.com/oleg.moshkovich' git background={theme.pageBackground} hover={theme.contentBackground} display={'none'}><Image src={gitLab} proportions={'10px'} /></Circle>
             <Circle href='https://www.linkedin.com/in/olegmoshkovich/' background={theme.pageBackground} hover={theme.contentBackground}><Image src={linkedIn} proportions={'8px'} /></Circle>
-            <Circle href='https://github.com/OlegMoshkovich' background={theme.pageBackground} hover={theme.contentBackground}><Image src={git} proportions={'8px'} /></Circle>
+            <Circle href='https://github.com/OlegMoshkovich' background={theme.pageBackground} hover={theme.contentBackground} display={'none'}><Image src={git} proportions={'8px'} /></Circle>
         </NavContainer>
     )
 }
@@ -35,6 +35,10 @@ cursor:pointer;
 &:hover {
     background-color:${(props) => props.hover};
   }
+  @media (max-width: 768px) {
+    display:${(props) => props.display};
+    flex-direction:row;
+    }
 `
 
 const NavContainer = styled.div`
@@ -47,7 +51,8 @@ position: fixed;
 bottom:20px;
 left:30px;
 @media (max-width: 768px) {
-    display:none;
+    // display:none;
+    flex-direction:row;
     }
 `
 

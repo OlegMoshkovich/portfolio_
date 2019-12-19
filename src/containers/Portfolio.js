@@ -51,7 +51,7 @@ class Portfolio extends Component {
         <SocialNav />
         <a href='/context' style={{ position: 'fixed', bottom: '30px', right: '45px', color: 'blue' }}>context</a>
 
-        <Hero color={'blue'} fontColor={'white'} header={true} title={'Oleg Moshkovich / Engineer'} img={title} proportions={'93%'} />
+        <Hero color={'blue'} display={'none'} fontColor={'white'} header={true} title={'Oleg Moshkovich / Engineer'} img={title} proportions={'93%'} />
         {/* -----------------gs */}
         <Element name="gs" />
         <Element name="1" />
@@ -62,7 +62,8 @@ class Portfolio extends Component {
           description1={'In 2017 I joined omission.studio, то develop a fully functioning prototype of the Girls Scouts mobile application designed for 1.2 million users. The prototype was built using React Native Library and EXPO toolchain.'}
         />
         <Element name="3" />
-        <Hero color={'white'} fontColor={'blue'} weight={'light'} header={true} title={'Product Map'} img={map} proportions={'80%'} />
+        <Hero color={'white'} display={'none'} fontColor={'blue'} weight={'light'} header={true} title={'Product Map'} img={map} proportions={'80%'} />
+
         <Element name="4" />
         <Section color={'white'} border={'transparent'} images={[world, ava]}
           description1={'The designed and prototyped system contained developed concept character, created using Maya and a digital outdoor/world create using Unity. Both concepts were integrated into React Native application in the form of custom media components.  '}

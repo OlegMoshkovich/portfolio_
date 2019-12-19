@@ -11,7 +11,7 @@ import {
 
 export const Hero = (props) => {
     return (
-        <PageContainer  >
+        <PageContainer display={props.display} >
             <TitleContainer color={'white'} >
                 {props.header ?
                     <TitleCell fontColor={props.fontColor} color={props.color}>{props.title}</TitleCell> :
