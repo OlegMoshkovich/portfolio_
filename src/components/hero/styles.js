@@ -72,6 +72,6 @@ padding:2px 10px 2px 10px;
     font-size: 18px;
     margin-left: 0px;
     margin-top: 20px;
-    padding:2px 0px 2px 0px;
+    padding:2px 2px 2px 5px;
     }
 `
