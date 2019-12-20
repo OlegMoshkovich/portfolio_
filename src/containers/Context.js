@@ -1,10 +1,10 @@
 
 import React, { useState } from 'react';
-import { NavContext } from '../components/nav/navcontext'
+import { NavContext } from '../components/nav_/navcontext_'
 import ThemeContext from '../utils/ThemeContext';
 import { ContentCard } from '../components/section/contentcard_'
 import { ExtraLink } from './styles'
-import { SocialNav } from '../components/nav/socialnav'
+import { SocialNav } from '../components/nav_/socialnav'
 
 
 const Context = (props) => {
