@@ -61,16 +61,15 @@ export const ContentCard = (props) => {
                 < PageContainer color={theme.pageBackground} >
                         {
                                 props.loading ?
-                                        // Pulse external library activated on the loading flag passed from the Context Container
+                                        // Pulse external library activated on the loading flag passed from the ContextContainer
                                         <PulseLoader sizeUnit={"px"} size={10} color={'white'} loading={props.loading} />
 
-                                        //ConteentContainer compoenent accepts the theme directly from the Theme Provider
+                                        //ContextContainer styled component accepts the properties directly from the Theme Provider
                                         : <ContentContainer font={theme.font} align={theme.align} background={theme.contentBackground} border={theme.border} radius={theme.radius}>
                                                 {
                                                         props.article === 'empty' ?
                                                                 <Content color={theme.color}>please select a topic</Content> :
                                                                 <Content color={theme.color} weight={theme.fontWeight}
-                                                                // style={{ borderBottom: '1px solid #E0E0E0', paddingBottom: '20px' }}
                                                                 >
                                                                         {props.article}</Content>
                                                 }
