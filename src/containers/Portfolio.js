@@ -4,7 +4,7 @@ import { Element } from 'react-scroll'
 import { Section } from '../components/section/section'
 import { Video } from '../components/section/video'
 import { Hero } from '../components/hero/hero'
-import { Nav } from '../components/nav/nav'
+import { Nav } from '../components/nav/nav_'
 import { PageNav } from '../components/nav/pagenav'
 import { SocialNav } from '../components/nav/socialnav'
 
