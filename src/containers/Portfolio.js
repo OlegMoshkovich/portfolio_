@@ -45,7 +45,7 @@ class Portfolio extends Component {
         <SocialNav />
         <a href='/context' style={{ position: 'fixed', bottom: '30px', right: '45px', color: 'blue' }}>context</a>
 
-        <Hero color={'blue'} display={'none'} fontColor={'white'} header={true} title={'Oleg Moshkovich / Engineer'} text={true} img={title} proportions={'93%'} />
+        <Hero color={'blue'} fontColor={'white'} header={true} title={'Oleg Moshkovich / Engineer'} text={true} img={title} proportions={'93%'} />
         {/* -----------------gs */}
         <Element name="gs" />
         <Element name="1" />

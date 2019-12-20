@@ -11,8 +11,8 @@ background:${(props) => props.color};
 //  border:2px solid yellow;
 @media (max-width: 768px) {
     // margin:0px;
-    height:100vh;
-     border: 1px solid yellow;
+    // height:24vh;
+    // border: 1px solid red;
     display:${(props) => props.display}
     }
 `
@@ -25,18 +25,20 @@ width:100%;
 height:100%;
 margin-top:20px;
 // background:yellow;
- border: 1px solid red;
-
+// border: 1px solid red;
+@media (max-width: 768px) {
+    // display:none;
+    width:80%;
+    // height:50%;
+    // margin:0px;
+    // border: 1px solid red;
+    }
 `
 export const Image = styled.img`
 max-width:${(props) => props.proportions || '80%'};
 max-height:${(props) => props.proportions || '80%'};
-border: 1px solid blue; 
-@media (max-width: 768px) {
-    width:auto;
-    height:auto;
+// border: 1px solid blue; 
 `
-
 export const TitleContainer = styled.div`
 width:auto;
 align-self:start;
@@ -64,11 +66,11 @@ font-weight: ${(props) => props.weight || 'white'};
 font-size: 24px;
 padding:2px 10px 2px 10px;
 @media (max-width: 768px) {
-    background:transparent;
-    color:blue;
-    border: 1px solid
+    // background:transparent;
+    color:white;
+    // border-bottom: 1px solid
     width:100%;
-    font-size: 16px;
+    font-size: 18px;
     margin-left: 0px;
     margin-top: 20px;
     padding:2px 2px 2px 5px;
