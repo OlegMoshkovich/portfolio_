@@ -12,7 +12,7 @@ background:${(props) => props.color};
 @media (max-width: 768px) {
     // margin:0px;
     height:24vh;
-    // border: 1px solid red;
+     border: 1px solid yellow;
     display:${(props) => props.display}
     }
 `
@@ -25,13 +25,13 @@ width:100%;
 height:100%;
 margin-top:20px;
 // background:yellow;
-// border: 1px solid red;
+ border: 1px solid red;
 
 `
 export const Image = styled.img`
 max-width:${(props) => props.proportions || '80%'};
 max-height:${(props) => props.proportions || '80%'};
-// border: 1px solid blue; 
+border: 1px solid blue; 
 `
 export const TitleContainer = styled.div`
 width:auto;
