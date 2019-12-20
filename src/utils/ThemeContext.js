@@ -9,7 +9,7 @@ export const ThemePolitics = {
     color: 'white',
     contentBackground: 'black',
     border: 'black',
-    align: 'left'
+    align: 'center'
 }
 export const ThemeArt = {
     pageBackground: '#BACFC9',

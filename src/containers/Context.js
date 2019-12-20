@@ -45,12 +45,12 @@ const Context = (props) => {
             <ThemeContext.Provider value={themeHook} >
                 <NavContext fetchArticles={fetchArticles} />
                 <SocialNav />
-                <ExtraLink href='/' >portfolio</ExtraLink>
+                <ExtraLink href='/'>portfolio</ExtraLink>
                 <ContentCard article={article} subject={subject} loading={loading} />
             </ThemeContext.Provider>
         </div>
     )
 }
 
-export default Context;
+export default Context
 
