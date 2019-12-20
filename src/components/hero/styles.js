@@ -34,7 +34,7 @@ max-height:${(props) => props.proportions || '80%'};
 border: 1px solid blue; 
 @media (max-width: 768px) {
     max-width:auto;
-    max-height:100%;
+    max-height:80%;
 `
 
 export const TitleContainer = styled.div`
