@@ -35,13 +35,6 @@ import ribbon2 from '../img/ribbon2.png'
 import ribbon3 from '../img/ribbon3.png'
 import ribbon_realized from '../img/ribbon_realized.png'
 
-
-
-
-
-
-
-
 class Portfolio extends Component {
   // myRef = React.createRef();
   render() {

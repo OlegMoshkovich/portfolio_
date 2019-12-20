@@ -2,36 +2,6 @@ import React from 'react';
 import styled from 'styled-components'
 import { Link } from 'react-scroll'
 
-export const Nav = () => {
-    return (
-        <NavContainer>
-            <Link to="gs" duration={0} >
-                <Circle proportions={'18px'} hover={'white'} />
-            </Link>
-            <Link to="emilie" duration={0} >
-                <Circle proportions={'18px'} hover={'white'} />
-            </Link>
-            <Link to="hcs" duration={0} >
-                <Circle proportions={'18px'} hover={'white'} />
-            </Link>
-            <Link to="10design" duration={0} >
-                <Circle proportions={'18px'} hover={'white'} />
-            </Link>
-            <div style={{ margin: '0px 0px 0px 10px' }}>
-                <Circle proportions={'40px'} hover={'blue'} cursor={'default'} hoverBorder={'white'}>
-                    <div style={{ display: 'flex' }}>
-                        <div
-                            style={{
-                                margin: '0px 3px 7px 0px',
-                            }}>_</div>
-                        <div>></div>
-                    </div>
-                </Circle>
-            </div>
-        </NavContainer >
-    )
-}
-
 const Circle = styled.div`
 width:${(props) => props.proportions};
 height:${(props) => props.proportions};
@@ -65,3 +35,32 @@ right: 45px;
     display:none;
     }
 `
+export const Nav = () => {
+    return (
+        <NavContainer>
+            <Link to="gs" duration={0} >
+                <Circle proportions={'18px'} hover={'white'} />
+            </Link>
+            <Link to="emilie" duration={0} >
+                <Circle proportions={'18px'} hover={'white'} />
+            </Link>
+            <Link to="hcs" duration={0} >
+                <Circle proportions={'18px'} hover={'white'} />
+            </Link>
+            <Link to="10design" duration={0} >
+                <Circle proportions={'18px'} hover={'white'} />
+            </Link>
+            <div style={{ margin: '0px 0px 0px 10px' }}>
+                <Circle proportions={'40px'} hover={'blue'} cursor={'default'} hoverBorder={'white'}>
+                    <div style={{ display: 'flex' }}>
+                        <div
+                            style={{
+                                margin: '0px 3px 7px 0px',
+                            }}>_</div>
+                        <div>></div>
+                    </div>
+                </Circle>
+            </div>
+        </NavContainer >
+    )
+}

@@ -6,18 +6,6 @@ import gitLab from '../../img/gitlab.png';
 import ThemeContext from '../../utils/ThemeContext';
 
 
-
-export const SocialNav = (props) => {
-    const [theme] = useContext(ThemeContext)
-    return (
-        <NavContainer>
-            <Circle href='https://www.gitlab.com/oleg.moshkovich' git background={theme.pageBackground} hover={theme.contentBackground} display={'none'}><Image src={gitLab} proportions={'10px'} /></Circle>
-            <Circle href='https://www.linkedin.com/in/olegmoshkovich/' background={theme.pageBackground} hover={theme.contentBackground}><Image src={linkedIn} proportions={'8px'} /></Circle>
-            <Circle href='https://github.com/OlegMoshkovich' background={theme.pageBackground} hover={theme.contentBackground} display={'none'}><Image src={git} proportions={'8px'} /></Circle>
-        </NavContainer>
-    )
-}
-
 const Circle = styled.a`
 width:18px;
 height:18px;
@@ -56,7 +44,19 @@ left:30px;
     }
 `
 
-export const Image = styled.img`
+const Image = styled.img`
 width:${(props) => props.proportions};
 height:${(props) => props.proportions};
 `
+
+export const SocialNav = (props) => {
+    const [theme] = useContext(ThemeContext)
+    return (
+        <NavContainer>
+            <Circle href='https://www.gitlab.com/oleg.moshkovich' git background={theme.pageBackground} hover={theme.contentBackground} display={'none'}><Image src={gitLab} proportions={'10px'} /></Circle>
+            <Circle href='https://www.linkedin.com/in/olegmoshkovich/' background={theme.pageBackground} hover={theme.contentBackground}><Image src={linkedIn} proportions={'8px'} /></Circle>
+            <Circle href='https://github.com/OlegMoshkovich' background={theme.pageBackground} hover={theme.contentBackground} display={'none'}><Image src={git} proportions={'8px'} /></Circle>
+        </NavContainer>
+    )
+}
+

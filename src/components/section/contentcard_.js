@@ -13,39 +13,6 @@ const PageContainer = styled.div`
         background:${(props) => props.color};
         //  border:2px solid yellow;
         `
-const CenterContainer = styled.div`
-        display:flex
-        flex-direction:row;
-        justify-content:space-around;
-        align-items:center;
-        width:100%;
-        height:100%;
-        margin-top:40px;
-        background:blue;
-        // border: 1px solid red;
-        `
-const Image = styled.img`
-        max-width:${(props) => props.proportions || '80%'};
-        max-height:${(props) => props.proportions || '80%'};
-        `
-const TitleContainer = styled.div`
-        width:auto;
-        align-self:start;
-        margin-top: 50px;
-        margin-left: 50px;
-        `
-const TitleCell = styled.div`
-        display:flex
-        flex-direction:row;
-        justify-content:flex-start;
-        align-items:left;
-        background:${(props) => props.color || 'blue'};
-        color:${(props) => props.fontColor || 'white'};
-        font-family: 'Roboto', sans-serif;
-        font-weight: ${(props) => props.weight || 'white'};
-        font-size: 24px;
-        padding:2px 10px 2px 10px;
-        `
 const ContentContainer = styled.div`
         width: 400px;
         height: auto;

@@ -13,7 +13,6 @@ export const Video = (props) => {
             <TitleContainer color={'transparent'} >
                 <TitleCell color={'transparent'} textColor={'blue'}>{props.description1}</TitleCell>
             </TitleContainer >
-            {/* <FlexContainer color={props.color} > */}
             <CenterContainer>
                 <video style={{ width: props.proportions, height: props.proportions }} loop autoPlay>
                     <source src={props.src} type="video/mp4" />

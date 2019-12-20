@@ -4,35 +4,6 @@ import styled from 'styled-components'
 import ThemeContext, { ThemeArt, ThemePolitics, ThemeTechnology } from '../../utils/ThemeContext';
 
 
-export const NavContext = (props) => {
-    const [theme, setTheme] = useContext(ThemeContext)
-
-    return (
-        <div >
-            <ButtonContainer>
-                <Circle onClick={() => {
-                    return (
-                        setTheme(ThemeArt),
-                        props.fetchArticles('art')
-                    )
-                }} background={theme.pageBackground} proportions={'40px'} hover={'#FFC696'} margin={'6px'}>art</Circle>
-                <Circle onClick={() => {
-                    return (
-                        setTheme(ThemePolitics),
-                        props.fetchArticles('politics')
-                    )
-                }} background={theme.pageBackground} proportions={'40px'} hover={'black'} margin={'6px'}>politics</Circle>
-                <Circle onClick={() => {
-                    return (
-                        setTheme(ThemeTechnology),
-                        props.fetchArticles('technology')
-                    )
-                }} background={theme.pageBackground} proportions={'40px'} hover={'yellow'} margin={'6px'}>tech</Circle>
-            </ButtonContainer>
-        </div >
-    )
-}
-
 const Circle = styled.div`
 width:${(props) => props.proportions};
 height:${(props) => props.proportions};
@@ -67,3 +38,31 @@ top:80px;
 // right:200px;
 // border:1px solid red;
 `
+
+export const NavContext = (props) => {
+    const [theme, setTheme] = useContext(ThemeContext)
+    return (
+        <div >
+            <ButtonContainer>
+                <Circle onClick={() => {
+                    return (
+                        setTheme(ThemeArt),
+                        props.fetchArticles('art')
+                    )
+                }} background={theme.pageBackground} proportions={'40px'} hover={'#FFC696'} margin={'6px'}>art</Circle>
+                <Circle onClick={() => {
+                    return (
+                        setTheme(ThemePolitics),
+                        props.fetchArticles('politics')
+                    )
+                }} background={theme.pageBackground} proportions={'40px'} hover={'black'} margin={'6px'}>politics</Circle>
+                <Circle onClick={() => {
+                    return (
+                        setTheme(ThemeTechnology),
+                        props.fetchArticles('technology')
+                    )
+                }} background={theme.pageBackground} proportions={'40px'} hover={'yellow'} margin={'6px'}>tech</Circle>
+            </ButtonContainer>
+        </div >
+    )
+}
