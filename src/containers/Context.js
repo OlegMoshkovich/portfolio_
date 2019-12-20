@@ -16,6 +16,7 @@ const Context = (props) => {
     const [subject, setSubject] = useState('')
     const [loading, setLoading] = useState(false)
     const key = process.env.REACT_APP_API_KEY
+    console.log(key)
 
     // move the fetch to Redux - use thunk for the async actions
     const fetchArticles = (searchTerm) => {
