@@ -28,6 +28,8 @@ const ContentContainer = styled.div`
         box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
         @media (max-width: 768px) {
         width: 80%;
+        // border: .5px solid black;
+        margin: 0px 0px 80px 0px
         }
         `
 const Content = styled.div`
