@@ -19,7 +19,6 @@ export const Hero = (props) => {
                 }
             </TitleContainer >
             <CenterContainer>
-
                 {props.text ? <div style={{ fontFamily: 'roboto', fontSize: '45px', color: 'blue' }}>Portfolio</div> : <Image src={props.img} proportions={props.proportions} />
                 }
             </CenterContainer>

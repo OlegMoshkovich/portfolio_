@@ -8,13 +8,15 @@ import { SocialNav } from '../components/nav/socialnav'
 
 
 const Context = (props) => {
+
+    //reference to the
     const themeHook = useState({})
-    const key = 'mnnfCWd6y4tQ4IipGbUkIZXICpFqbHH1'
     const [article, setArticle] = useState('empty')
     const [random, setRandom] = useState(1)
     const [subject, setSubject] = useState('')
     const [loading, setLoading] = useState(false)
 
+    const key = 'mnnfCWd6y4tQ4IipGbUkIZXICpFqbHH1'
 
     const fetchArticles = (searchTerm) => {
         let topic = 'New York Times ' + searchTerm.toUpperCase() + ' snippet'
@@ -35,13 +37,13 @@ const Context = (props) => {
             })
             .catch((function (error) {
                 setArticle('please wait a bit...')
-                // setLoading(true)
             }))
     }
 
     return (
         <div>
-            {/* Theme Context -- every component inside of the ThemeContext has access to the themeHook  */}
+            {/* Theme Context -- every component inside of the ThemeContext has access to the themeHook 
+            -- the themes are set in the NavContext -- and consumed by the SocialNav and the ContentCard  */}
             <ThemeContext.Provider value={themeHook} >
                 <NavContext fetchArticles={fetchArticles} />
                 <SocialNav />

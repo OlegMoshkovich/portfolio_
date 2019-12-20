@@ -5,7 +5,11 @@ import ThemeContext, { ThemeDefault } from '../../utils/ThemeContext';
 
 
 export const ContentCard = (props) => {
+
+        //hook that is referencing ThemeContext
         const [theme, setTheme] = useContext(ThemeContext)
+
+        //default theme is set on at the mounting face of the Context Conatainer
         useEffect(
                 () => setTheme(ThemeDefault), []
         )
@@ -14,7 +18,10 @@ export const ContentCard = (props) => {
                 < PageContainer color={theme.pageBackground} >
                         {
                                 props.loading ?
+                                        // Pulse external library activated on the loading flag passed from the Context Container
                                         <PulseLoader sizeUnit={"px"} size={10} color={'white'} loading={props.loading} />
+
+                                        //ConteentContainer compoenent accepts the theme directly from the Theme Provider
                                         : <ContentContainer font={theme.font} align={theme.align} background={theme.contentBackground} border={theme.border} radius={theme.radius}>
                                                 {
                                                         props.article === 'empty' ?
