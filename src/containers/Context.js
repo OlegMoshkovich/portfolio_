@@ -17,7 +17,7 @@ const Context = (props) => {
     const [loading, setLoading] = useState(false)
     const key = process.env.REACT_APP_API_KEY
 
-    // move the fetch to Redux - use thunk for the asynch actions
+    // move the fetch to Redux - use thunk for the async actions
     const fetchArticles = (searchTerm) => {
         let topic = 'New York Times ' + searchTerm.toUpperCase() + ' snippet'
         setLoading(true)
@@ -36,7 +36,10 @@ const Context = (props) => {
                     setArticle(docs[random].snippet))
             })
             .catch((function (error) {
+                //set loading to false in order to breal out of the loader and message the user
                 setLoading(false)
+                //write a check state to evaluate the errror - so far most of the errors are coming from the 
+                //api limits -- therefore message to the user to wait until the next request
                 setArticle('limit is reached - please wait a bit...')
             }))
     }
