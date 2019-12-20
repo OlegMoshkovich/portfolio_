@@ -16,7 +16,7 @@ const Context = (props) => {
     const [subject, setSubject] = useState('')
     const [loading, setLoading] = useState(false)
 
-    const key = 'mnnfCWd6y4tQ4IipGbUkIZXICpFqbHH1'
+    const key = process.env.REACT_APP_API_KEY
 
     const fetchArticles = (searchTerm) => {
         let topic = 'New York Times ' + searchTerm.toUpperCase() + ' snippet'
