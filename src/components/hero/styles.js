@@ -11,7 +11,7 @@ background:${(props) => props.color};
 //  border:2px solid yellow;
 @media (max-width: 768px) {
     // margin:0px;
-    height:24vh;
+    height:100vh;
      border: 1px solid yellow;
     display:${(props) => props.display}
     }
