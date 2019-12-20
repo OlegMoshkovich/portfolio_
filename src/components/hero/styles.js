@@ -32,7 +32,11 @@ export const Image = styled.img`
 max-width:${(props) => props.proportions || '80%'};
 max-height:${(props) => props.proportions || '80%'};
 border: 1px solid blue; 
+@media (max-width: 768px) {
+    max-width:auto;
+    max-height:100%;
 `
+
 export const TitleContainer = styled.div`
 width:auto;
 align-self:start;
