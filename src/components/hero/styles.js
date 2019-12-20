@@ -26,13 +26,7 @@ height:100%;
 margin-top:20px;
 // background:yellow;
 // border: 1px solid red;
-@media (max-width: 768px) {
-    // display:none;
-    width:80%;
-    // height:50%;
-    // margin:0px;
-    // border: 1px solid red;
-    }
+
 `
 export const Image = styled.img`
 max-width:${(props) => props.proportions || '80%'};
@@ -66,11 +60,11 @@ font-weight: ${(props) => props.weight || 'white'};
 font-size: 24px;
 padding:2px 10px 2px 10px;
 @media (max-width: 768px) {
-    // background:transparent;
-    color:white;
-    // border-bottom: 1px solid
+    background:transparent;
+    color:blue;
+    border: 1px solid
     width:100%;
-    font-size: 18px;
+    font-size: 16px;
     margin-left: 0px;
     margin-top: 20px;
     padding:2px 2px 2px 5px;
