@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Portfolio from './containers/portfolio';
-import Context from './containers/context'
+import Portfolio from './containers/Portfolio';
+import Context from './containers/Context'
 import * as serviceWorker from './serviceWorker';
 import { Router } from "@reach/router"
 

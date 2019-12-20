@@ -46,10 +46,11 @@ margin-top: 50px;
 margin-left: 50px;
 @media (max-width: 768px) {
     // display:none;
-    margin-left: 0px;
+    margin-left: 20px;
     margin-top: 0px;
-    align-self:center;
+    align-self:left;
     // border:1px solid red;
+    width:auto;
     }
 `
 
@@ -73,5 +74,7 @@ padding:2px 10px 2px 10px;
     margin-left: 0px;
     margin-top: 20px;
     padding:2px 2px 2px 5px;
+    align-items:center;
+    // justify-content:center;
     }
 `

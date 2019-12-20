@@ -15,11 +15,14 @@ export const ContentCard = (props) => {
                         {
                                 props.loading ?
                                         <PulseLoader sizeUnit={"px"} size={10} color={'white'} loading={props.loading} />
-                                        : <ContentContainer font={theme.font} background={theme.contentBackground} border={theme.border} radius={theme.radius}>
+                                        : <ContentContainer font={theme.font} align={theme.align} background={theme.contentBackground} border={theme.border} radius={theme.radius}>
                                                 {
                                                         props.article === 'empty' ?
                                                                 <Content color={theme.color}>please select a topic</Content> :
-                                                                <Content color={theme.color} weight={theme.fontWeight} > {props.article}</Content>
+                                                                <Content color={theme.color} weight={theme.fontWeight}
+                                                                // style={{ borderBottom: '1px solid #E0E0E0', paddingBottom: '20px' }}
+                                                                >
+                                                                        {props.article}</Content>
                                                 }
                                                 <Subject color={theme.color}>{props.subject}</Subject>
                                         </ContentContainer>
@@ -79,7 +82,7 @@ export const ContentContainer = styled.div`
         display: flex;
         flex-direction: column;
         justify-content: center;
-        text-align: center;
+        text-align: ${(props) => props.align || 'center'};
         align-items: center;
         border-radius:${(props) => props.radius};
         font-family: ${(props) => props.font};

@@ -9,6 +9,7 @@ export const ThemePolitics = {
     color: 'white',
     contentBackground: 'black',
     border: 'black',
+    align: 'left'
 }
 export const ThemeArt = {
     pageBackground: '#BACFC9',
