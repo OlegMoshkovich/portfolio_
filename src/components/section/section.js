@@ -16,7 +16,6 @@ export const Section = (props) => {
             <TitleContainer color={''} >
                 <TitleCell color={'transparent'} textColor={'blue'}>{props.description1}</TitleCell>
             </TitleContainer >
-            {/* <FlexContainer color={props.color} > */}
             <CenterContainer>
                 {
                     images.map((image, index) => {
@@ -28,11 +27,6 @@ export const Section = (props) => {
                     })
                 }
             </CenterContainer>
-
-            {/* </FlexContainer> */}
-            {/* <TextContainer color={'white'} >
-                <TextCell color={'transparent'}>{props.description2}</TextCell>
-            </TextContainer > */}
         </PageContainer >
     )
 }

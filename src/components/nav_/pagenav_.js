@@ -10,7 +10,6 @@ background-color:white;
 color:blue;
 font-family: 'Roboto', sans-serif;
 font-size:10px;
-// text-align:center;
 display:flex;
 justify-content:center;
 border:1px solid white;

@@ -44,12 +44,11 @@ class Portfolio extends Component {
         <PageNav />
         <SocialNav />
         <a href='/context' style={{ position: 'fixed', bottom: '30px', right: '45px', color: 'blue' }}>context</a>
-
         <Hero color={'blue'} fontColor={'white'} header={true} title={'Oleg Moshkovich / Engineer'} text={true} img={title} proportions={'93%'} />
         {/* -----------------gs */}
         <Element name="gs" />
         <Element name="1" />
-        <Hero className='violet' color={'blue'} fontColor={'white'} header={true} title={'Girls Scouts / React Native '} img={gs5_hero} proportions={'100%'} />
+        <Hero className='violet' color={'blue'} fontColor={'white'} header={true} title={'Girls Scouts / React Native development'} img={gs5_hero} proportions={'100%'} />
 
         <Element name="2" />
         <Video src={gs_video} proportions={'80%'}
@@ -65,9 +64,7 @@ class Portfolio extends Component {
         <Element name="5" />
         <Section color={'white'} border={'transparent'} images={[prototype1, prototype2]}
           description1={' Extensive user research and testing took place in New York and Washington DC, gathered feedback resulted in the definition of the first release feature set.The production team was engaged in September of 2018.'} />
-
         {/* -----------------emilie */}
-
         <Element name="emilie" />
         <Element name="6" />
         <Hero color={'blue'} fontColor={'white'} header={true} title={'BCG.DV / ReactJs + Redux + Material'} img={emilie_hero} proportion={'50%'} proportions={'85%'} />
@@ -75,7 +72,6 @@ class Portfolio extends Component {
         <Section color={'white'} images={[emilie1, emilie2, emilie3]}
           description1={'In 2019 I joined Boston Consultant Group to work on Emilie Scientific platform as a front end engineer. The content and user management platform included user assesment single page application, and 2 admin portals used for content and user management.'} />
         {/* -----------------hcs */}
-
         <Element name="hcs" />
         <Element name="8" />
         <Hero color={'blue'} fontColor={'white'} header={true} title={'HCS / ReactJS and Unity development'} img={hcs_hero} proportions={'100%'} />
