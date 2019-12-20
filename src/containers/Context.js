@@ -15,8 +15,9 @@ const Context = (props) => {
     const [random, setRandom] = useState(1)
     const [subject, setSubject] = useState('')
     const [loading, setLoading] = useState(false)
-    const key = process.env.REACT_APP_API_KEY
-    console.log(key)
+    //normally this would be stored on the server for safety - however in this case it is ok to put it here
+    //because there is a limit to the api calls,  there is no payment for the api and it is for demo purposes.
+    const nyt = 'mnnfCWd6y4tQ4IipGbUkIZXICpFqbHH1'
 
     // move the fetch to Redux - use thunk for the async actions
     const fetchArticles = (searchTerm) => {
@@ -27,7 +28,7 @@ const Context = (props) => {
         let genRandom = Math.floor(Math.random() * 10)
         genRandom !== random ? setRandom(genRandom) : setRandom(genRandom + 1)
 
-        fetch(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${searchTerm}&api-key=${key}`)
+        fetch(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${searchTerm}&api-key=${nyt}`)
             .then(resp => resp.json())
             .then(data => data.response)
             .then(data => data.docs)
