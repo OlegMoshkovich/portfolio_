@@ -15,9 +15,9 @@ const Context = (props) => {
     const [random, setRandom] = useState(1)
     const [subject, setSubject] = useState('')
     const [loading, setLoading] = useState(false)
-
     const key = process.env.REACT_APP_API_KEY
 
+    // move the fetch to Redux - use thunk for the asynch actions
     const fetchArticles = (searchTerm) => {
         let topic = 'New York Times ' + searchTerm.toUpperCase() + ' snippet'
         setLoading(true)
