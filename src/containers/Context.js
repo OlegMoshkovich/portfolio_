@@ -36,7 +36,8 @@ const Context = (props) => {
                     setArticle(docs[random].snippet))
             })
             .catch((function (error) {
-                setArticle('please wait a bit...')
+                setLoading(false)
+                setArticle('limit is reached - please wait a bit...')
             }))
     }
 

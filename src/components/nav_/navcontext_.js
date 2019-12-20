@@ -20,10 +20,21 @@ font-size:8px;
 color:white;
 cursor:pointer;
 &:hover {
-    background-color:${(props) => props.hover};;
+    // background-color:${(props) => props.hover};;
     border:1px solid white
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
   }
+  @media (max-width: 768px) {
+    // margin:0px;
+    // height:24vh;
+    // border: 1px solid red;
+    display:${(props) => props.display}
+    &:hover {
+        // background-color:${(props) => props.hover};;
+        border:1px solid white
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+      }
+    }
 `
 
 const ButtonContainer = styled.div`

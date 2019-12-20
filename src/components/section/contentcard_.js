@@ -36,6 +36,9 @@ const Content = styled.div`
         font-size: 24px;
         font-weight:${(props) => props.weight};
         margin:70px 40px 60px 40px;
+        @media (max-width: 768px) {
+                font-size: 18px;
+                }
         `
 const Subject = styled.div`
         margin-bottom: 20px; 
