@@ -19,6 +19,30 @@ cursor:${(props) => props.cursor || ' pointer'};
     background-color:${(props) => props.hover};
     border:1px solid ${(props) => props.hoverBorder || 'blue'};
   }
+  @media (max-width: 768px) {
+    margin: 5px 0px 5px 0px;
+    }
+`
+const CircleLogo = styled.div`
+width:${(props) => props.proportions};
+height:${(props) => props.proportions};
+margin: 0px 3px 0px 3px;
+background-color:blue;
+border: 1px solid white;
+border-radius:50%;
+display:flex;
+font-weight: bold;
+justify-content:center;
+align-items: center;
+color:white;
+cursor:${(props) => props.cursor || ' pointer'};
+&:hover {
+    background-color:${(props) => props.hover};
+    border:1px solid ${(props) => props.hoverBorder || 'blue'};
+  }
+  @media (max-width: 768px) {
+    margin: 5px 0px 5px 0px;
+    }
 `
 const NavContainer = styled.div`
 width: auto;
@@ -30,9 +54,13 @@ align-items: center;
 position: fixed;
 top: 40px;
 right: 45px;
-// border:1px solid blue;
+
 @media (max-width: 768px) {
     display:none;
+    flex-direction: column-reverse;
+    top: 20px;
+    right: 20px;
+    align-items: center;
     }
 `
 export const Nav = () => {
