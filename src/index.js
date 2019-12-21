@@ -5,8 +5,10 @@ import Portfolio from './containers/Portfolio';
 import Context from './containers/Context'
 import * as serviceWorker from './serviceWorker';
 import { Router } from '@reach/router'
-import { Provider } from 'redux'
+import { Provider, createStore } from 'redux'
+import reducer from '../src/reducers'
 
+const store = createStore(reducer)
 
 
 
