@@ -63,13 +63,11 @@ const Context = (props) => {
     )
 }
 
+//return object literal expression availble as props to the compoenent
 const mapStateToProps = (state) => ({ state })
 const mapDispatchtoProps = dispatch => ({
     getArticles: search => dispatch(getArticles(search))
 })
-
-
-
 
 export default connect(mapStateToProps, mapDispatchtoProps)(Context)
 

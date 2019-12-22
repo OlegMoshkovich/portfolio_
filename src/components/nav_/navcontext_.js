@@ -77,10 +77,8 @@ const NavContext = (props) => {
         </div >
     )
 }
-const mapDispatchtoProps = dispatch => ({
-    getArticles: search => dispatch(getArticles(search))
-})
 
+const mapDispatchtoProps = dispatch => ({ getArticles: search => dispatch(getArticles(search)) })
 const mapStatetoProps = (state) => ({ state })
 
 export default connect(mapStatetoProps, mapDispatchtoProps)(NavContext)
