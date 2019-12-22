@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux'
-import { getArticles } from './getarticles'
+import { articles } from './articles'
 
 export default combineReducers({
-    getArticles
+    articles
 })
+

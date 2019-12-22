@@ -8,7 +8,7 @@ import { Router } from '@reach/router'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import reducer from '../src/reducers'
-const store = createStore(reducer)
+import store from './utils/store'
 
 const Application = () => {
     return (

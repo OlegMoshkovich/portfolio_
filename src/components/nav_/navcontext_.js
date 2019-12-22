@@ -2,6 +2,8 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components'
 import ThemeContext, { ThemeArt, ThemePolitics, ThemeTechnology } from '../../utils/ThemeContext';
+import { connect } from 'react-redux'
+import { getArticles } from '../../actions/getarticles'
 
 
 const Circle = styled.div`
@@ -43,30 +45,42 @@ position: fixed;
 top:80px;
 `
 
-export const NavContext = (props) => {
+const NavContext = (props) => {
     const [theme, setTheme] = useContext(ThemeContext)
+    // console.log('props from nav', props)
+    // props.getArticles('somthing else')
     return (
         <div >
             <ButtonContainer>
                 <Circle onClick={() => {
                     return (
                         setTheme(ThemeArt),
-                        props.fetchArticles('art')
+                        // props.fetchArticles('art'),
+                        props.getArticles('art')
                     )
                 }} background={theme.pageBackground} proportions={'40px'} hover={'#FFC696'} margin={'6px'}>art</Circle>
                 <Circle onClick={() => {
                     return (
                         setTheme(ThemePolitics),
-                        props.fetchArticles('politics')
+                        // props.fetchArticles('politics')
+                        props.getArticles('politics')
                     )
                 }} background={theme.pageBackground} proportions={'40px'} hover={'black'} margin={'6px'}>politics</Circle>
                 <Circle onClick={() => {
                     return (
                         setTheme(ThemeTechnology),
-                        props.fetchArticles('technology')
+                        // props.fetchArticles('technology')
+                        props.getArticles('technology')
                     )
                 }} background={theme.pageBackground} proportions={'40px'} hover={'yellow'} margin={'6px'}>tech</Circle>
             </ButtonContainer>
         </div >
     )
 }
+const mapDispatchtoProps = dispatch => ({
+    getArticles: search => dispatch(getArticles(search))
+})
+
+const mapStatetoProps = (state) => ({ state })
+
+export default connect(mapStatetoProps, mapDispatchtoProps)(NavContext)

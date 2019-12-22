@@ -1,15 +1,14 @@
 
 import React, { useState } from 'react';
-import { NavContext } from '../components/nav_/navcontext_'
+import NavContext from '../components/nav_/navcontext_'
 import ThemeContext from '../utils/ThemeContext';
 import { ContentCard } from '../components/section/contentcard_'
 import { ExtraLink } from './styles'
 import { SocialNav } from '../components/nav_/socialnav'
 import { connect } from 'react-redux'
-
+import { getArticles } from '../actions/getarticles'
 
 const Context = (props) => {
-
     //reference to the
     const themeHook = useState({})
     const [article, setArticle] = useState('empty')
@@ -20,7 +19,8 @@ const Context = (props) => {
     //because there is a limit to the api calls,  there is no payment for the api and it is for demo purposes.
     const nyt = 'mnnfCWd6y4tQ4IipGbUkIZXICpFqsbHH1'
 
-    console.log('articles', props)
+    // props.getArticles('politics')
+    console.log('articles', props);
 
     // move the fetch to Redux - use thunk for the async actions
     const fetchArticles = (searchTerm) => {
@@ -64,6 +64,12 @@ const Context = (props) => {
 }
 
 const mapStateToProps = (state) => ({ state })
+const mapDispatchtoProps = dispatch => ({
+    getArticles: search => dispatch(getArticles(search))
+})
 
-export default connect(mapStateToProps)(Context)
+
+
+
+export default connect(mapStateToProps, mapDispatchtoProps)(Context)
 
