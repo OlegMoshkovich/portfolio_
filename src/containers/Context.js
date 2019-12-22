@@ -5,6 +5,7 @@ import ThemeContext from '../utils/ThemeContext';
 import { ContentCard } from '../components/section/contentcard_'
 import { ExtraLink } from './styles'
 import { SocialNav } from '../components/nav_/socialnav'
+import { connect } from 'react-redux'
 
 
 const Context = (props) => {
@@ -17,7 +18,9 @@ const Context = (props) => {
     const [loading, setLoading] = useState(false)
     //normally this would be stored on the server for safety - however in this case it is ok to put it here
     //because there is a limit to the api calls,  there is no payment for the api and it is for demo purposes.
-    const nyt = 'mnnfCWd6y4tQ4IipGbUkIZXICpFqbHH1'
+    const nyt = 'mnnfCWd6y4tQ4IipGbUkIZXICpFqsbHH1'
+
+    console.log('articles', props)
 
     // move the fetch to Redux - use thunk for the async actions
     const fetchArticles = (searchTerm) => {
@@ -60,5 +63,7 @@ const Context = (props) => {
     )
 }
 
-export default Context
+const mapStateToProps = (state) => ({ state })
+
+export default connect(mapStateToProps)(Context)
 

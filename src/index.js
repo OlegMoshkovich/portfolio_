@@ -5,21 +5,19 @@ import Portfolio from './containers/Portfolio';
 import Context from './containers/Context'
 import * as serviceWorker from './serviceWorker';
 import { Router } from '@reach/router'
-import { Provider, createStore } from 'redux'
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
 import reducer from '../src/reducers'
-
 const store = createStore(reducer)
-
-
-
 
 const Application = () => {
     return (
-
-        <Router>
-            <Portfolio path="/" />
-            <Context path="/context" />
-        </Router>
+        <Provider store={store}>
+            <Router>
+                <Portfolio path="/" />
+                <Context path="/context" />
+            </Router>
+        </Provider>
     )
 }
 
