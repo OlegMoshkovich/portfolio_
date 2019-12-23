@@ -19,9 +19,9 @@ const Context = (props) => {
     useEffect(() => {
         props.fetchArticles('politics')
         props.fetchArticles('art')
-        props.fetchArticles('technology')
-        console.log('length of the articles length', props.articlesPolitics.length)
-        console.log('articles props in the use Effect', props.articlesPolitics)
+        props.fetchArticles('politics')
+        // console.log('length of the articles length', props.articlesPolitics.length)
+        // console.log('articles props in the use Effect', props.articlesPolitics)
     }, []);
 
     if (props.articlesPolitics.length !== 0 && loading) {
@@ -55,7 +55,7 @@ const Context = (props) => {
     //             setArticle('limit is reached - please wait a bit...')
     //         }))
     // }
-    console.log('props state from the context', props.articlesPolitics)
+    // console.log('props state from the context', props.articlesPolitics)
     const displayArticle = (subject = '') => {
         // let topic = 'New York Times ' + searchTerm.toUpperCase() + ' snippet'
 

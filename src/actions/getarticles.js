@@ -35,6 +35,7 @@ export const fetchArticles = (searchTerm) => dispatch => {
             }
 
         }).catch((function (error) {
+            // console.log('in the catch')
             dispatch(getArticlesFail())
         }))
 }
