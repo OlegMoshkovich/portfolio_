@@ -55,21 +55,21 @@ const NavContext = (props) => {
                 <Circle onClick={() => {
                     return (
                         setTheme(ThemeArt),
-                        props.getArticles('art')
-                        // props.fetchArticles('art')
+                        // props.getArticles('art'),
+                        props.displayArticle('art')
                     )
                 }} background={theme.pageBackground} proportions={'40px'} hover={'#FFC696'} margin={'6px'}>art</Circle>
                 <Circle onClick={() => {
                     return (
-                        setTheme(ThemePolitics),
-                        props.getArticles('politics')
+                        setTheme(ThemePolitics)
+                        // props.getArticles('politics')
                         // props.fetchArticles('politics')
                     )
                 }} background={theme.pageBackground} proportions={'40px'} hover={'black'} margin={'6px'}>politics</Circle>
                 <Circle onClick={() => {
                     return (
-                        setTheme(ThemeTechnology),
-                        props.getArticles('technology')
+                        setTheme(ThemeTechnology)
+                        // props.getArticles('technology')
                         // props.fetchArticles('technology')
                     )
                 }} background={theme.pageBackground} proportions={'40px'} hover={'yellow'} margin={'6px'}>tech</Circle>

@@ -14,20 +14,22 @@ const Context = (props) => {
     const [article, setArticle] = useState('empty')
     const [random, setRandom] = useState(1)
     const [subject, setSubject] = useState('')
-    const [loading, setLoading] = useState(true)
+    const [loading, setLoading] = useState(false)
 
     useEffect(() => {
-        props.fetchArticles('politics')
-        props.fetchArticles('art')
-        props.fetchArticles('politics')
+        const { fetchArticles } = props
+        fetchArticles('politics')
+        fetchArticles('art')
+        fetchArticles('technology')
+        console.log('props state from the context', props.state)
         // console.log('length of the articles length', props.articlesPolitics.length)
         // console.log('articles props in the use Effect', props.articlesPolitics)
     }, []);
 
-    if (props.articlesPolitics.length !== 0 && loading) {
-        console.log('in the loading loop')
-        setLoading(false)
-    }
+    // if (props.articlesPolitics.length !== 0 && loading) {
+    //     console.log('in the loading loop')
+    //     setLoading(false)
+    // }
 
 
     // // move the fetch to Redux - use thunk for the async actions
@@ -55,18 +57,18 @@ const Context = (props) => {
     //             setArticle('limit is reached - please wait a bit...')
     //         }))
     // }
-    // console.log('props state from the context', props.articlesPolitics)
-    const displayArticle = (subject = '') => {
-        // let topic = 'New York Times ' + searchTerm.toUpperCase() + ' snippet'
 
+    const displayArticle = () => {
+        console.log('printing fullstate', props)
     }
+
     return (
 
         <div>
             {/* Theme Context -- every component inside of the ThemeContext has access to the themeHook 
             -- the themes are set in the NavContext -- and consumed by the SocialNav and the ContentCard  */}
             <ThemeContext.Provider value={themeHook} >
-                <NavContext fetchArticles={fetchArticles} />
+                <NavContext displayArticle={displayArticle} />
                 <SocialNav />
                 <ExtraLink href='/'>portfolio</ExtraLink>
                 <ContentCard article={article} subject={subject} loading={loading} />
@@ -75,8 +77,8 @@ const Context = (props) => {
     )
 }
 
-//return object literal expression availble as props to the compoenent
-const mapStateToProps = ({ articlesPolitics }) => ({ articlesPolitics })
+//return object literal expression available as props to the compoenent
+const mapStateToProps = (state) => ({ state })
 const mapDispatchtoProps = dispatch => ({
     fetchArticles: search => dispatch(fetchArticles(search))
 })

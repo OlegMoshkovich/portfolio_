@@ -1,5 +1,5 @@
 export function getArticlesPolitics(articles) {
-    console.log('in the get articles', articles)
+    // console.log('in the get articles', articles)
     return { type: 'GET_ARTICLES_POLITICS', payload: articles }
 }
 export function getArticlesArt(articles) {
