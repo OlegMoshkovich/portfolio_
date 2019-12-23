@@ -14,9 +14,10 @@ const Context = (props) => {
     const [article, setArticle] = useState('empty')
     const [random, setRandom] = useState(1)
     const [subject, setSubject] = useState('')
-    const [loading, setLoading] = useState(true)
+    const [loading, setLoading] = useState(false)
     const [reload, setReload] = useState(false)
     const [disable, setDisable] = useState(false)
+    const [fetch, setFetch] = useState(false)
 
     //run this useEffect only once when component mount
     useEffect(() => {
@@ -34,14 +35,23 @@ const Context = (props) => {
 
     //function passed to the nav container and triggered on the topic button click
     const displayArticle = (search) => {
+        if (!loading
+            && props.articlesPolitics.length === 0
+            && props.articlesArt.length === 0
+            && props.articlesTech.length === 0) {
+            setLoading(true)
+            return
+        }
+
         const { articlesPolitics, articlesTech, articlesArt } = props
         let genRandom = Math.floor(Math.random() * 10)
+
         //in case the the random generator duplicates the value
         genRandom < 10 ?
             genRandom !== random ? setRandom(genRandom) : setRandom(genRandom + 1) :
             genRandom !== random ? setRandom(genRandom) : setRandom(genRandom - 1)
 
-        //access appropriate piece of state based on the topic selected by the user
+        //access the appropriate piece of state based on the topic selected by the user
         switch (search) {
             case 'politics':
                 setArticle(articlesPolitics[random].snippet)
@@ -73,11 +83,11 @@ const Context = (props) => {
         setTimeout(
             () => {
                 return (
-                    setArticle('please select a topic'),
-                    setReload(!reload),
-                    setLoading(false)
+                    fetchAll(),
+                    // setArticle('please select a topic'),
+                    setLoading(true)
                 )
-            }, 10000
+            }, 20000
         )
     }
 
