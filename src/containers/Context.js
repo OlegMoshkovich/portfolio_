@@ -18,6 +18,8 @@ const Context = (props) => {
 
     useEffect(() => {
         props.fetchArticles('politics')
+        props.fetchArticles('art')
+        props.fetchArticles('technology')
         console.log('length of the articles length', props.articlesPolitics.length)
         console.log('articles props in the use Effect', props.articlesPolitics)
     }, []);
