@@ -1,5 +1,5 @@
 export const articlesFail = (state = '', action) => {
-    switch (action.Type) {
+    switch (action.type) {
         case ('GET_ARTICLES_FAIL'):
             console.log('in the fail reducer', action)
             return action.payload
@@ -7,3 +7,4 @@ export const articlesFail = (state = '', action) => {
             return state
     }
 }
+

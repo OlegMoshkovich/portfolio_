@@ -10,9 +10,9 @@ export function getArticlesTech(articles) {
     // console.log('in the get articles', articles)
     return { type: 'GET_ARTICLES_TECH', payload: articles }
 }
-export function getArticlesFail(error) {
-    // console.log('in the get articles', articles)
-    return { type: 'GET_ARTICLES_FAIL', payload: error }
+export function getArticlesFail() {
+    console.log('in the get articles FAIL')
+    return { type: 'GET_ARTICLES_FAIL', payload: 'please reload the page in 5 seconds' }
 }
 
 export const fetchArticles = (searchTerm) => dispatch => {
@@ -35,7 +35,7 @@ export const fetchArticles = (searchTerm) => dispatch => {
             }
 
         }).catch((function (error) {
-            // console.log('in the catch')
+            console.log('in the catch')
             dispatch(getArticlesFail())
         }))
 }

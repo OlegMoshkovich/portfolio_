@@ -5,7 +5,6 @@ import ThemeContext, { ThemeArt, ThemePolitics, ThemeTechnology } from '../../ut
 import { connect } from 'react-redux'
 import { fetchArticles } from '../../actions/getarticles'
 
-
 const Circle = styled.div`
 width:${(props) => props.proportions};
 height:${(props) => props.proportions};
@@ -47,32 +46,26 @@ top:80px;
 
 const NavContext = (props) => {
     const [theme, setTheme] = useContext(ThemeContext)
-    // console.log('props from nav', props)
-    // props.getArticles('somthing else')
+
     return (
         <div >
             <ButtonContainer>
                 <Circle onClick={() => {
                     return (
                         setTheme(ThemeArt),
-                        // props.getArticles('art'),
                         props.displayArticle('art')
                     )
                 }} background={theme.pageBackground} proportions={'40px'} hover={'#FFC696'} margin={'6px'}>art</Circle>
                 <Circle onClick={() => {
                     return (
                         setTheme(ThemePolitics),
-                        // props.getArticles('politics')
-                        // props.fetchArticles('politics')
                         props.displayArticle('politics')
                     )
                 }} background={theme.pageBackground} proportions={'40px'} hover={'black'} margin={'6px'}>politics</Circle>
                 <Circle onClick={() => {
                     return (
                         setTheme(ThemeTechnology),
-                        // props.getArticles('technology')
-                        // props.fetchArticles('technology')
-                        props.displayArticle('politics')
+                        props.displayArticle('tech')
                     )
                 }} background={theme.pageBackground} proportions={'40px'} hover={'yellow'} margin={'6px'}>tech</Circle>
             </ButtonContainer>
@@ -85,4 +78,3 @@ const mapStatetoProps = (state) => ({ state })
 
 export default connect(mapStatetoProps, mapDispatchtoProps)(NavContext)
 
-// export default NavContext
