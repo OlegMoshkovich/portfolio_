@@ -5,9 +5,7 @@ import Portfolio from './containers/Portfolio';
 import Context from './containers/Context'
 import * as serviceWorker from './serviceWorker';
 import { Router } from '@reach/router'
-import { createStore } from 'redux'
 import { Provider } from 'react-redux'
-import reducer from '../src/reducers'
 import store from './utils/store'
 
 const Application = () => {

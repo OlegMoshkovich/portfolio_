@@ -6,7 +6,7 @@ import { ContentCard } from '../components/section/contentcard_'
 import { ExtraLink } from './styles'
 import { SocialNav } from '../components/nav_/socialnav'
 import { connect } from 'react-redux'
-import { getArticles } from '../actions/getarticles'
+import { fetchArticles } from '../actions/getarticles'
 
 const Context = (props) => {
     //reference to the
@@ -15,12 +15,6 @@ const Context = (props) => {
     const [random, setRandom] = useState(1)
     const [subject, setSubject] = useState('')
     const [loading, setLoading] = useState(false)
-    //normally this would be stored on the server for safety - however in this case it is ok to put it here
-    //because there is a limit to the api calls,  there is no payment for the api and it is for demo purposes.
-    const nyt = 'mnnfCWd6y4tQ4IipGbUkIZXICpFqsbHH1'
-
-    // props.getArticles('politics')
-    console.log('articles', props);
 
     // move the fetch to Redux - use thunk for the async actions
     const fetchArticles = (searchTerm) => {
@@ -28,10 +22,11 @@ const Context = (props) => {
         setLoading(true)
         setSubject(topic)
 
+
         let genRandom = Math.floor(Math.random() * 10)
         genRandom !== random ? setRandom(genRandom) : setRandom(genRandom + 1)
 
-        fetch(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${searchTerm}&api-key=${nyt}`)
+        fetch(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${searchTerm}&api-key=LhjEBx8TxE98grgsu312D8vRwatwxrWo`)
             .then(resp => resp.json())
             .then(data => data.response)
             .then(data => data.docs)
@@ -66,7 +61,7 @@ const Context = (props) => {
 //return object literal expression availble as props to the compoenent
 const mapStateToProps = (state) => ({ state })
 const mapDispatchtoProps = dispatch => ({
-    getArticles: search => dispatch(getArticles(search))
+    fetchArticles: search => dispatch(fetchArticles(search))
 })
 
 export default connect(mapStateToProps, mapDispatchtoProps)(Context)
