@@ -27,17 +27,9 @@ const Context = (props) => {
         fetchArticles('technology')
     }, [reload]);
 
-    // //This useEffect is responsible for the case when the API returns 401 -- and the fetch needs to re run
-    // useEffect(() => {
-    //     console.log('this effect is suppose to run')
-    //     const { fetchArticles } = props
-    //     fetchArticles('politics')
-    //     fetchArticles('art')
-    //     fetchArticles('technology')
-    // }, [reload])
 
     //turn on loading flag as the page mounts -- and turn it off only when all of the articles are fetched
-    //not ideal scenario from the user perspective...nor from the logic -- device a better strategy
+    //not ideal scenario from the user perspective...nor from the logic
     if (loading
         && props.articlesPolitics.length !== 0
         && props.articlesArt.length !== 0
@@ -45,11 +37,11 @@ const Context = (props) => {
         setLoading(false)
     }
 
-    //In case the limit is hit -- and the fetch catches the error -- apply this logic -- wait for 5 seconds and try
-    // to call api again
+    //In case the limit is hit -- and the fetch catches the error -- apply this logic -- wait for 10 seconds and try
+    // to call api again -- this is an edge case since the api is going to be accessed only once upon the load
     if (loading && props.articlesFail !== '') {
         setLoading(false)
-        //message the user about th
+        //message the user
         setArticle(props.articlesFail)
         setTimeout(
             () => {
@@ -62,13 +54,16 @@ const Context = (props) => {
         )
     }
 
-    //function passed to the nav container and triggered by the user
+    //function passed to the nav container and triggered on the topic button click
     const displayArticle = (search) => {
         const { articlesPolitics, articlesTech, articlesArt } = props
         let genRandom = Math.floor(Math.random() * 10)
-        if (genRandom < 9) {
-            genRandom !== random ? setRandom(genRandom) : setRandom(genRandom + 1)
-        }
+        //in case the the random generator duplicates the value
+        genRandom < 10 ?
+            genRandom !== random ? setRandom(genRandom) : setRandom(genRandom + 1) :
+            genRandom !== random ? setRandom(genRandom) : setRandom(genRandom - 1)
+
+        //access appropriate piece of state based on the topic selected by the user
         switch (search) {
             case 'politics':
                 setArticle(articlesPolitics[random].snippet)
