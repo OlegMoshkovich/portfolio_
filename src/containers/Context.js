@@ -20,13 +20,40 @@ const Context = (props) => {
 
     //run this useEffect only once when component mount
     useEffect(() => {
-        const { fetchArticles } = props
         //choosing to fetch all of the articles upon page load and store it in the state container
+        fetchAll()
+    }, []);
+
+    //wrapper function to dispatch all three fetch actions
+    const fetchAll = () => {
+        const { fetchArticles } = props
         fetchArticles('politics')
         fetchArticles('art')
         fetchArticles('technology')
-    }, [reload]);
+    }
 
+    //function passed to the nav container and triggered on the topic button click
+    const displayArticle = (search) => {
+        const { articlesPolitics, articlesTech, articlesArt } = props
+        let genRandom = Math.floor(Math.random() * 10)
+        //in case the the random generator duplicates the value
+        genRandom < 10 ?
+            genRandom !== random ? setRandom(genRandom) : setRandom(genRandom + 1) :
+            genRandom !== random ? setRandom(genRandom) : setRandom(genRandom - 1)
+
+        //access appropriate piece of state based on the topic selected by the user
+        switch (search) {
+            case 'politics':
+                setArticle(articlesPolitics[random].snippet)
+                break;
+            case 'tech':
+                setArticle(articlesTech[random].snippet)
+                break;
+            case 'art':
+                setArticle(articlesArt[random].snippet)
+                break;
+        }
+    }
 
     //turn on loading flag as the page mounts -- and turn it off only when all of the articles are fetched
     //not ideal scenario from the user perspective...nor from the logic
@@ -52,29 +79,6 @@ const Context = (props) => {
                 )
             }, 10000
         )
-    }
-
-    //function passed to the nav container and triggered on the topic button click
-    const displayArticle = (search) => {
-        const { articlesPolitics, articlesTech, articlesArt } = props
-        let genRandom = Math.floor(Math.random() * 10)
-        //in case the the random generator duplicates the value
-        genRandom < 10 ?
-            genRandom !== random ? setRandom(genRandom) : setRandom(genRandom + 1) :
-            genRandom !== random ? setRandom(genRandom) : setRandom(genRandom - 1)
-
-        //access appropriate piece of state based on the topic selected by the user
-        switch (search) {
-            case 'politics':
-                setArticle(articlesPolitics[random].snippet)
-                break;
-            case 'tech':
-                setArticle(articlesTech[random].snippet)
-                break;
-            case 'art':
-                setArticle(articlesArt[random].snippet)
-                break;
-        }
     }
 
     return (
