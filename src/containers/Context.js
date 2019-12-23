@@ -16,6 +16,7 @@ const Context = (props) => {
     const [subject, setSubject] = useState('')
     const [loading, setLoading] = useState(true)
     const [reload, setReload] = useState(false)
+    const [disable, setDisable] = useState(false)
 
     //run this useEffect only once when component mount
     useEffect(() => {
@@ -24,15 +25,16 @@ const Context = (props) => {
         fetchArticles('politics')
         fetchArticles('art')
         fetchArticles('technology')
-    }, []);
+    }, [reload]);
 
-    //This useEffect is responsible for the case when the API returns 401 -- and the fetch needs to re run
-    useEffect(() => {
-        console.log('this effect is suppose to run')
-        fetchArticles('politics')
-        fetchArticles('art')
-        fetchArticles('technology')
-    }, [reload])
+    // //This useEffect is responsible for the case when the API returns 401 -- and the fetch needs to re run
+    // useEffect(() => {
+    //     console.log('this effect is suppose to run')
+    //     const { fetchArticles } = props
+    //     fetchArticles('politics')
+    //     fetchArticles('art')
+    //     fetchArticles('technology')
+    // }, [reload])
 
     //turn on loading flag as the page mounts -- and turn it off only when all of the articles are fetched
     //not ideal scenario from the user perspective...nor from the logic -- device a better strategy
@@ -47,14 +49,16 @@ const Context = (props) => {
     // to call api again
     if (loading && props.articlesFail !== '') {
         setLoading(false)
+        //message the user about th
         setArticle(props.articlesFail)
         setTimeout(
             () => {
                 return (
                     setArticle('please select a topic'),
-                    setReload(!reload)
+                    setReload(!reload),
+                    setLoading(false)
                 )
-            }, 5000
+            }, 10000
         )
     }
 
@@ -77,7 +81,6 @@ const Context = (props) => {
                 break;
         }
     }
-
 
     return (
         <div>

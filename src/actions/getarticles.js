@@ -12,7 +12,7 @@ export function getArticlesTech(articles) {
 }
 export function getArticlesFail() {
     console.log('in the get articles FAIL')
-    return { type: 'GET_ARTICLES_FAIL', payload: 'please reload the page in 5 seconds' }
+    return { type: 'GET_ARTICLES_FAIL', payload: 'we are sorry...the page will reload in 10 seconds' }
 }
 
 export const fetchArticles = (searchTerm) => dispatch => {
