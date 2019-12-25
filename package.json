@@ -1,13 +1,11 @@
 {
   "name": "react_portfolio",
-  "engines": {
-    "npm": "5.7.1",
-    "node": "10.13.0"
-  },
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@reach/router": "^1.2.1",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.8.0",
     "jest": "^24.9.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
@@ -24,7 +22,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint \"src/**/*.{js,jsx} \"--quite"
   },
   "eslintConfig": {
     "extends": "react-app"

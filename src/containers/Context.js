@@ -15,14 +15,13 @@ const Context = (props) => {
     const [random, setRandom] = useState(1)
     const [subject, setSubject] = useState('')
     const [loading, setLoading] = useState(false)
-    const [reload, setReload] = useState(false)
-    const [disable, setDisable] = useState(false)
-    const [fetch, setFetch] = useState(false)
+    const [count, setCount] = useState(10)
 
     //run this useEffect only once when component mount
     useEffect(() => {
         //choosing to fetch all of the articles upon page load and store it in the state container
-        fetchAll()
+        // fetchAll()
+        countDown(10)
     }, []);
 
     //wrapper function to dispatch all three fetch actions
@@ -64,9 +63,21 @@ const Context = (props) => {
                 break;
         }
     }
+    const countDown = (num) => {
+        console.log('in the countdown present count is', count)
+        if (num > 1) {
+            console.log('inside the loop new count', num)
+            setCount(num)
+            setArticle(`the fetch failed count ${num}`)
+            setTimeout(() => countDown(num - 1), 1000)
+        } else {
+            return
+        }
 
-    //turn on loading flag as the page mounts -- and turn it off only when all of the articles are fetched
-    //not ideal scenario from the user perspective...nor from the logic
+        console.log('in the countdown')
+    }
+
+    //Turn off only when all of the articles are fetched
     if (loading
         && props.articlesPolitics.length !== 0
         && props.articlesArt.length !== 0
@@ -79,12 +90,15 @@ const Context = (props) => {
     if (loading && props.articlesFail !== '') {
         setLoading(false)
         //message the user
-        setArticle(props.articlesFail)
+
+        setArticle(`the fetch failed ${count}`)
+        countDown(20)
+
         setTimeout(
             () => {
                 return (
                     fetchAll(),
-                    // setArticle('please select a topic'),
+                    setArticle('please select a topic'),
                     setLoading(true)
                 )
             }, 20000
