@@ -107,7 +107,7 @@ const Context = (props) => {
                 return (
                     clearFailMessage(),
                     fetchAll(),
-                    // setLoading(false),
+
                     setArticle('please select a topic'),
                     setReloading(false)
                 )
@@ -117,6 +117,7 @@ const Context = (props) => {
 
     return (
         <div>
+
             {/* Theme Context -- every component inside of the ThemeContext has access to the themeHook 
             -- the themes are set in the NavContext -- and consumed by the SocialNav and the ContentCard  */}
             <ThemeContext.Provider value={themeHook} >

@@ -12,6 +12,7 @@ const PageContainer = styled.div`
         align-items:center;
         background:${(props) => props.color};
         `
+
 const ContentContainer = styled.div`
         width: 400px;
         height: auto;
@@ -30,6 +31,7 @@ const ContentContainer = styled.div`
         margin: 0px 0px 80px 0px
         }
         `
+
 const Content = styled.div`
         font-weight: light;
         color: ${(props) => props.color};
@@ -48,20 +50,16 @@ const Subject = styled.div`
             `
 
 export const ContentCard = (props) => {
-
         //hook that is referencing ThemeContext
         const [theme, setTheme] = useContext(ThemeContext)
-
         //default theme is set on at the mounting face of the Context Conatainer
         useEffect(() => setTheme(ThemeDefault), [])
-
         return (
                 < PageContainer color={theme.pageBackground} >
                         {
                                 props.loading ?
                                         // Pulse external library activated on the loading flag passed from the ContextContainer
                                         <PulseLoader sizeUnit={"px"} size={10} color={'white'} loading={props.loading} />
-
                                         //ContextContainer styled component accepts the properties directly from the Theme Provider
                                         : <ContentContainer font={theme.font} align={theme.align} background={theme.contentBackground} border={theme.border} radius={theme.radius}>
                                                 {
@@ -71,7 +69,6 @@ export const ContentCard = (props) => {
                                                                 >
                                                                         {props.article}</Content>
                                                 }
-
                                                 <Subject color={theme.color}>{props.subject}</Subject>
                                         </ContentContainer>
                         }

@@ -45,8 +45,8 @@ top:80px;
 `
 
 const NavContext = (props) => {
+    //NavContext is the driver that is setting the current theme by settiing the current Theme Object
     const [theme, setTheme] = useContext(ThemeContext)
-
     return (
         <div >
             <ButtonContainer>
