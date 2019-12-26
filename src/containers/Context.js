@@ -17,11 +17,13 @@ const Context = (props) => {
     const [subject, setSubject] = useState('')
     const [loading, setLoading] = useState(false)
     const [count, setCount] = useState(10)
+    const [politics, setPolitics] = useState([])
 
     //run this useEffect only once when component mount
     useEffect(() => {
         //choosing to fetch all of the articles upon page load and store it in the state container
-        fetchAll()
+        // fetchAll()
+        fetchArticle('politics')
     }, []);
 
     //wrapper function to dispatch all three fetch actions
@@ -31,6 +33,23 @@ const Context = (props) => {
         fetchArticles('politics')
         fetchArticles('art')
         fetchArticles('technology')
+    }
+
+    const fetchArticle = async (searchTerm) => {
+        setLoading(true)
+        try {
+            let response = await fetch(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${searchTerm}&api-key=LhjEBx8TxE98grgsu312D8vRwatwxrWo`)
+            let data = await response.json()
+            let articles = data.response.docs
+            return setPolitics(articles)
+        } catch (err) {
+            console.error(err);
+        }
+    }
+
+    if (loading && politics.length !== 0) {
+        console.log('politics', politics)
+        setLoading(false)
     }
 
     //function passed to the nav container and triggered on the topic button click
