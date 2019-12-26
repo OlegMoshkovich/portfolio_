@@ -13,6 +13,7 @@ const Context = (props) => {
     //reference theme hook
     const themeHook = useState({})
     const [article, setArticle] = useState('empty')
+    const [reloading, setReloading] = useState(false)
     const [random, setRandom] = useState(1)
     const [subject, setSubject] = useState('')
     const [loading, setLoading] = useState(false)
@@ -35,18 +36,23 @@ const Context = (props) => {
     //function passed to the nav container and triggered on the topic button click
     const displayArticle = (search) => {
 
-        //check - disable article display- if the user presses the button before the articles are loaded 
+        //if the user tries to access the article before the fetching finished
         if (loading
             && props.articlesPolitics.length === 0
             && props.articlesArt.length === 0
             && props.articlesTech.length === 0) {
+            // setLoading(true)
+            return
+        }
+        //user cannot access articles during the reload
+        if (reloading) {
             return
         }
 
         const { articlesPolitics, articlesTech, articlesArt } = props
         let genRandom = Math.floor(Math.random() * 10)
 
-        //in case the random generator duplicates the value add or subtract one from the generated value
+        //in case the the random generator duplicates the value add or subtract one from the value
         genRandom < 10 ?
             genRandom !== random ? setRandom(genRandom) : setRandom(genRandom + 1) :
             genRandom !== random ? setRandom(genRandom) : setRandom(genRandom - 1)
@@ -55,17 +61,20 @@ const Context = (props) => {
         switch (search) {
             case 'politics':
                 setArticle(articlesPolitics[random].snippet)
+                setSubject("New York Times POLITICS section")
                 break;
             case 'tech':
                 setArticle(articlesTech[random].snippet)
+                setSubject("New York Times TECH section")
                 break;
             case 'art':
                 setArticle(articlesArt[random].snippet)
+                setSubject("New York Times ART section")
                 break;
         }
     }
 
-    //count down function displays to the use the message and count until the page reloads
+    //in case the API cannot be reached - wait 20 seconds and try to reach the api again
     const countDown = (seconds) => {
         if (seconds > 0) {
             setCount(seconds)
@@ -76,7 +85,6 @@ const Context = (props) => {
             return
         }
     }
-
 
     //Turn off only when all of the articles are fetched
     if (loading
@@ -90,8 +98,9 @@ const Context = (props) => {
     // to call api again -- this is an edge case since the api is going to be accessed only once upon the load
     if (loading && props.articlesFail !== '') {
         const { clearFailMessage } = props
+        // console.log('in the fail loop ')
+        setReloading(true)
         setLoading(false)
-        //message the user
         countDown(20)
         setTimeout(
             () => {
@@ -99,7 +108,8 @@ const Context = (props) => {
                     clearFailMessage(),
                     fetchAll(),
                     // setLoading(false),
-                    setArticle('please select a topic')
+                    setArticle('please select a topic'),
+                    setReloading(false)
                 )
             }, 20000
         )
