@@ -46,7 +46,7 @@ const Context = (props) => {
         const { articlesPolitics, articlesTech, articlesArt } = props
         let genRandom = Math.floor(Math.random() * 10)
 
-        //in case the random generator duplicates the value add or subtract one from the value
+        //in case the random generator duplicates the value add or subtract one from the generated value
         genRandom < 10 ?
             genRandom !== random ? setRandom(genRandom) : setRandom(genRandom + 1) :
             genRandom !== random ? setRandom(genRandom) : setRandom(genRandom - 1)
@@ -65,7 +65,7 @@ const Context = (props) => {
         }
     }
 
-    //in case the API cannot be reached - wait 20 seconds and try to reach the api again
+    //count down function displays to the use the message and count until the page reloads
     const countDown = (seconds) => {
         if (seconds > 0) {
             setCount(seconds)
@@ -76,6 +76,7 @@ const Context = (props) => {
             return
         }
     }
+
 
     //Turn off only when all of the articles are fetched
     if (loading
@@ -89,10 +90,8 @@ const Context = (props) => {
     // to call api again -- this is an edge case since the api is going to be accessed only once upon the load
     if (loading && props.articlesFail !== '') {
         const { clearFailMessage } = props
-        // console.log('in the fail loop ')
         setLoading(false)
         //message the user
-        setArticle(`the fetch failed ${count}`)
         countDown(20)
         setTimeout(
             () => {
