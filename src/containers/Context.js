@@ -18,7 +18,6 @@ const Context = (props) => {
     const [loading, setLoading] = useState(false)
     const [count, setCount] = useState(10)
 
-    //run this useEffect only once when component mount
     useEffect(() => {
         //choosing to fetch all of the articles upon page load and store it in the state container
         fetchAll()
@@ -35,18 +34,19 @@ const Context = (props) => {
 
     //function passed to the nav container and triggered on the topic button click
     const displayArticle = (search) => {
-        if (!loading
+
+        //check - disable article display- if the user presses the button before the articles are loaded 
+        if (loading
             && props.articlesPolitics.length === 0
             && props.articlesArt.length === 0
             && props.articlesTech.length === 0) {
-            setLoading(true)
             return
         }
 
         const { articlesPolitics, articlesTech, articlesArt } = props
         let genRandom = Math.floor(Math.random() * 10)
 
-        //in case the the random generator duplicates the value add or subtract one from the value
+        //in case the random generator duplicates the value add or subtract one from the value
         genRandom < 10 ?
             genRandom !== random ? setRandom(genRandom) : setRandom(genRandom + 1) :
             genRandom !== random ? setRandom(genRandom) : setRandom(genRandom - 1)
