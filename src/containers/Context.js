@@ -6,9 +6,10 @@ import { ContentCard } from '../components/section/contentcard_'
 import { ExtraLink } from './styles'
 import { SocialNav } from '../components/nav_/socialnav'
 import { connect } from 'react-redux'
-import { fetchArticles } from '../actions/getarticles'
+import { fetchArticles, getArticlesFail } from '../actions/getarticles'
 
 const Context = (props) => {
+
     //reference theme hook
     const themeHook = useState({})
     const [article, setArticle] = useState('empty')
@@ -20,13 +21,13 @@ const Context = (props) => {
     //run this useEffect only once when component mount
     useEffect(() => {
         //choosing to fetch all of the articles upon page load and store it in the state container
-        // fetchAll()
-        countDown(10)
+        fetchAll()
     }, []);
 
     //wrapper function to dispatch all three fetch actions
     const fetchAll = () => {
         const { fetchArticles } = props
+        setLoading(true)
         fetchArticles('politics')
         fetchArticles('art')
         fetchArticles('technology')
@@ -45,7 +46,7 @@ const Context = (props) => {
         const { articlesPolitics, articlesTech, articlesArt } = props
         let genRandom = Math.floor(Math.random() * 10)
 
-        //in case the the random generator duplicates the value
+        //in case the the random generator duplicates the value add or subtract one from the value
         genRandom < 10 ?
             genRandom !== random ? setRandom(genRandom) : setRandom(genRandom + 1) :
             genRandom !== random ? setRandom(genRandom) : setRandom(genRandom - 1)
@@ -63,18 +64,17 @@ const Context = (props) => {
                 break;
         }
     }
-    const countDown = (num) => {
-        console.log('in the countdown present count is', count)
-        if (num > 1) {
-            console.log('inside the loop new count', num)
-            setCount(num)
-            setArticle(`the fetch failed count ${num}`)
-            setTimeout(() => countDown(num - 1), 1000)
+
+    //in case the API cannot be reached - wait 20 seconds and try to reach the api again
+    const countDown = (seconds) => {
+        if (seconds > 0) {
+            setCount(seconds)
+            setArticle(`we are sorry, technical problem encountered the page will reload in ${seconds}`)
+            // recursively call the functin to display conut down
+            return setTimeout(() => countDown(seconds - 1), 1000)
         } else {
             return
         }
-
-        console.log('in the countdown')
     }
 
     //Turn off only when all of the articles are fetched
@@ -88,18 +88,19 @@ const Context = (props) => {
     //In case the limit is hit -- and the fetch catches the error -- apply this logic -- wait for 10 seconds and try
     // to call api again -- this is an edge case since the api is going to be accessed only once upon the load
     if (loading && props.articlesFail !== '') {
+        const { clearFailMessage } = props
+        // console.log('in the fail loop ')
         setLoading(false)
         //message the user
-
         setArticle(`the fetch failed ${count}`)
         countDown(20)
-
         setTimeout(
             () => {
                 return (
+                    clearFailMessage(),
                     fetchAll(),
-                    setArticle('please select a topic'),
-                    setLoading(true)
+                    // setLoading(false),
+                    setArticle('please select a topic')
                 )
             }, 20000
         )
@@ -131,7 +132,8 @@ const mapStateToProps = ({
         articlesFail
     })
 const mapDispatchtoProps = dispatch => ({
-    fetchArticles: search => dispatch(fetchArticles(search))
+    fetchArticles: search => dispatch(fetchArticles(search)),
+    clearFailMessage: () => dispatch(getArticlesFail(''))
 })
 export default connect(mapStateToProps, mapDispatchtoProps)(Context)
 

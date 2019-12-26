@@ -7,8 +7,8 @@ export function getArticlesArt(articles) {
 export function getArticlesTech(articles) {
     return { type: 'GET_ARTICLES_TECH', payload: articles }
 }
-export function getArticlesFail() {
-    return { type: 'GET_ARTICLES_FAIL', payload: 'we are sorry...the page will reload in 10 seconds' }
+export function getArticlesFail(payload) {
+    return { type: 'GET_ARTICLES_FAIL', payload }
 }
 
 export const fetchArticles = (searchTerm) => dispatch => {
@@ -28,7 +28,8 @@ export const fetchArticles = (searchTerm) => dispatch => {
             }
 
         }).catch((function (error) {
-            dispatch(getArticlesFail())
+            console.log('error from the fetch', error)
+            dispatch(getArticlesFail('error'))
         }))
 }
 

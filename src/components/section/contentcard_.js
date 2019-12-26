@@ -54,6 +54,7 @@ export const ContentCard = (props) => {
 
         //default theme is set on at the mounting face of the Context Conatainer
         useEffect(() => setTheme(ThemeDefault), [])
+
         return (
                 < PageContainer color={theme.pageBackground} >
                         {
@@ -70,6 +71,7 @@ export const ContentCard = (props) => {
                                                                 >
                                                                         {props.article}</Content>
                                                 }
+
                                                 <Subject color={theme.color}>{props.subject}</Subject>
                                         </ContentContainer>
                         }
