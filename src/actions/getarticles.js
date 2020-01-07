@@ -1,3 +1,4 @@
+
 export function getArticlesPolitics(articles) {
     return { type: 'GET_ARTICLES_POLITICS', payload: articles }
 }

@@ -35,8 +35,14 @@ import ribbon2 from '../img/ribbon2.png'
 import ribbon3 from '../img/ribbon3.png'
 import ribbon_realized from '../img/ribbon_realized.png'
 
+import { pageViewEvent } from '../actions/segment'
+import { connect } from 'react-redux'
+
 class Portfolio extends Component {
   // myRef = React.createRef();
+  componentDidMount() {
+    this.props.pageEvent()
+  }
   render() {
     return (
       <div >
@@ -99,5 +105,8 @@ class Portfolio extends Component {
   }
 }
 
+const MapDispatchToProps = dispatch => ({
+  pageEvent: () => dispatch(pageViewEvent('Main', '/index'))
+})
 
-export default Portfolio;
+export default connect(null, MapDispatchToProps)(Portfolio);

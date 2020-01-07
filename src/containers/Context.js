@@ -7,6 +7,7 @@ import { ExtraLink } from './styles'
 import { SocialNav } from '../components/nav_/socialnav'
 import { connect } from 'react-redux'
 import { fetchArticles, getArticlesFail } from '../actions/getarticles'
+import { pageViewEvent } from '../actions/segment'
 
 const Context = (props) => {
 
@@ -20,8 +21,10 @@ const Context = (props) => {
     const [count, setCount] = useState(10)
 
     useEffect(() => {
+        const { pageViewEvent } = props
         //choosing to fetch all of the articles upon page load and store it in the state container
         fetchAll()
+        pageViewEvent()
     }, []);
 
     //wrapper function to dispatch all three fetch actions
@@ -142,6 +145,7 @@ const mapStateToProps = ({
         articlesFail
     })
 const mapDispatchtoProps = dispatch => ({
+    pageViewEvent: () => dispatch(pageViewEvent('Context', '/context')),
     fetchArticles: search => dispatch(fetchArticles(search)),
     clearFailMessage: () => dispatch(getArticlesFail(''))
 })

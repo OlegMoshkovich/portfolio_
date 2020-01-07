@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import ThemeContext, { ThemeArt, ThemePolitics, ThemeTechnology } from '../../utils/ThemeContext';
 import { connect } from 'react-redux'
 import { fetchArticles } from '../../actions/getarticles'
+import { articleButton } from '../../actions/segment'
 
 const Circle = styled.div`
 width:${(props) => props.proportions};
@@ -53,7 +54,9 @@ const NavContext = (props) => {
                 <Circle onClick={() => {
                     return (
                         setTheme(ThemeArt),
-                        props.displayArticle('art')
+                        props.displayArticle('art'),
+                        props.buttonPressed()
+
                     )
                 }} background={theme.pageBackground} proportions={'40px'} hover={'#FFC696'} margin={'6px'}>art</Circle>
                 <Circle onClick={() => {
@@ -73,7 +76,12 @@ const NavContext = (props) => {
     )
 }
 
-const mapDispatchtoProps = dispatch => ({ getArticles: search => dispatch(fetchArticles(search)) })
+const mapDispatchtoProps = dispatch => (
+    {
+        getArticles: search => dispatch(fetchArticles(search)),
+        buttonPressed: () => dispatch(articleButton())
+    }
+)
 const mapStatetoProps = (state) => ({ state })
 
 export default connect(mapStatetoProps, mapDispatchtoProps)(NavContext)
