@@ -6,7 +6,7 @@ const Circle = styled.div`
 width:${(props) => props.proportions};
 height:${(props) => props.proportions};
 margin: 0px 3px 0px 3px;
-background-color:blue;
+background-color:${(props) => props.background || 'blue'};
 border: 1px solid white;
 border-radius:50%;
 display:flex;
@@ -43,23 +43,23 @@ right: 45px;
     align-items: center;
     }
 `
-export const Nav = () => {
+export const Nav = (props) => {
     return (
         <NavContainer>
             <Link to="gs" duration={0} >
-                <Circle proportions={'18px'} hover={'white'} />
+                <Circle proportions={'18px'} hover={'white'} background={props.background} hoverBorder={props.background} />
             </Link>
             <Link to="emilie" duration={0} >
-                <Circle proportions={'18px'} hover={'white'} />
+                <Circle proportions={'18px'} hover={'white'} background={props.background} hoverBorder={props.background} />
             </Link>
             <Link to="hcs" duration={0} >
-                <Circle proportions={'18px'} hover={'white'} />
+                <Circle proportions={'18px'} hover={'white'} background={props.background} hoverBorder={props.background} />
             </Link>
             <Link to="10design" duration={0} >
-                <Circle proportions={'18px'} hover={'white'} />
+                <Circle proportions={'18px'} hover={'white'} background={props.background} hoverBorder={props.background} />
             </Link>
             <div style={{ margin: '0px 0px 0px 10px' }}>
-                <Circle proportions={'40px'} hover={'blue'} cursor={'default'} hoverBorder={'white'}>
+                <Circle proportions={'40px'} cursor={'default'} hoverBorder={'white'} background={props.background}>
                     <div style={{ display: 'flex' }}>
                         <div
                             style={{

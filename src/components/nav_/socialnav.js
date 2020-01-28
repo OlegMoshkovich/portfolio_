@@ -50,6 +50,7 @@ height:${(props) => props.proportions};
 
 export const SocialNav = (props) => {
     const [theme] = useContext(ThemeContext)
+
     return (
         <NavContainer>
             <Circle href='https://www.gitlab.com/oleg.moshkovich' git background={theme.pageBackground} hover={theme.contentBackground} display={'none'}><Image src={gitLab} proportions={'10px'} /></Circle>

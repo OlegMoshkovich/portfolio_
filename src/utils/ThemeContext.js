@@ -36,4 +36,13 @@ export const ThemeDefault = {
     border: 'white'
 };
 
+export const ThemeAEC = {
+    pageBackground: 'black',
+    font: 'Roboto',
+    color: 'white',
+    contentBackground: 'black',
+    border: 'white'
+};
+
+
 export default ThemeContext;
