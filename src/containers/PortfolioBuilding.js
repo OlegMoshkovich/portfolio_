@@ -77,30 +77,30 @@ const PortfolioBuilding = () => {
       <Hero color={'black'} fontColor={'white'} header={true} img={overall} proportions={'95%'} /> */}
 
 
-      <Element name="7" />
+      <Element name="6" />
       <Hero color={'black'} fontColor={'white'} header={true} img={resume7} proportions={'95%'} />
 
 
-      <Element name="8" />
+      <Element name="7" />
       <Hero color={'black'} fontColor={'white'} header={true} img={resume8} proportions={'95%'} />
 
 
-      <Element name="9" />
+      <Element name="8" />
       <Hero color={'black'} fontColor={'white'} header={true} img={resume9} proportions={'95%'} />
 
 
 
 
-      <Element name="10" />
+      <Element name="9" />
       <Hero color={'black'} fontColor={'white'} header={true} img={resume10} proportions={'95%'} />
 
       {/* -----------------ribbon */}
       <Element name="10design" />
-      <Element name="11" />
+      <Element name="10" />
       <Hero color={'black'} fontColor={'white'} header={true} img={resume11} proportions={'95%'} />
-      <Element name="12" />
+      <Element name="11" />
       <Hero color={'black'} fontColor={'white'} header={true} img={resume12} proportions={'95%'} />
-      <Element name="6" />
+      <Element name="12" />
       <Hero color={'black'} fontColor={'white'} header={true} img={resume13} proportions={'95%'} />
 
 
