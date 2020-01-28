@@ -49,8 +49,8 @@ class Portfolio extends Component {
         <Nav />
         <PageNav />
         <SocialNav />
-        <a href='/context' style={{ position: 'fixed', bottom: '30px', right: '45px', color: 'blue' }}>context</a>
-        <a href='/aec' style={{ position: 'fixed', bottom: '30px', right: '110px', color: 'blue' }}>aec</a>
+        <a href='/aec' style={{ position: 'fixed', bottom: '30px', right: '45px', color: 'blue' }}>A.E.C.</a>
+        {/* <a href='/aec' style={{ position: 'fixed', bottom: '30px', right: '110px', color: 'blue' }}>aec</a> */}
         <Hero color={'blue'} fontColor={'white'} header={true} title={'Oleg Moshkovich / Engineer'} text={true} description={Portfolio} img={title} proportions={'93%'} >
           <div>Portfolio</div>
         </Hero>

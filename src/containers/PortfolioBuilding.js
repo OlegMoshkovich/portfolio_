@@ -28,6 +28,8 @@ import resume10 from '../img/building/resume10.png'
 import resume11 from '../img/building/resume11.png'
 import resume12 from '../img/building/resume12.png'
 import resume13 from '../img/building/resume13.png'
+import resume14 from '../img/building/resume14.png'
+import resume15 from '../img/building/resume15.png'
 
 
 
@@ -46,7 +48,7 @@ const PortfolioBuilding = () => {
       <Nav background={'black'} />
       <PageNav />
       <SocialNav />
-      <a href='/' style={{ position: 'fixed', bottom: '30px', right: '45px', color: 'black' }}>home</a>
+      <a href='/' style={{ position: 'fixed', bottom: '30px', right: '45px', color: 'black' }}>portfolio</a>
       <Hero color={'black'} fontColor={'white'} header={true} title={'Oleg Moshkovich / Engineer'} text={true} img={title} proportions={'93%'} >
         AEC Portfolio
         </Hero>
@@ -68,7 +70,8 @@ const PortfolioBuilding = () => {
       <Element name="4" />
       <Hero color={'black'} fontColor={'white'} header={true} img={gprom} proportions={'95%'} />
 
-
+      {/* -----------------ribbon */}
+      <Element name="10design" />
       <Element name="5" />
       <Hero color={'black'} fontColor={'white'} header={true} img={w} proportions={'95%'} />
 
@@ -94,8 +97,7 @@ const PortfolioBuilding = () => {
       <Element name="9" />
       <Hero color={'black'} fontColor={'white'} header={true} img={resume10} proportions={'95%'} />
 
-      {/* -----------------ribbon */}
-      <Element name="10design" />
+
       <Element name="10" />
       <Hero color={'black'} fontColor={'white'} header={true} img={resume11} proportions={'95%'} />
       <Element name="11" />
@@ -103,6 +105,11 @@ const PortfolioBuilding = () => {
       <Element name="12" />
       <Hero color={'black'} fontColor={'white'} header={true} img={resume13} proportions={'95%'} />
 
+
+      <Hero color={'black'} fontColor={'white'} header={true} img={resume14} proportions={'95%'} />
+
+
+      <Hero color={'black'} fontColor={'white'} header={true} img={resume15} proportions={'95%'} />
 
 
 
