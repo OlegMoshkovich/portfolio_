@@ -27,6 +27,7 @@ import resume9 from '../img/building/resume9.png'
 import resume10 from '../img/building/resume10.png'
 import resume11 from '../img/building/resume11.png'
 import resume12 from '../img/building/resume12.png'
+import resume13 from '../img/building/resume13.png'
 
 
 
@@ -99,6 +100,8 @@ const PortfolioBuilding = () => {
       <Hero color={'black'} fontColor={'white'} header={true} img={resume11} proportions={'95%'} />
       <Element name="12" />
       <Hero color={'black'} fontColor={'white'} header={true} img={resume12} proportions={'95%'} />
+      <Element name="6" />
+      <Hero color={'black'} fontColor={'white'} header={true} img={resume13} proportions={'95%'} />
 
 
 
