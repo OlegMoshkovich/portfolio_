@@ -4,7 +4,7 @@ import ThemeContext, { ThemePolitics } from '../utils/ThemeContext';
 import { Hero } from '../components/hero/hero'
 import { Nav } from '../components/nav_/nav_'
 import { PageNav } from '../components/nav_/pagenav_'
-import { SocialNav } from '../components/nav_/socialnav'
+import { SocialNavTheme } from '../components/nav_/socialnav_theme'
 
 import title from '../img/title.png'
 import gc from '../img/building/resume1.png'
@@ -21,9 +21,11 @@ import resume12 from '../img/building/resume12.png'
 import resume13 from '../img/building/resume13.png'
 import resume14 from '../img/building/resume14.png'
 import resume15 from '../img/building/resume15.png'
+import aecPortfolio from '../img/aecPortfolio.png'
 
 import { pageViewEvent } from '../actions/segment'
 import { connect } from 'react-redux'
+import Favicon from 'react-favicon';
 
 const PortfolioBuilding = () => {
   // myRef = React.createRef();
@@ -37,9 +39,10 @@ const PortfolioBuilding = () => {
   return (
 
     <ThemeContext.Provider value={themeHook} >
+      <Favicon url={aecPortfolio} />
       <Nav background={'black'} />
       <PageNav color={'black'} />
-      <SocialNav />
+      <SocialNavTheme />
       <a href='/' style={{ position: 'fixed', bottom: '30px', right: '45px', color: 'black' }}>portfolio</a>
       <Hero color={'black'} fontColor={'white'} header={true} title={'Oleg Moshkovich / Engineer'} text={true} img={title} proportions={'93%'} >
         AEC Portfolio
