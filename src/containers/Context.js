@@ -123,6 +123,7 @@ const Context = (props) => {
 
             {/* Theme Context -- every component inside of the ThemeContext has access to the themeHook 
             -- the themes are set in the NavContext -- and consumed by the SocialNav and the ContentCard  */}
+
             <ThemeContext.Provider value={themeHook} >
                 <NavContext displayArticle={displayArticle} />
                 <SocialNav />

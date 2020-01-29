@@ -54,6 +54,7 @@ export const ContentCard = (props) => {
         const [theme, setTheme] = useContext(ThemeContext)
         //default theme is set on at the mounting face of the Context Conatainer
         useEffect(() => setTheme(ThemeDefault), [])
+        console.log('theme from the content card', theme)
         return (
                 < PageContainer color={theme.pageBackground} >
                         {

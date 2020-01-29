@@ -50,6 +50,7 @@ height:${(props) => props.proportions};
 
 export const SocialNav = (props) => {
     const [theme] = useContext(ThemeContext)
+    console.log('them props', theme)
 
     return (
         <NavContainer>
