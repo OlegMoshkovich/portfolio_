@@ -46,8 +46,8 @@ text-decoration: underline;
 const Team = styled.div`
 display:flex;
 flex-direction:row;
-justify-content:space-around;
-align-items:space-around;
+justify-content:space-between;
+align-items:space-between;
 width : ${props => props.width || 'auto'};
 height : ${props => props.height || '100px'};
 `
@@ -134,7 +134,7 @@ const Outerlabs = () => {
                     {
                         scores.length !== 0 ?
                             scores.map((score, i) =>
-                                <Team key={i} width={'100px'}>
+                                <Team key={i} width={'140px'}>
                                     <div>{score[0]}</div>
                                     <div>{score[1]}</div>
                                 </Team>
