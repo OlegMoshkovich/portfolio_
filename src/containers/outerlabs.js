@@ -41,15 +41,17 @@ const Title = styled.div`
 font-size:20px;
 height:20px;
 text-decoration: underline;
+// border:1px solid black;
 `
 
 const Team = styled.div`
 display:flex;
 flex-direction:row;
-justify-content:space-between;
-align-items:space-between;
+justify-content:${props => props.flex || 'space-between'};
+align-items:center;
 width : ${props => props.width || 'auto'};
 height : ${props => props.height || '100px'};
+// border:1px solid black;
 `
 
 const Outerlabs = () => {
@@ -121,7 +123,7 @@ const Outerlabs = () => {
                 <LocalContainter height={'130px'} width={'150px'}>
                     {
                         matches.map((game, i) =>
-                            <Team key={i}>
+                            <Team key={i} width={'210px'} flex={'center'} >
                                 <div>{game}</div>
                             </Team>
                         )
