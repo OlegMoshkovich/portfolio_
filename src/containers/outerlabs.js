@@ -37,7 +37,7 @@ display:flex;
 flex-direction:row;
 justify-content:space-around;
 align-items:space-around;
-height : ${props => props.width || 'auto'};
+width : ${props => props.width || 'auto'};
 height : ${props => props.height || '100px'};
 `
 
@@ -103,11 +103,9 @@ const Outerlabs = () => {
             <Favicon url={outer} />
             <LocalContainter height={'100px'} flex={'center'} >
                 <Image src={outer} />
-                {/* <div>outer labs interview test</div> */}
             </LocalContainter>
             <Title>Games</Title>
             <LocalContainter height={'100px'}>
-
                 {
                     matches.map((game, i) =>
                         <Team key={i}>
@@ -117,7 +115,6 @@ const Outerlabs = () => {
                 }
             </LocalContainter>
             <Title>Ranking Table</Title>
-
             <LocalContainter height={'200px'}>
 
                 {
