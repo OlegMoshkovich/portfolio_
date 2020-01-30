@@ -118,7 +118,7 @@ const Outerlabs = () => {
             </LocalContainter>
             <GamesContainer >
                 <Title>Games</Title>
-                <LocalContainter height={'130px'}>
+                <LocalContainter height={'130px'} width={'150px'}>
                     {
                         matches.map((game, i) =>
                             <Team key={i}>
@@ -134,7 +134,7 @@ const Outerlabs = () => {
                     {
                         scores.length !== 0 ?
                             scores.map((score, i) =>
-                                <Team key={i} width={'140px'}>
+                                <Team key={i} width={'150px'}>
                                     <div>{score[0]}</div>
                                     <div>{score[1]}</div>
                                 </Team>
