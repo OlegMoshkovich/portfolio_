@@ -1,16 +1,14 @@
-import React from 'react';
+import React from 'react'
 
 export const themes = {
-    light: {
-        foreground: 'red',
-        background: 'black',
+    aec: {
+        color: 'black',
     },
-    dark: {
-        foreground: 'blue',
-        background: 'black',
+    developer: {
+        color: 'blue'
     },
 };
 
-export const ThemeContext = React.createContext(
-    themes.dark // default value
-);
+export const ThemeContext = React.createContext(themes.dark);
+
+

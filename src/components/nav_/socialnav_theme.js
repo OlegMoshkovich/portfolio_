@@ -3,8 +3,9 @@ import styled from 'styled-components';
 import linkedIn from '../../img/in.png';
 import git from '../../img/git.png';
 import gitLab from '../../img/gitlab.png';
-import ThemeContext from '../../utils/ThemeContext';
-import Theme from '../../utils/Theme';
+// import ThemeContext from '../../utils/ThemeContext';
+import { ThemeContext, themes } from '../../utils/Theme';
+
 
 
 const Circle = styled.a`
@@ -50,14 +51,14 @@ height:${(props) => props.proportions};
 `
 
 export const SocialNavTheme = (props) => {
-    const [theme] = useContext(ThemeContext)
-    console.log('them props', theme)
+    const theme = useContext(ThemeContext);
+    console.log('social nav theme', theme)
 
     return (
         <NavContainer>
-            <Circle href='https://www.gitlab.com/oleg.moshkovich' git background={'black'} hover={'black'} display={'none'}><Image src={gitLab} proportions={'10px'} /></Circle>
-            <Circle href='https://www.linkedin.com/in/olegmoshkovich/' background={'black'} hover={'black'}><Image src={linkedIn} proportions={'8px'} /></Circle>
-            <Circle href='https://github.com/OlegMoshkovich' background={'black'} hover={'black'} display={'none'}><Image src={git} proportions={'8px'} /></Circle>
+            <Circle href='https://www.gitlab.com/oleg.moshkovich' git background={theme.color} hover={theme.colorHover} display={'none'}><Image src={gitLab} proportions={'10px'} /></Circle>
+            <Circle href='https://www.linkedin.com/in/olegmoshkovich/' background={theme.color} hover={theme.colorHover}><Image src={linkedIn} proportions={'8px'} /></Circle>
+            <Circle href='https://github.com/OlegMoshkovich' background={theme.color} hover={theme.colorHover} display={'none'}><Image src={git} proportions={'8px'} /></Circle>
         </NavContainer>
     )
 }

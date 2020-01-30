@@ -10,6 +10,7 @@ import { Router } from '@reach/router'
 import { Provider } from 'react-redux'
 import store from './utils/store'
 import Experiment from './containers/Experiment'
+import Outerlbas from './containers/outerlabs'
 
 const Application = () => {
     return (
@@ -19,6 +20,7 @@ const Application = () => {
                 <PortfolioBuilding path="/aec" />
                 <Context path="/context" />
                 <Experiment path="/experiment" />
+                <Outerlbas path="/outerlabs" />
             </Router>
         </Provider>
     )

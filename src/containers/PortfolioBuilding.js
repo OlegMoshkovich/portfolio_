@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Element } from 'react-scroll'
-import ThemeContext, { ThemePolitics } from '../utils/ThemeContext';
+// import ThemeContext, { ThemePolitics } from '../utils/ThemeContext';
 import { Hero } from '../components/hero/hero'
 import { Nav } from '../components/nav_/nav_'
 import { PageNav } from '../components/nav_/pagenav_'
@@ -27,18 +27,23 @@ import { pageViewEvent } from '../actions/segment'
 import { connect } from 'react-redux'
 import Favicon from 'react-favicon';
 
+import { ThemeContext, themes } from '../utils/Theme'
+
+
+
+
 const PortfolioBuilding = () => {
   // myRef = React.createRef();
-  const themeHook = useState({})
+  // const themeHook = useState({})
 
-  const [theme, setTheme] = useContext(ThemeContext)
-  //default theme is set on at the mounting face of the Context Conatainer
-  useEffect(() => setTheme(ThemePolitics), [])
-  console.log('current theme from the buildling porfolio', theme)
+  // const [theme, setTheme] = useContext(ThemeContext)
+  // //default theme is set on at the mounting face of the Context Conatainer
+  // useEffect(() => setTheme(ThemePolitics), [])
+  // console.log('current theme from the buildling porfolio', theme)
 
   return (
 
-    <ThemeContext.Provider value={themeHook} >
+    <ThemeContext.Provider value={themes.aec}>
       <Favicon url={aecPortfolio} />
       <Nav background={'black'} />
       <PageNav color={'black'} />
