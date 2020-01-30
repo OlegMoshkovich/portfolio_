@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components'
 import outer from '../img/outer.png'
 import Favicon from 'react-favicon';
@@ -13,6 +13,16 @@ justify-content:space-around;
 align-items:center;
 `
 
+const GamesContainer = styled.div`
+display:flex;
+flex-direction:column;
+justify-content:space-around;
+align-items:center;
+height : ${props => props.height || '200px'};
+padding: 10px;
+width: 200px;
+border:1px solid grey;
+`
 const LocalContainter = styled.div`
 display:flex;
 flex-direction:column;
@@ -22,6 +32,7 @@ height : ${props => props.height || '100px'};
 width: auto;
 // border:1px solid black;
 `
+
 const Image = styled.img`
 width:auto;
 `
@@ -45,6 +56,7 @@ const Outerlabs = () => {
     const [state, setState] = useState('...')
     const [scores, setScores] = useState([])
     const [matches] = useState(['Lions 3, Snakes 3', 'Tarantulas 1, FC Awesome 0', 'Lions 1, FC Awesome 1', 'Tarantulas 3, Snakes 1', 'Lions 4, Grouches 0'])
+    useEffect(() => games(), [])
 
     const func = () => {
         state === '...' ?
@@ -104,34 +116,37 @@ const Outerlabs = () => {
             <LocalContainter height={'100px'} flex={'center'} >
                 <Image src={outer} />
             </LocalContainter>
-            <Title>Games</Title>
-            <LocalContainter height={'100px'}>
-                {
-                    matches.map((game, i) =>
-                        <Team key={i}>
-                            <div>{game}</div>
-                        </Team>
-                    )
-                }
-            </LocalContainter>
-            <Title>Ranking Table</Title>
-            <LocalContainter height={'200px'}>
-
-                {
-                    scores.length !== 0 ?
-                        scores.map((score, i) =>
-                            <Team key={i} width={'100px'}>
-                                <div>{score[0]}</div>
-                                <div>{score[1]}</div>
+            <GamesContainer >
+                <Title>Games</Title>
+                <LocalContainter height={'130px'}>
+                    {
+                        matches.map((game, i) =>
+                            <Team key={i}>
+                                <div>{game}</div>
                             </Team>
                         )
-                        : ''
-                }
-            </LocalContainter>
+                    }
+                </LocalContainter>
+            </GamesContainer>
+            <GamesContainer >
+                <Title>Ranking Table</Title>
+                <LocalContainter height={'130px'}>
+                    {
+                        scores.length !== 0 ?
+                            scores.map((score, i) =>
+                                <Team key={i} width={'100px'}>
+                                    <div>{score[0]}</div>
+                                    <div>{score[1]}</div>
+                                </Team>
+                            )
+                            : ''
+                    }
+                </LocalContainter>
+            </GamesContainer>
 
-            <LocalContainter height={'90px'}>
+            {/* <LocalContainter height={'90px'}>
                 <button onClick={games}>calculate ranking</button>
-            </LocalContainter>
+            </LocalContainter> */}
 
         </Container>
     )
