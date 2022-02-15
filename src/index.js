@@ -16,8 +16,8 @@ const Application = () => {
     return (
         <Provider store={store}>
             <Router>
-                <Portfolio path="/" />
-                <PortfolioBuilding path="/aec" />
+                <Portfolio path="/aec" />
+                <PortfolioBuilding path="/" />
                 <Context path="/context" />
                 <Experiment path="/experiment" />
                 <Outerlbas path="/outerlabs" />
